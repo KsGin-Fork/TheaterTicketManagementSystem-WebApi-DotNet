@@ -8,7 +8,7 @@ using TTMSWebAPI.Servers;
 namespace TTMSWebAPI.Controllers
 {
     /// <summary>
-    /// 用户操作
+    /// 人事管理操作API
     /// </summary>
     [Route("[controller]")]
     [EnableCors("mCors")]
@@ -27,7 +27,7 @@ namespace TTMSWebAPI.Controllers
         };
 
         /// <summary>
-        /// 登陆
+        /// 用户登陆
         /// </summary>
         /// <returns>登陆结果</returns>
         /// <param name="account">账号</param>
