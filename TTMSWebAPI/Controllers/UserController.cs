@@ -32,7 +32,7 @@ namespace TTMSWebAPI.Controllers
         /// <returns>登陆结果</returns>
         /// <param name="account">账号</param>
         /// <param name="password">密码</param>
-        [HttpGet("Login&a={account}&p={password}")]
+        [HttpGet("[action]a={account}&p={password}")]
         public object Login(string account , string password)
         {
             try
@@ -59,8 +59,8 @@ namespace TTMSWebAPI.Controllers
         /// </summary>
         /// <param name="user">用户</param>
         /// <returns>修改密码结果</returns>
-        [HttpPatch("ModPassword")]
-        public object ModPassword([FromBody]UserModel user)
+        [HttpPatch("[action]")]
+        public object UpdateUserPassword([FromBody]UserModel user)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace TTMSWebAPI.Controllers
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
 
-                var re = UserServer.ModPassword(user);
+                var re = UserServer.UpdateUserPassword(user);
 
                 return new {code = (int) re , msg = CodeMapping[(int)re]};
             }
@@ -85,7 +85,7 @@ namespace TTMSWebAPI.Controllers
         /// </summary>
         /// <param name="user">用户</param>
         /// <returns>增加结果</returns>
-        [HttpPost("NewUser")]
+        [HttpPost("[action]")]
         public object NewUser([FromBody]UserModel user)
         {
             try
@@ -111,8 +111,8 @@ namespace TTMSWebAPI.Controllers
         /// </summary>
         /// <param name="account">需要删除的用户账号</param>
         /// <returns>删除结果</returns>
-        [HttpDelete("delUser&a={account}")]
-        public object DelUser(string account)
+        [HttpDelete("[action]/a={account}")]
+        public object DeleteUser(string account)
         {
             try
             {
@@ -122,7 +122,7 @@ namespace TTMSWebAPI.Controllers
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
 
-                var re = UserServer.DelUser(account);
+                var re = UserServer.DeleteUser(account);
 
                 return new {code = (int) re , msg = CodeMapping[(int)re]};
             }
@@ -137,7 +137,7 @@ namespace TTMSWebAPI.Controllers
         /// </summary>
         /// <param name="account">用户账号</param>
         /// <returns></returns>
-        [HttpGet("getuser&a={account}")]
+        [HttpGet("[action]/a={account}")]
         public object GetUser(string account)
         {
             try
@@ -163,8 +163,8 @@ namespace TTMSWebAPI.Controllers
         /// </summary>
         /// <param name="user">用户</param>
         /// <returns>修改等级结果</returns>
-        [HttpPatch("ModLevel")]
-        public object ModLevel([FromBody] UserModel user)
+        [HttpPatch("[action]")]
+        public object UpdateUserLevel([FromBody] UserModel user)
         {
             try
             {
@@ -174,7 +174,7 @@ namespace TTMSWebAPI.Controllers
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
 
-                var re = UserServer.ModLevel(user);
+                var re = UserServer.UpdateUserLevel(user);
 
                 return new {code = (int) re , msg = CodeMapping[(int)re]};
             }
@@ -189,8 +189,8 @@ namespace TTMSWebAPI.Controllers
         /// </summary>
         /// <param name="user">用户</param>
         /// <returns>修改电话结果</returns>
-        [HttpPatch("ModTel")]
-        public object ModTel([FromBody] UserModel user)
+        [HttpPatch("[action]")]
+        public object UpdateUserTel([FromBody] UserModel user)
         {
             try
             {
@@ -200,7 +200,7 @@ namespace TTMSWebAPI.Controllers
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
 
-                var re = UserServer.ModTel(user);
+                var re = UserServer.UpdateUserTel(user);
 
                 return new {code = (int) re , msg = CodeMapping[(int)re]};
             }

@@ -141,7 +141,7 @@ namespace TTMSWebAPI.Servers
 		/// </summary>
 		/// <param name="account">需要删除的用户账号</param>
 		/// <returns>删除结果</returns>
-		public static object DelUser(string account)
+		public static object DeleteUser(string account)
 		{
 			using (var con = new SqlConnection(Server.SqlConString))
 			{
@@ -179,7 +179,7 @@ namespace TTMSWebAPI.Servers
 		/// </summary>
 		/// <param name="user">用户</param>
 		/// <returns>修改密码结果</returns>
-		public static object ModPassword(UserModel user)
+		public static object UpdateUserPassword(UserModel user)
 		{
 			using (var con = new SqlConnection(Server.SqlConString))
 			{
@@ -271,7 +271,7 @@ namespace TTMSWebAPI.Servers
 		/// </summary>
 		/// <param name="user">用户</param>
 		/// <returns>修改等级结果</returns>
-		public static object ModLevel(UserModel user)
+		public static object UpdateUserLevel(UserModel user)
 		{
 			using (var con = new SqlConnection(Server.SqlConString))
 			{
@@ -316,7 +316,7 @@ namespace TTMSWebAPI.Servers
 		/// </summary>
 		/// <param name="user">用户</param>
 		/// <returns>修改电话结果</returns>
-		public static object ModTel(UserModel user)
+		public static object UpdateUserTel(UserModel user)
 		{
 			using (var con = new SqlConnection(Server.SqlConString))
 			{
