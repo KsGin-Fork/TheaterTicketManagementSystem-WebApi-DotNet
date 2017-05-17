@@ -30,10 +30,9 @@ namespace TTMSWebAPI.Controllers
         /// 用户登陆
         /// </summary>
         /// <returns>登陆结果</returns>
-        /// <param name="account">账号</param>
-        /// <param name="password">密码</param>
-        [HttpGet("[action]a={account}&p={password}")]
-        public object Login(string account , string password)
+        /// <param name="user">登录的用户</param>  
+        [HttpGet("[action]")]
+        public object Login([FromBody]UserModel user)
         {
             try
             {
@@ -43,7 +42,7 @@ namespace TTMSWebAPI.Controllers
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
 
-                var re = UserServer.Login(account , password);
+                var re = UserServer.Login(user.Account , user.Password);
 
                 return new {code = (int) re , msg = CodeMapping[(int)re]};
             }
@@ -86,7 +85,7 @@ namespace TTMSWebAPI.Controllers
         /// <param name="user">用户</param>
         /// <returns>增加结果</returns>
         [HttpPost("[action]")]
-        public object NewUser([FromBody]UserModel user)
+        public object CreateUser([FromBody]UserModel user)
         {
             try
             {
@@ -96,7 +95,7 @@ namespace TTMSWebAPI.Controllers
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
 
-                var re = UserServer.NewUser(user);
+                var re = UserServer.CreateUser(user);
 
                 return new {code = (int) re , msg = CodeMapping[(int)re]};
             }

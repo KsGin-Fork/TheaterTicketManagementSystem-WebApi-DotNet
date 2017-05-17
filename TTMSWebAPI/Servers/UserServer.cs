@@ -62,7 +62,7 @@ namespace TTMSWebAPI.Servers
 		/// </summary>
 		/// <param name="user">用户</param>
 		/// <returns>增加结果</returns>
-		public static object NewUser(UserModel user)
+		public static object CreateUser(UserModel user)
 		{
 			using (var con = new SqlConnection(Server.SqlConString))
 			{
