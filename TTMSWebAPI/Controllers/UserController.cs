@@ -23,16 +23,16 @@ namespace TTMSWebAPI.Controllers
             {1, "wrong password"},
             {2, "account not found"},
             {3, "account is exists"}
-
         };
 
         /// <summary>
         /// 用户登陆
         /// </summary>
         /// <returns>登陆结果</returns>
-        /// <param name="user">登录的用户</param>  
-        [HttpGet("[action]")]
-        public object Login([FromBody]UserModel user)
+        /// <param name="Account">账号</param>
+        /// <param name="Password">密码</param>
+        [HttpGet("[action]/a={Account}&p={Password}")]
+        public object Login(string Account , string Password)
         {
             try
             {
@@ -42,7 +42,7 @@ namespace TTMSWebAPI.Controllers
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
 
-                var re = UserServer.Login(user.Account , user.Password);
+                var re = UserServer.Login(Account , Password);
 
                 return new {code = (int) re , msg = CodeMapping[(int)re]};
             }

@@ -23,7 +23,7 @@ namespace TTMSWebAPI.Servers
 			{
 				con.Open();
 
-				var sqlCom = new SqlCommand("sp_login", con)
+				var sqlCom = new SqlCommand("sp_Login", con)
 				{
 					CommandType = CommandType.StoredProcedure
 				};
@@ -68,7 +68,7 @@ namespace TTMSWebAPI.Servers
 			{
 				con.Open();
 
-				var sqlCom = new SqlCommand("sp_newUser", con)
+				var sqlCom = new SqlCommand("sp_CreateUser", con)
 				{
 					CommandType = CommandType.StoredProcedure
 				};
@@ -147,7 +147,7 @@ namespace TTMSWebAPI.Servers
 			{
 				con.Open();
 
-				var sqlCom = new SqlCommand("sp_delUser", con)
+				var sqlCom = new SqlCommand("sp_DeleteUser", con)
 				{
 					CommandType = CommandType.StoredProcedure
 				};
@@ -185,7 +185,7 @@ namespace TTMSWebAPI.Servers
 			{
 				con.Open();
 
-				var sqlCom = new SqlCommand("sp_userModPassword", con)
+				var sqlCom = new SqlCommand("sp_UpdateUserPassword", con)
 				{
 					CommandType = CommandType.StoredProcedure
 				};
@@ -230,7 +230,7 @@ namespace TTMSWebAPI.Servers
 			{
 				con.Open();
 
-				var sqlCom = new SqlCommand("sp_getUser", con)
+				var sqlCom = new SqlCommand("sp_GetUser", con)
 				{
 					CommandType = CommandType.StoredProcedure
 				};
@@ -277,7 +277,7 @@ namespace TTMSWebAPI.Servers
 			{
 				con.Open();
 
-				var sqlCom = new SqlCommand("sp_userModLevel", con)
+				var sqlCom = new SqlCommand("sp_UpdateUserLevel", con)
 				{
 					CommandType = CommandType.StoredProcedure
 				};
@@ -322,7 +322,7 @@ namespace TTMSWebAPI.Servers
 			{
 				con.Open();
 
-				var sqlCom = new SqlCommand("sp_userModTel", con)
+				var sqlCom = new SqlCommand("sp_UpdateUserTel", con)
 				{
 					CommandType = CommandType.StoredProcedure
 				};
