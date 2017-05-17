@@ -59,7 +59,7 @@ namespace TTMSWebAPI.Controllers
         /// </summary>
         /// <param name="user">用户</param>
         /// <returns>修改密码结果</returns>
-        [HttpPost("ModPassword")]
+        [HttpPatch("ModPassword")]
         public object ModPassword([FromBody]UserModel user)
         {
             try
@@ -85,8 +85,7 @@ namespace TTMSWebAPI.Controllers
         /// </summary>
         /// <param name="user">用户</param>
         /// <returns>增加结果</returns>
-        [HttpPut("NewUser")]
-        [EnableCors("mCors")]
+        [HttpPost("NewUser")]
         public object NewUser([FromBody]UserModel user)
         {
             try
@@ -164,7 +163,7 @@ namespace TTMSWebAPI.Controllers
         /// </summary>
         /// <param name="user">用户</param>
         /// <returns>修改等级结果</returns>
-        [HttpPost("ModLevel")]
+        [HttpPatch("ModLevel")]
         public object ModLevel([FromBody] UserModel user)
         {
             try
@@ -190,7 +189,7 @@ namespace TTMSWebAPI.Controllers
         /// </summary>
         /// <param name="user">用户</param>
         /// <returns>修改电话结果</returns>
-        [HttpPost("ModTel")]
+        [HttpPatch("ModTel")]
         public object ModTel([FromBody] UserModel user)
         {
             try
