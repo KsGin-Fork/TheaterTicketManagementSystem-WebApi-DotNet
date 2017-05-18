@@ -1,2 +1,2 @@
 ﻿# TTMSWebAPI
-[主页地址](http://ksgin.online/ttmsapi/home)
+[主页地址](http://api.ksgin.online/home)
