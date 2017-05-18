@@ -7,6 +7,9 @@
       <excludeFolder url="file://$MODULE_DIR$/../../TTMSWebAPI/obj" />
       <excludeFolder url="file://$MODULE_DIR$/../../packages" />
     </content>
+    <content url="file://E:/DotNetProject/TTMSWebAPI/TTMSWebAPI/bin/Release/netcoreapp1.1/publish">
+      <sourceFolder url="file://E:/DotNetProject/TTMSWebAPI/TTMSWebAPI/bin/Release/netcoreapp1.1/publish" isTestSource="false" />
+    </content>
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

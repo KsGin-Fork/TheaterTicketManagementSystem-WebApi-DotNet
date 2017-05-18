@@ -28,32 +28,46 @@ namespace TTMSWebAPI.Servers
 					CommandType = CommandType.StoredProcedure
 				};
 
-				sqlCom.Parameters.Add(new SqlParameter
+				sqlCom.Parameters.AddRange(new[]
 				{
-					ParameterName = "@account",
-					Direction = ParameterDirection.Input,
-					SqlDbType = SqlDbType.NVarChar,
-					Size = 15,
-					Value = account
-				});
-				sqlCom.Parameters.Add(new SqlParameter
-				{
-					ParameterName = "@password",
-					Direction = ParameterDirection.Input,
-					SqlDbType = SqlDbType.NVarChar,
-					Size = 15,
-					Value = password
-				});
-				sqlCom.Parameters.Add(new SqlParameter
-				{
-					ParameterName = "@return",
-					Direction = ParameterDirection.ReturnValue,
-					SqlDbType = SqlDbType.Int
+					new SqlParameter
+					{
+						ParameterName = "@account",
+						Direction = ParameterDirection.Input,
+						SqlDbType = SqlDbType.NVarChar,
+						Size = 15,
+						Value = account
+					},
+					new SqlParameter
+					{
+						ParameterName = "@password",
+						Direction = ParameterDirection.Input,
+						SqlDbType = SqlDbType.NVarChar,
+						Size = 15,
+						Value = password
+					},
+					new SqlParameter
+					{
+						ParameterName = "@message",
+						Direction = ParameterDirection.Output,
+						Size = 30,
+						SqlDbType = SqlDbType.VarChar
+					},
+					new SqlParameter
+					{
+						ParameterName = "@return",
+						Direction = ParameterDirection.ReturnValue,
+						SqlDbType = SqlDbType.Int
+					}
 				});
 
 				sqlCom.ExecuteNonQuery();
 
-				return sqlCom.Parameters["@return"].Value;
+				return new
+				{
+					result = (int) sqlCom.Parameters["@return"].Value,
+					msg = (string) sqlCom.Parameters["@message"].Value
+				};
 			}
 		}
 
@@ -73,66 +87,78 @@ namespace TTMSWebAPI.Servers
 					CommandType = CommandType.StoredProcedure
 				};
 
-				sqlCom.Parameters.Add(new SqlParameter
+				sqlCom.Parameters.AddRange(new []
 				{
-					ParameterName = "@name",
-					Direction = ParameterDirection.Input,
-					SqlDbType = SqlDbType.NVarChar,
-					Size = 30,
-					Value = user.Name
-				});
-
-				sqlCom.Parameters.Add(new SqlParameter
-				{
-					ParameterName = "@account",
-					Direction = ParameterDirection.Input,
-					SqlDbType = SqlDbType.NVarChar,
-					Size = 15,
-					Value = user.Account
-				});
-
-				sqlCom.Parameters.Add(new SqlParameter
-				{
-					ParameterName = "@password",
-					Direction = ParameterDirection.Input,
-					SqlDbType = SqlDbType.NVarChar,
-					Size = 15,
-					Value = user.Password
-				});
-				sqlCom.Parameters.Add(new SqlParameter
-				{
-					ParameterName = "@level",
-					Direction = ParameterDirection.Input,
-					SqlDbType = SqlDbType.NVarChar,
-					Size = 15,
-					Value = user.Level
-				});
-				sqlCom.Parameters.Add(new SqlParameter
-				{
-					ParameterName = "@sex",
-					Direction = ParameterDirection.Input,
-					SqlDbType = SqlDbType.NVarChar,
-					Size = 10,
-					Value = user.Sex
-				});
-				sqlCom.Parameters.Add(new SqlParameter
-				{
-					ParameterName = "@tel",
-					Direction = ParameterDirection.Input,
-					SqlDbType = SqlDbType.NVarChar,
-					Size = 12,
-					Value = user.Tel
-				});
-				sqlCom.Parameters.Add(new SqlParameter
-				{
-					ParameterName = "@return",
-					Direction = ParameterDirection.ReturnValue,
-					SqlDbType = SqlDbType.Int
+					new SqlParameter
+					{
+						ParameterName = "@name",
+						Direction = ParameterDirection.Input,
+						SqlDbType = SqlDbType.NVarChar,
+						Size = 30,
+						Value = user.Name
+					},
+					new SqlParameter
+					{
+						ParameterName = "@account",
+						Direction = ParameterDirection.Input,
+						SqlDbType = SqlDbType.NVarChar,
+						Size = 15,
+						Value = user.Account
+					},
+					new SqlParameter
+					{
+						ParameterName = "@password",
+						Direction = ParameterDirection.Input,
+						SqlDbType = SqlDbType.NVarChar,
+						Size = 15,
+						Value = user.Password
+					},
+					new SqlParameter
+					{
+						ParameterName = "@level",
+						Direction = ParameterDirection.Input,
+						SqlDbType = SqlDbType.NVarChar,
+						Size = 15,
+						Value = user.Level
+					},
+					new SqlParameter
+					{
+						ParameterName = "@sex",
+						Direction = ParameterDirection.Input,
+						SqlDbType = SqlDbType.NVarChar,
+						Size = 10,
+						Value = user.Sex
+					},
+					new SqlParameter
+					{
+						ParameterName = "@tel",
+						Direction = ParameterDirection.Input,
+						SqlDbType = SqlDbType.NVarChar,
+						Size = 12,
+						Value = user.Tel
+					},
+					new SqlParameter
+					{
+						ParameterName = "@message",
+						Direction = ParameterDirection.Output,
+						Size = 30,
+						SqlDbType = SqlDbType.VarChar
+					},
+					new SqlParameter
+					{
+						ParameterName = "@return",
+						Direction = ParameterDirection.ReturnValue,
+						SqlDbType = SqlDbType.Int
+					}
 				});
 
 				sqlCom.ExecuteNonQuery();
 
-				return sqlCom.Parameters["@return"].Value;
+				return new
+				{
+					result = (int) sqlCom.Parameters["@return"].Value,
+					msg = (string) sqlCom.Parameters["@message"].Value
+				};
 			}
 		}
 
@@ -152,25 +178,38 @@ namespace TTMSWebAPI.Servers
 					CommandType = CommandType.StoredProcedure
 				};
 
-				sqlCom.Parameters.Add(new SqlParameter
+				sqlCom.Parameters.AddRange(new []
 				{
-					ParameterName = "@account",
-					Direction = ParameterDirection.Input,
-					SqlDbType = SqlDbType.NVarChar,
-					Size = 15,
-					Value = account
-				});
-
-				sqlCom.Parameters.Add(new SqlParameter
-				{
-					ParameterName = "@return",
-					Direction = ParameterDirection.ReturnValue,
-					SqlDbType = SqlDbType.Int
+					new SqlParameter
+					{
+						ParameterName = "@account",
+						Direction = ParameterDirection.Input,
+						SqlDbType = SqlDbType.NVarChar,
+						Size = 15,
+						Value = account
+					},
+					new SqlParameter
+					{
+						ParameterName = "@message",
+						Direction = ParameterDirection.Output,
+						Size = 30,
+						SqlDbType = SqlDbType.VarChar
+					},
+					new SqlParameter
+					{
+						ParameterName = "@return",
+						Direction = ParameterDirection.ReturnValue,
+						SqlDbType = SqlDbType.Int
+					}
 				});
 
 				sqlCom.ExecuteNonQuery();
 
-				return sqlCom.Parameters["@return"].Value;
+				return new
+				{
+					result = (int) sqlCom.Parameters["@return"].Value,
+					msg = (string) sqlCom.Parameters["@message"].Value
+				};
 			}
 		}
 
@@ -190,32 +229,46 @@ namespace TTMSWebAPI.Servers
 					CommandType = CommandType.StoredProcedure
 				};
 
-				sqlCom.Parameters.Add(new SqlParameter
+				sqlCom.Parameters.AddRange(new []
 				{
-					ParameterName = "@account",
-					Direction = ParameterDirection.Input,
-					SqlDbType = SqlDbType.NVarChar,
-					Size = 15,
-					Value = user.Account
-				});
-				sqlCom.Parameters.Add(new SqlParameter
-				{
-					ParameterName = "@newPassword",
-					Direction = ParameterDirection.Input,
-					SqlDbType = SqlDbType.NVarChar,
-					Size = 15,
-					Value = user.Password
-				});
-				sqlCom.Parameters.Add(new SqlParameter
-				{
-					ParameterName = "@return",
-					Direction = ParameterDirection.ReturnValue,
-					SqlDbType = SqlDbType.Int
+					new SqlParameter
+					{
+						ParameterName = "@account",
+						Direction = ParameterDirection.Input,
+						SqlDbType = SqlDbType.NVarChar,
+						Size = 15,
+						Value = user.Account
+					},
+					new SqlParameter
+					{
+						ParameterName = "@newPassword",
+						Direction = ParameterDirection.Input,
+						SqlDbType = SqlDbType.NVarChar,
+						Size = 15,
+						Value = user.Password
+					},
+					new SqlParameter
+					{
+						ParameterName = "@message",
+						Direction = ParameterDirection.Output,
+						Size = 30,
+						SqlDbType = SqlDbType.VarChar
+					},
+					new SqlParameter
+					{
+						ParameterName = "@return",
+						Direction = ParameterDirection.ReturnValue,
+						SqlDbType = SqlDbType.Int
+					}
 				});
 
 				sqlCom.ExecuteNonQuery();
 
-				return sqlCom.Parameters["@return"].Value;
+				return new
+				{
+					result = (int) sqlCom.Parameters["@return"].Value,
+					msg = (string) sqlCom.Parameters["@message"].Value
+				};
 			}
 		}
 
@@ -235,21 +288,39 @@ namespace TTMSWebAPI.Servers
 					CommandType = CommandType.StoredProcedure
 				};
 
-				sqlCom.Parameters.Add(new SqlParameter
+				sqlCom.Parameters.AddRange(new []
 				{
-					ParameterName = "@account",
-					Direction = ParameterDirection.Input,
-					SqlDbType = SqlDbType.NVarChar,
-					Size = 18,
-					Value = account
+					new SqlParameter
+					{
+						ParameterName = "@account",
+						Direction = ParameterDirection.Input,
+						SqlDbType = SqlDbType.NVarChar,
+						Size = 18,
+						Value = account
+					},
+					new SqlParameter
+					{
+						ParameterName = "@message",
+						Direction = ParameterDirection.Output,
+						Size = 30,
+						SqlDbType = SqlDbType.VarChar
+					},
+					new SqlParameter
+					{
+						ParameterName = "@return",
+						Direction = ParameterDirection.ReturnValue,
+						SqlDbType = SqlDbType.Int
+					}
 				});
 
 				sqlCom.ExecuteNonQuery();
 
+				object data = null;
+
 				var reader = sqlCom.ExecuteReader();
 				if (reader.Read())
 				{
-					return new
+					data = new
 					{
 						userName = reader[0] != DBNull.Value ? (string)reader[0] : null ,
 						userAccount = reader[1] != DBNull.Value ? (string)reader[1] : null,
@@ -262,7 +333,12 @@ namespace TTMSWebAPI.Servers
 						userTel = reader[8] != DBNull.Value ? (string)reader[8] : null
 					};
 				}
-				return null;
+				return new
+				{
+					result = (int) sqlCom.Parameters["@return"].Value,
+					msg = (string) sqlCom.Parameters["@message"].Value,
+					data
+				};
 			}
 		}
 
@@ -282,32 +358,46 @@ namespace TTMSWebAPI.Servers
 					CommandType = CommandType.StoredProcedure
 				};
 
-				sqlCom.Parameters.Add(new SqlParameter
+				sqlCom.Parameters.AddRange(new []
 				{
-					ParameterName = "@account",
-					Direction = ParameterDirection.Input,
-					SqlDbType = SqlDbType.NVarChar,
-					Size = 15,
-					Value = user.Account
-				});
-				sqlCom.Parameters.Add(new SqlParameter
-				{
-					ParameterName = "@newLevel",
-					Direction = ParameterDirection.Input,
-					SqlDbType = SqlDbType.NVarChar,
-					Size = 15,
-					Value = user.Level
-				});
-				sqlCom.Parameters.Add(new SqlParameter
-				{
-					ParameterName = "@return",
-					Direction = ParameterDirection.ReturnValue,
-					SqlDbType = SqlDbType.Int
+					new SqlParameter
+					{
+						ParameterName = "@account",
+						Direction = ParameterDirection.Input,
+						SqlDbType = SqlDbType.NVarChar,
+						Size = 15,
+						Value = user.Account
+					},
+					new SqlParameter
+					{
+						ParameterName = "@newLevel",
+						Direction = ParameterDirection.Input,
+						SqlDbType = SqlDbType.NVarChar,
+						Size = 15,
+						Value = user.Level
+					},
+					new SqlParameter
+					{
+						ParameterName = "@message",
+						Direction = ParameterDirection.Output,
+						Size = 30,
+						SqlDbType = SqlDbType.VarChar
+					},
+					new SqlParameter
+					{
+						ParameterName = "@return",
+						Direction = ParameterDirection.ReturnValue,
+						SqlDbType = SqlDbType.Int
+					}
 				});
 
 				sqlCom.ExecuteNonQuery();
 
-				return sqlCom.Parameters["@return"].Value;
+				return new
+				{
+					result = (int) sqlCom.Parameters["@return"].Value,
+					msg = (string) sqlCom.Parameters["@message"].Value
+				};
 			}
 		}
 
@@ -327,32 +417,46 @@ namespace TTMSWebAPI.Servers
 					CommandType = CommandType.StoredProcedure
 				};
 
-				sqlCom.Parameters.Add(new SqlParameter
+				sqlCom.Parameters.AddRange(new []
 				{
-					ParameterName = "@account",
-					Direction = ParameterDirection.Input,
-					SqlDbType = SqlDbType.NVarChar,
-					Size = 15,
-					Value = user.Account
-				});
-				sqlCom.Parameters.Add(new SqlParameter
-				{
-					ParameterName = "@newTel",
-					Direction = ParameterDirection.Input,
-					SqlDbType = SqlDbType.NVarChar,
-					Size = 15,
-					Value = user.Tel
-				});
-				sqlCom.Parameters.Add(new SqlParameter
-				{
-					ParameterName = "@return",
-					Direction = ParameterDirection.ReturnValue,
-					SqlDbType = SqlDbType.Int
+					new SqlParameter
+					{
+						ParameterName = "@account",
+						Direction = ParameterDirection.Input,
+						SqlDbType = SqlDbType.NVarChar,
+						Size = 15,
+						Value = user.Account
+					},
+					new SqlParameter
+					{
+						ParameterName = "@newTel",
+						Direction = ParameterDirection.Input,
+						SqlDbType = SqlDbType.NVarChar,
+						Size = 15,
+						Value = user.Tel
+					},
+					new SqlParameter
+					{
+						ParameterName = "@message",
+						Direction = ParameterDirection.Output,
+						Size = 30,
+						SqlDbType = SqlDbType.VarChar
+					},
+					new SqlParameter
+					{
+						ParameterName = "@return",
+						Direction = ParameterDirection.ReturnValue,
+						SqlDbType = SqlDbType.Int
+					}
 				});
 
 				sqlCom.ExecuteNonQuery();
 
-				return sqlCom.Parameters["@return"].Value;
+				return new
+				{
+					result = (int) sqlCom.Parameters["@return"].Value,
+					msg = (string) sqlCom.Parameters["@message"].Value
+				};
 			}
 		}
 	}

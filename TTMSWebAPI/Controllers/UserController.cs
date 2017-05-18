@@ -15,17 +15,6 @@ namespace TTMSWebAPI.Controllers
     public class UserController : Controller
     {
         /// <summary>
-        /// 错误代码与错误信息
-        /// </summary>
-        public static Dictionary<int, string> CodeMapping = new Dictionary<int, string>
-        {
-            {0, "successful"},
-            {1, "wrong password"},
-            {2, "account not found"},
-            {3, "account is exists"}
-        };
-
-        /// <summary>
         /// 用户登陆
         /// </summary>
         /// <returns>登陆结果</returns>
@@ -44,11 +33,11 @@ namespace TTMSWebAPI.Controllers
 
                 var re = UserServer.Login(Account , Password);
 
-                return new {code = (int) re , msg = CodeMapping[(int)re]};
+                return re;
             }
             catch (Exception e)
             {
-                return new {code = 301 , msg = e.Message };
+                return "{ " + e.HResult + " : \"" + e.Message + "\" }";
             }
 
         }
@@ -71,11 +60,11 @@ namespace TTMSWebAPI.Controllers
 
                 var re = UserServer.UpdateUserPassword(user);
 
-                return new {code = (int) re , msg = CodeMapping[(int)re]};
+                return re;
             }
             catch (Exception e)
             {
-                return new {code = 301 , msg = e.Message };
+                return "{ " + e.HResult + " : \"" + e.Message + "\" }";
             }
         }
 
@@ -97,11 +86,11 @@ namespace TTMSWebAPI.Controllers
 
                 var re = UserServer.CreateUser(user);
 
-                return new {code = (int) re , msg = CodeMapping[(int)re]};
+                return re;
             }
             catch (Exception e)
             {
-                return new {code = 301 , msg = e.Message };
+                return "{ " + e.HResult + " : \"" + e.Message + "\" }";
             }
         }
 
@@ -123,11 +112,11 @@ namespace TTMSWebAPI.Controllers
 
                 var re = UserServer.DeleteUser(account);
 
-                return new {code = (int) re , msg = CodeMapping[(int)re]};
+                return re;
             }
             catch (Exception e)
             {
-                return new {code = 301 , msg = e.Message };
+                return "{ " + e.HResult + " : \"" + e.Message + "\" }";
             }
         }
 
@@ -153,7 +142,7 @@ namespace TTMSWebAPI.Controllers
             }
             catch (Exception e)
             {
-                return new {code = 301 , msg = e.Message };
+                return "{ " + e.HResult + " : \"" + e.Message + "\" }";
             }
         }
 
@@ -175,11 +164,11 @@ namespace TTMSWebAPI.Controllers
 
                 var re = UserServer.UpdateUserLevel(user);
 
-                return new {code = (int) re , msg = CodeMapping[(int)re]};
+                return re;
             }
             catch (Exception e)
             {
-                return new {code = 301 , msg = e.Message };
+                return "{ " + e.HResult + " : \"" + e.Message + "\" }";
             }
         }
 
@@ -201,11 +190,11 @@ namespace TTMSWebAPI.Controllers
 
                 var re = UserServer.UpdateUserTel(user);
 
-                return new {code = (int) re , msg = CodeMapping[(int)re]};
+                return re;
             }
             catch (Exception e)
             {
-                return new {code = 301 , msg = e.Message };
+                return "{ " + e.HResult + " : \"" + e.Message + "\" }";
             }
         }
 
