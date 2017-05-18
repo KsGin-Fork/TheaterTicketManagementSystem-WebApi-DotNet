@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using TTMSWebAPI.Models;
@@ -18,10 +17,9 @@ namespace TTMSWebAPI.Controllers
         /// 用户登陆
         /// </summary>
         /// <returns>登陆结果</returns>
-        /// <param name="Account">账号</param>
-        /// <param name="Password">密码</param>
-        [HttpGet("[action]/a={Account}&p={Password}")]
-        public object Login(string Account , string Password)
+        /// <param name="lm">登录用户</param>
+        [HttpPatch("[action]")]
+        public object Login([FromBody]LoginModel lm)
         {
             try
             {
@@ -31,13 +29,17 @@ namespace TTMSWebAPI.Controllers
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
 
-                var re = UserServer.Login(Account , Password);
+                var re = UserServer.Login(lm);
 
                 return re;
             }
             catch (Exception e)
             {
-                return "{ " + e.HResult + " : \"" + e.Message + "\" }";
+                return new
+                {
+                    result = e.HResult ,
+                    msg = e.Message
+                };
             }
 
         }
@@ -45,10 +47,10 @@ namespace TTMSWebAPI.Controllers
         /// <summary>
         /// 用户修改密码
         /// </summary>
-        /// <param name="user">用户</param>
+        /// <param name="um">用户</param>
         /// <returns>修改密码结果</returns>
         [HttpPatch("[action]")]
-        public object UpdateUserPassword([FromBody]UserModel user)
+        public object UpdateUserPassword([FromBody]UpdateUserPasswordModel um)
         {
             try
             {
@@ -58,23 +60,27 @@ namespace TTMSWebAPI.Controllers
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
 
-                var re = UserServer.UpdateUserPassword(user);
+                var re = UserServer.UpdateUserPassword(um);
 
                 return re;
             }
             catch (Exception e)
             {
-                return "{ " + e.HResult + " : \"" + e.Message + "\" }";
+                return new
+                {
+                    result = e.HResult ,
+                    msg = e.Message
+                };
             }
         }
 
         /// <summary>
         /// 增加一个新用户
         /// </summary>
-        /// <param name="user">用户</param>
+        /// <param name="cm">增加的用户</param>
         /// <returns>增加结果</returns>
         [HttpPost("[action]")]
-        public object CreateUser([FromBody]UserModel user)
+        public object CreateUser([FromBody]CreateUserModel cm)
         {
             try
             {
@@ -84,23 +90,27 @@ namespace TTMSWebAPI.Controllers
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
 
-                var re = UserServer.CreateUser(user);
+                var re = UserServer.CreateUser(cm);
 
                 return re;
             }
             catch (Exception e)
             {
-                return "{ " + e.HResult + " : \"" + e.Message + "\" }";
+                return new
+                {
+                    result = e.HResult ,
+                    msg = e.Message
+                };
             }
         }
 
         /// <summary>
         /// 删除一个用户
         /// </summary>
-        /// <param name="account">需要删除的用户账号</param>
+        /// <param name="dm">需要删除的用户</param>
         /// <returns>删除结果</returns>
-        [HttpDelete("[action]/a={account}")]
-        public object DeleteUser(string account)
+        [HttpDelete("[action]")]
+        public object DeleteUser([FromBody]DeleteUserModel dm)
         {
             try
             {
@@ -110,13 +120,17 @@ namespace TTMSWebAPI.Controllers
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
 
-                var re = UserServer.DeleteUser(account);
+                var re = UserServer.DeleteUser(dm);
 
                 return re;
             }
             catch (Exception e)
             {
-                return "{ " + e.HResult + " : \"" + e.Message + "\" }";
+                return new
+                {
+                    result = e.HResult ,
+                    msg = e.Message
+                };
             }
         }
 
@@ -142,17 +156,21 @@ namespace TTMSWebAPI.Controllers
             }
             catch (Exception e)
             {
-                return "{ " + e.HResult + " : \"" + e.Message + "\" }";
+                return new
+                {
+                    result = e.HResult ,
+                    msg = e.Message
+                };
             }
         }
 
         /// <summary>
         /// 用户修改等级
         /// </summary>
-        /// <param name="user">用户</param>
+        /// <param name="um">用户</param>
         /// <returns>修改等级结果</returns>
         [HttpPatch("[action]")]
-        public object UpdateUserLevel([FromBody] UserModel user)
+        public object UpdateUserLevel([FromBody]UpdateUserLevelModel um)
         {
             try
             {
@@ -162,23 +180,27 @@ namespace TTMSWebAPI.Controllers
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
 
-                var re = UserServer.UpdateUserLevel(user);
+                var re = UserServer.UpdateUserLevel(um);
 
                 return re;
             }
             catch (Exception e)
             {
-                return "{ " + e.HResult + " : \"" + e.Message + "\" }";
+                return new
+                {
+                    result = e.HResult ,
+                    msg = e.Message
+                };
             }
         }
 
         /// <summary>
         /// 用户修改电话
         /// </summary>
-        /// <param name="user">用户</param>
+        /// <param name="um">用户</param>
         /// <returns>修改电话结果</returns>
         [HttpPatch("[action]")]
-        public object UpdateUserTel([FromBody] UserModel user)
+        public object UpdateUserTel([FromBody]UpdateUserTelModel um)
         {
             try
             {
@@ -188,13 +210,17 @@ namespace TTMSWebAPI.Controllers
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
 
-                var re = UserServer.UpdateUserTel(user);
+                var re = UserServer.UpdateUserTel(um);
 
                 return re;
             }
             catch (Exception e)
             {
-                return "{ " + e.HResult + " : \"" + e.Message + "\" }";
+                return new
+                {
+                    result = e.HResult ,
+                    msg = e.Message
+                };
             }
         }
 

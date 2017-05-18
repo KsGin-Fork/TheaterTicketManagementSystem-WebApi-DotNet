@@ -15,9 +15,8 @@ namespace TTMSWebAPI.Servers
 		/// 登陆
 		/// </summary>
 		/// <returns>登陆结果</returns>
-		/// <param name="account">账号</param>
-		/// <param name="password">密码</param>
-		public static object Login(string account, string password)
+		/// <param name="lm">用户</param>
+		public static object Login(LoginModel lm)
 		{
 			using (var con = new SqlConnection(Server.SqlConString))
 			{
@@ -36,7 +35,7 @@ namespace TTMSWebAPI.Servers
 						Direction = ParameterDirection.Input,
 						SqlDbType = SqlDbType.NVarChar,
 						Size = 15,
-						Value = account
+						Value = lm.Account
 					},
 					new SqlParameter
 					{
@@ -44,7 +43,7 @@ namespace TTMSWebAPI.Servers
 						Direction = ParameterDirection.Input,
 						SqlDbType = SqlDbType.NVarChar,
 						Size = 15,
-						Value = password
+						Value = lm.Password
 					},
 					new SqlParameter
 					{
@@ -74,9 +73,9 @@ namespace TTMSWebAPI.Servers
 		/// <summary>
 		/// 增加一个新用户
 		/// </summary>
-		/// <param name="user">用户</param>
+		/// <param name="cm">用户</param>
 		/// <returns>增加结果</returns>
-		public static object CreateUser(UserModel user)
+		public static object CreateUser(CreateUserModel cm)
 		{
 			using (var con = new SqlConnection(Server.SqlConString))
 			{
@@ -95,7 +94,7 @@ namespace TTMSWebAPI.Servers
 						Direction = ParameterDirection.Input,
 						SqlDbType = SqlDbType.NVarChar,
 						Size = 30,
-						Value = user.Name
+						Value = cm.Name
 					},
 					new SqlParameter
 					{
@@ -103,7 +102,7 @@ namespace TTMSWebAPI.Servers
 						Direction = ParameterDirection.Input,
 						SqlDbType = SqlDbType.NVarChar,
 						Size = 15,
-						Value = user.Account
+						Value = cm.Account
 					},
 					new SqlParameter
 					{
@@ -111,7 +110,7 @@ namespace TTMSWebAPI.Servers
 						Direction = ParameterDirection.Input,
 						SqlDbType = SqlDbType.NVarChar,
 						Size = 15,
-						Value = user.Password
+						Value = cm.Password
 					},
 					new SqlParameter
 					{
@@ -119,7 +118,7 @@ namespace TTMSWebAPI.Servers
 						Direction = ParameterDirection.Input,
 						SqlDbType = SqlDbType.NVarChar,
 						Size = 15,
-						Value = user.Level
+						Value = cm.Level
 					},
 					new SqlParameter
 					{
@@ -127,7 +126,7 @@ namespace TTMSWebAPI.Servers
 						Direction = ParameterDirection.Input,
 						SqlDbType = SqlDbType.NVarChar,
 						Size = 10,
-						Value = user.Sex
+						Value = cm.Sex
 					},
 					new SqlParameter
 					{
@@ -135,7 +134,7 @@ namespace TTMSWebAPI.Servers
 						Direction = ParameterDirection.Input,
 						SqlDbType = SqlDbType.NVarChar,
 						Size = 12,
-						Value = user.Tel
+						Value = cm.Tel
 					},
 					new SqlParameter
 					{
@@ -165,9 +164,9 @@ namespace TTMSWebAPI.Servers
 		/// <summary>
 		/// 删除一个用户
 		/// </summary>
-		/// <param name="account">需要删除的用户账号</param>
+		/// <param name="dm">需要删除的用户账号</param>
 		/// <returns>删除结果</returns>
-		public static object DeleteUser(string account)
+		public static object DeleteUser(DeleteUserModel dm)
 		{
 			using (var con = new SqlConnection(Server.SqlConString))
 			{
@@ -186,7 +185,7 @@ namespace TTMSWebAPI.Servers
 						Direction = ParameterDirection.Input,
 						SqlDbType = SqlDbType.NVarChar,
 						Size = 15,
-						Value = account
+						Value = dm.Account
 					},
 					new SqlParameter
 					{
@@ -216,9 +215,9 @@ namespace TTMSWebAPI.Servers
 		/// <summary>
 		/// 用户修改密码
 		/// </summary>
-		/// <param name="user">用户</param>
+		/// <param name="um">用户</param>
 		/// <returns>修改密码结果</returns>
-		public static object UpdateUserPassword(UserModel user)
+		public static object UpdateUserPassword(UpdateUserPasswordModel um)
 		{
 			using (var con = new SqlConnection(Server.SqlConString))
 			{
@@ -237,7 +236,7 @@ namespace TTMSWebAPI.Servers
 						Direction = ParameterDirection.Input,
 						SqlDbType = SqlDbType.NVarChar,
 						Size = 15,
-						Value = user.Account
+						Value = um.Account
 					},
 					new SqlParameter
 					{
@@ -245,7 +244,7 @@ namespace TTMSWebAPI.Servers
 						Direction = ParameterDirection.Input,
 						SqlDbType = SqlDbType.NVarChar,
 						Size = 15,
-						Value = user.Password
+						Value = um.Password
 					},
 					new SqlParameter
 					{
@@ -345,9 +344,9 @@ namespace TTMSWebAPI.Servers
 		/// <summary>
 		/// 用户修改等级
 		/// </summary>
-		/// <param name="user">用户</param>
+		/// <param name="um">用户</param>
 		/// <returns>修改等级结果</returns>
-		public static object UpdateUserLevel(UserModel user)
+		public static object UpdateUserLevel(UpdateUserLevelModel um)
 		{
 			using (var con = new SqlConnection(Server.SqlConString))
 			{
@@ -366,7 +365,7 @@ namespace TTMSWebAPI.Servers
 						Direction = ParameterDirection.Input,
 						SqlDbType = SqlDbType.NVarChar,
 						Size = 15,
-						Value = user.Account
+						Value = um.Account
 					},
 					new SqlParameter
 					{
@@ -374,7 +373,7 @@ namespace TTMSWebAPI.Servers
 						Direction = ParameterDirection.Input,
 						SqlDbType = SqlDbType.NVarChar,
 						Size = 15,
-						Value = user.Level
+						Value = um.Level
 					},
 					new SqlParameter
 					{
@@ -404,9 +403,9 @@ namespace TTMSWebAPI.Servers
 		/// <summary>
 		/// 用户修改电话
 		/// </summary>
-		/// <param name="user">用户</param>
+		/// <param name="um">用户</param>
 		/// <returns>修改电话结果</returns>
-		public static object UpdateUserTel(UserModel user)
+		public static object UpdateUserTel(UpdateUserTelModel um)
 		{
 			using (var con = new SqlConnection(Server.SqlConString))
 			{
@@ -425,7 +424,7 @@ namespace TTMSWebAPI.Servers
 						Direction = ParameterDirection.Input,
 						SqlDbType = SqlDbType.NVarChar,
 						Size = 15,
-						Value = user.Account
+						Value = um.Account
 					},
 					new SqlParameter
 					{
@@ -433,7 +432,7 @@ namespace TTMSWebAPI.Servers
 						Direction = ParameterDirection.Input,
 						SqlDbType = SqlDbType.NVarChar,
 						Size = 15,
-						Value = user.Tel
+						Value = um.Tel
 					},
 					new SqlParameter
 					{
