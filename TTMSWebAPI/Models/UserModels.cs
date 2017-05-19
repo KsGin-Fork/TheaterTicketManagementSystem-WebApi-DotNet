@@ -55,35 +55,49 @@ namespace TTMSWebAPI.Models
         /// </summary>
         [StringLength(15)]
         public string Password { get; set; }
+    } 
+    
+    /// <summary>
+    /// 修改用户密码模型
+    /// </summary>
+    public class UpdateUserPasswordModel
+    {
+        /// <summary>
+        /// 用户Id
+        /// </summary>
+        public int Id { get; set; }
+        /// <summary>
+        /// 用户密码
+        /// </summary>
+        [StringLength(15)]
+        public string Password { get; set; }
     }
-
+    
     /// <summary>
     /// 修改用户权限等级模型
     /// </summary>
     public class UpdateUserLevelModel
     {
         /// <summary>
-        /// 用户账号
+        /// 用户Id
         /// </summary>
-        [StringLength(15)]
-        public string Account { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// 用户权限级别
         /// </summary>
         [StringLength(15)]
         public string Level { get; set; }
     }
-
+    
     /// <summary>
     /// 修改用户电话模型
     /// </summary>
     public class UpdateUserTelModel
     {
         /// <summary>
-        /// 用户账号
+        /// 用户Id
         /// </summary>
-        [StringLength(15)]
-        public string Account { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// 用户电话
         /// </summary>
@@ -91,32 +105,16 @@ namespace TTMSWebAPI.Models
         public string Tel { get; set; }
     }
 
-    /// <summary>
-    /// 修改用户密码模型
-    /// </summary>
-    public class UpdateUserPasswordModel
-    {
-        /// <summary>
-        /// 用户账号
-        /// </summary>
-        [StringLength(15)]
-        public string Account { get; set; }
-        /// <summary>
-        /// 用户密码
-        /// </summary>
-        [StringLength(15)]
-        public string Password { get; set; }
-    }
-
+    
     /// <summary>
     /// 删除用户模型
     /// </summary>
     public class DeleteUserModel
     {
         /// <summary>
-        /// 用户账号
+        /// 用户Id
         /// </summary>
         [StringLength(15)]
-        public string Account { get; set; }
+        public string Id { get; set; }
     }
 }

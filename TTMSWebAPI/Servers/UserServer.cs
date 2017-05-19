@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using TTMSWebAPI.Models;
@@ -164,7 +165,7 @@ namespace TTMSWebAPI.Servers
 		/// <summary>
 		/// 删除一个用户
 		/// </summary>
-		/// <param name="dm">需要删除的用户账号</param>
+		/// <param name="dm">需要删除的用户Id</param>
 		/// <returns>删除结果</returns>
 		public static object DeleteUser(DeleteUserModel dm)
 		{
@@ -183,9 +184,8 @@ namespace TTMSWebAPI.Servers
 					{
 						ParameterName = "@account",
 						Direction = ParameterDirection.Input,
-						SqlDbType = SqlDbType.NVarChar,
-						Size = 15,
-						Value = dm.Account
+						SqlDbType = SqlDbType.Int,
+						Value = dm.Id
 					},
 					new SqlParameter
 					{
@@ -211,7 +211,7 @@ namespace TTMSWebAPI.Servers
 				};
 			}
 		}
-
+		
 		/// <summary>
 		/// 用户修改密码
 		/// </summary>
@@ -223,7 +223,7 @@ namespace TTMSWebAPI.Servers
 			{
 				con.Open();
 
-				var sqlCom = new SqlCommand("sp_UpdateUserPassword", con)
+				var sqlCom = new SqlCommand("sp_UpdateUser", con)
 				{
 					CommandType = CommandType.StoredProcedure
 				};
@@ -232,11 +232,10 @@ namespace TTMSWebAPI.Servers
 				{
 					new SqlParameter
 					{
-						ParameterName = "@account",
+						ParameterName = "@userId",
 						Direction = ParameterDirection.Input,
-						SqlDbType = SqlDbType.NVarChar,
-						Size = 15,
-						Value = um.Account
+						SqlDbType = SqlDbType.Int,
+						Value = um.Id
 					},
 					new SqlParameter
 					{
@@ -272,76 +271,6 @@ namespace TTMSWebAPI.Servers
 		}
 
 		/// <summary>
-		/// 获得用户信息
-		/// </summary>
-		/// <param name="account"></param>
-		/// <returns></returns>
-		public static object GetUser(string account)
-		{
-			using (var con = new SqlConnection(Server.SqlConString))
-			{
-				con.Open();
-
-				var sqlCom = new SqlCommand("sp_GetUser", con)
-				{
-					CommandType = CommandType.StoredProcedure
-				};
-
-				sqlCom.Parameters.AddRange(new []
-				{
-					new SqlParameter
-					{
-						ParameterName = "@account",
-						Direction = ParameterDirection.Input,
-						SqlDbType = SqlDbType.NVarChar,
-						Size = 18,
-						Value = account
-					},
-					new SqlParameter
-					{
-						ParameterName = "@message",
-						Direction = ParameterDirection.Output,
-						Size = 30,
-						SqlDbType = SqlDbType.VarChar
-					},
-					new SqlParameter
-					{
-						ParameterName = "@return",
-						Direction = ParameterDirection.ReturnValue,
-						SqlDbType = SqlDbType.Int
-					}
-				});
-
-				sqlCom.ExecuteNonQuery();
-
-				object data = null;
-
-				var reader = sqlCom.ExecuteReader();
-				if (reader.Read())
-				{
-					data = new
-					{
-						userName = reader[0] != DBNull.Value ? (string)reader[0] : null ,
-						userAccount = reader[1] != DBNull.Value ? (string)reader[1] : null,
-						userPassword = reader[2] != DBNull.Value ? (string)reader[2] : null,
-						userCreateTime = (DateTime)reader[3],
-						userLastSignInTime = (DateTime)reader[4],
-						userLevel = (string)reader[5],
-						userSex = reader[6] != DBNull.Value ? (string)reader[6] : null,
-						userAvatar = reader[7] != DBNull.Value ? (BitArray)reader[7] : null,
-						userTel = reader[8] != DBNull.Value ? (string)reader[8] : null
-					};
-				}
-				return new
-				{
-					result = (int) sqlCom.Parameters["@return"].Value,
-					msg = (string) sqlCom.Parameters["@message"].Value,
-					data
-				};
-			}
-		}
-
-		/// <summary>
 		/// 用户修改等级
 		/// </summary>
 		/// <param name="um">用户</param>
@@ -352,7 +281,7 @@ namespace TTMSWebAPI.Servers
 			{
 				con.Open();
 
-				var sqlCom = new SqlCommand("sp_UpdateUserLevel", con)
+				var sqlCom = new SqlCommand("sp_UpdateUser", con)
 				{
 					CommandType = CommandType.StoredProcedure
 				};
@@ -361,11 +290,10 @@ namespace TTMSWebAPI.Servers
 				{
 					new SqlParameter
 					{
-						ParameterName = "@account",
+						ParameterName = "@userId",
 						Direction = ParameterDirection.Input,
-						SqlDbType = SqlDbType.NVarChar,
-						Size = 15,
-						Value = um.Account
+						SqlDbType = SqlDbType.Int,
+						Value = um.Id
 					},
 					new SqlParameter
 					{
@@ -411,7 +339,7 @@ namespace TTMSWebAPI.Servers
 			{
 				con.Open();
 
-				var sqlCom = new SqlCommand("sp_UpdateUserTel", con)
+				var sqlCom = new SqlCommand("sp_UpdateUser", con)
 				{
 					CommandType = CommandType.StoredProcedure
 				};
@@ -420,11 +348,10 @@ namespace TTMSWebAPI.Servers
 				{
 					new SqlParameter
 					{
-						ParameterName = "@account",
+						ParameterName = "@userId",
 						Direction = ParameterDirection.Input,
-						SqlDbType = SqlDbType.NVarChar,
-						Size = 15,
-						Value = um.Account
+						SqlDbType = SqlDbType.Int,
+						Value = um.Id
 					},
 					new SqlParameter
 					{
@@ -458,5 +385,220 @@ namespace TTMSWebAPI.Servers
 				};
 			}
 		}
+		
+		/// <summary>
+		/// 获得用户信息
+		/// </summary>
+		/// <param name="account">用户账号</param>
+		/// <returns></returns>
+		public static object QueryUserByAccount(string account)
+		{
+			using (var con = new SqlConnection(Server.SqlConString))
+			{
+				con.Open();
+
+				var sqlCom = new SqlCommand("sp_QueryUser", con)
+				{
+					CommandType = CommandType.StoredProcedure
+				};
+
+				sqlCom.Parameters.AddRange(new []
+				{
+					new SqlParameter
+					{
+						ParameterName = "@account",
+						Direction = ParameterDirection.Input,
+						SqlDbType = SqlDbType.NVarChar,
+						Size = 18,
+						Value = account
+					},
+					new SqlParameter
+					{
+						ParameterName = "@message",
+						Direction = ParameterDirection.Output,
+						Size = 30,
+						SqlDbType = SqlDbType.VarChar
+					},
+					new SqlParameter
+					{
+						ParameterName = "@return",
+						Direction = ParameterDirection.ReturnValue,
+						SqlDbType = SqlDbType.Int
+					}
+				});
+
+				sqlCom.ExecuteNonQuery();
+				
+				var msg = (string) sqlCom.Parameters["@message"].Value;
+
+				object data = null;
+
+				var reader = sqlCom.ExecuteReader();
+				if (reader.Read())
+				{
+					data = new
+					{
+						userId = (int)reader[0],
+						userName = reader[1] != DBNull.Value ? (string)reader[1] : null ,
+						userAccount = reader[2] != DBNull.Value ? (string)reader[2] : null,
+						userPassword = reader[3] != DBNull.Value ? (string)reader[3] : null,
+						userCreateTime = (DateTime)reader[4],
+						userLastSignInTime = (DateTime)reader[5],
+						userLevel = (string)reader[6],
+						userSex = reader[7] != DBNull.Value ? (string)reader[7] : null,
+						userAvatar = reader[8] != DBNull.Value ? (BitArray)reader[8] : null,
+						userTel = reader[9] != DBNull.Value ? (string)reader[9] : null
+					};
+				}
+				return new
+				{
+					result = (int) sqlCom.Parameters["@return"].Value,
+					msg,
+					data
+				};
+			}
+		}
+
+		/// <summary>
+		/// 获得用户信息
+		/// </summary>
+		/// <param name="id">用户Id</param>
+		/// <returns></returns>
+		public static object QueryUserById(int id)
+		{
+			using (var con = new SqlConnection(Server.SqlConString))
+			{
+				con.Open();
+
+				var sqlCom = new SqlCommand("sp_QueryUser", con)
+				{
+					CommandType = CommandType.StoredProcedure
+				};
+
+				sqlCom.Parameters.AddRange(new []
+				{
+					new SqlParameter
+					{
+						ParameterName = "@userId",
+						Direction = ParameterDirection.Input,
+						SqlDbType = SqlDbType.Int,
+						Value = id
+					},
+					new SqlParameter
+					{
+						ParameterName = "@message",
+						Direction = ParameterDirection.Output,
+						Size = 30,
+						SqlDbType = SqlDbType.VarChar
+					},
+					new SqlParameter
+					{
+						ParameterName = "@return",
+						Direction = ParameterDirection.ReturnValue,
+						SqlDbType = SqlDbType.Int
+					}
+				});
+
+				sqlCom.ExecuteNonQuery();
+				
+				var msg = (string) sqlCom.Parameters["@message"].Value;
+
+				object data = null;
+
+				var reader = sqlCom.ExecuteReader();
+				if (reader.Read())
+				{
+					data = new
+					{
+						userId = (int)reader[0],
+						userName = reader[1] != DBNull.Value ? (string)reader[1] : null ,
+						userAccount = reader[2] != DBNull.Value ? (string)reader[2] : null,
+						userPassword = reader[3] != DBNull.Value ? (string)reader[3] : null,
+						userCreateTime = (DateTime)reader[4],
+						userLastSignInTime = (DateTime)reader[5],
+						userLevel = (string)reader[6],
+						userSex = reader[7] != DBNull.Value ? (string)reader[7] : null,
+						userAvatar = reader[8] != DBNull.Value ? (BitArray)reader[8] : null,
+						userTel = reader[9] != DBNull.Value ? (string)reader[9] : null
+					};
+				}
+				return new
+				{
+					result = (int) sqlCom.Parameters["@return"].Value,
+					msg,
+					data
+				};
+			}
+		}
+		
+		/// <summary>
+		/// 获得所有用户
+		/// </summary>
+		/// <returns></returns>
+		public static object GetAllUser()
+		{
+			using (var con = new SqlConnection(Server.SqlConString))
+			{
+				con.Open();
+
+				var message = "";
+				
+				var sqlCom = new SqlCommand("sp_GetAllUser", con)
+				{
+					CommandType = CommandType.StoredProcedure
+				};
+
+				sqlCom.Parameters.AddRange(new []
+				{
+					new SqlParameter
+					{
+						ParameterName = "@message",
+						Direction = ParameterDirection.Output,
+						Size = 30,
+						SqlDbType = SqlDbType.VarChar,
+						Value = message
+					},
+					new SqlParameter
+					{
+						ParameterName = "@return",
+						Direction = ParameterDirection.ReturnValue,
+						SqlDbType = SqlDbType.Int
+					}
+				});
+
+				sqlCom.ExecuteNonQuery();
+
+				var msg = (string) sqlCom.Parameters["@message"].Value;
+
+				var data = new List<object>();
+
+				var reader = sqlCom.ExecuteReader();
+				
+				while (reader.Read())
+				{
+					data.Add( new
+					{
+						userId = (int)reader[0],
+						userName = reader[1] != DBNull.Value ? (string)reader[1] : null ,
+						userAccount = reader[2] != DBNull.Value ? (string)reader[2] : null,
+						userPassword = reader[3] != DBNull.Value ? (string)reader[3] : null,
+						userCreateTime = (DateTime)reader[4],
+						userLastSignInTime = (DateTime)reader[5],
+						userLevel = (string)reader[6],
+						userSex = reader[7] != DBNull.Value ? (string)reader[7] : null,
+						userAvatar = reader[8] != DBNull.Value ? (BitArray)reader[8] : null,
+						userTel = reader[9] != DBNull.Value ? (string)reader[9] : null
+					});
+				}
+				
+				return new
+				{
+					result = (int) sqlCom.Parameters["@return"].Value,
+					msg,
+					data
+				};
+			}
+		}
+
 	}
 }

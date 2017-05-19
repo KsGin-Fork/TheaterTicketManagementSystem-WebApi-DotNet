@@ -6,6 +6,7 @@ using TTMSWebAPI.Servers;
 
 namespace TTMSWebAPI.Controllers
 {
+    
     /// <summary>
     /// 人事管理操作API
     /// </summary>
@@ -13,6 +14,96 @@ namespace TTMSWebAPI.Controllers
     [EnableCors("mCors")]
     public class UserController : Controller
     {
+        /// <summary>
+        /// 列出所有用户
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public object Get()
+        {
+            try
+            {
+                var addr = Server.GetUserIp(Request.HttpContext);
+                if (Server.IpHandle(addr) == 0)
+                {
+                    return new[] { "your ip can't using our api , please contact administrator" };
+                }
+
+                var re = UserServer.GetAllUser();
+
+                return re;
+            }
+            catch (Exception e)
+            {
+                return new
+                {
+                    result = e.HResult ,
+                    msg = e.Message
+                };
+            }
+
+        }  
+        
+        /// <summary>
+        /// 获得用户信息
+        /// </summary>
+        /// <param name="account">用户账号</param>
+        /// <returns></returns>
+        [HttpGet("[Action]/{account}")]
+        public object QueryUserByAccount(string account)
+        {
+            try
+            {
+                var addr = Server.GetUserIp(Request.HttpContext);
+                if (Server.IpHandle(addr) == 0)
+                {
+                    return new[] { "your ip can't using our api , please contact administrator" };
+                }
+
+                var re = UserServer.QueryUserByAccount(account);
+
+                return re;
+            }
+            catch (Exception e)
+            {
+                return new
+                {
+                    result = e.HResult ,
+                    msg = e.Message
+                };
+            }
+        }
+        
+        /// <summary>
+        /// 获得用户信息
+        /// </summary>
+        /// <param name="id">用户id</param>
+        /// <returns></returns>
+        [HttpGet("[Action]/{id}")]
+        public object QueryUserById(int id)
+        {
+            try
+            {
+                var addr = Server.GetUserIp(Request.HttpContext);
+                if (Server.IpHandle(addr) == 0)
+                {
+                    return new[] { "your ip can't using our api , please contact administrator" };
+                }
+
+                var re = UserServer.QueryUserById(id);
+
+                return re;
+            }
+            catch (Exception e)
+            {
+                return new
+                {
+                    result = e.HResult ,
+                    msg = e.Message
+                };
+            }
+        }
+        
         /// <summary>
         /// 用户登陆
         /// </summary>
@@ -43,7 +134,7 @@ namespace TTMSWebAPI.Controllers
             }
 
         }
-
+        
         /// <summary>
         /// 用户修改密码
         /// </summary>
@@ -61,96 +152,6 @@ namespace TTMSWebAPI.Controllers
                 }
 
                 var re = UserServer.UpdateUserPassword(um);
-
-                return re;
-            }
-            catch (Exception e)
-            {
-                return new
-                {
-                    result = e.HResult ,
-                    msg = e.Message
-                };
-            }
-        }
-
-        /// <summary>
-        /// 增加一个新用户
-        /// </summary>
-        /// <param name="cm">增加的用户</param>
-        /// <returns>增加结果</returns>
-        [HttpPost("[action]")]
-        public object CreateUser([FromBody]CreateUserModel cm)
-        {
-            try
-            {
-                var addr = Server.GetUserIp(Request.HttpContext);
-                if (Server.IpHandle(addr) == 0)
-                {
-                    return new[] { "your ip can't using our api , please contact administrator" };
-                }
-
-                var re = UserServer.CreateUser(cm);
-
-                return re;
-            }
-            catch (Exception e)
-            {
-                return new
-                {
-                    result = e.HResult ,
-                    msg = e.Message
-                };
-            }
-        }
-
-        /// <summary>
-        /// 删除一个用户
-        /// </summary>
-        /// <param name="dm">需要删除的用户</param>
-        /// <returns>删除结果</returns>
-        [HttpDelete("[action]")]
-        public object DeleteUser([FromBody]DeleteUserModel dm)
-        {
-            try
-            {
-                var addr = Server.GetUserIp(Request.HttpContext);
-                if (Server.IpHandle(addr) == 0)
-                {
-                    return new[] { "your ip can't using our api , please contact administrator" };
-                }
-
-                var re = UserServer.DeleteUser(dm);
-
-                return re;
-            }
-            catch (Exception e)
-            {
-                return new
-                {
-                    result = e.HResult ,
-                    msg = e.Message
-                };
-            }
-        }
-
-        /// <summary>
-        /// 获得用户信息
-        /// </summary>
-        /// <param name="account">用户账号</param>
-        /// <returns></returns>
-        [HttpGet("[action]/a={account}")]
-        public object GetUser(string account)
-        {
-            try
-            {
-                var addr = Server.GetUserIp(Request.HttpContext);
-                if (Server.IpHandle(addr) == 0)
-                {
-                    return new[] { "your ip can't using our api , please contact administrator" };
-                }
-
-                var re = UserServer.GetUser(account);
 
                 return re;
             }
@@ -223,6 +224,65 @@ namespace TTMSWebAPI.Controllers
                 };
             }
         }
+        
+        /// <summary>
+        /// 增加一个新用户
+        /// </summary>
+        /// <param name="cm">增加的用户</param>
+        /// <returns>增加结果</returns>
+        [HttpPost("[action]")]
+        public object CreateUser([FromBody]CreateUserModel cm)
+        {
+            try
+            {
+                var addr = Server.GetUserIp(Request.HttpContext);
+                if (Server.IpHandle(addr) == 0)
+                {
+                    return new[] { "your ip can't using our api , please contact administrator" };
+                }
 
+                var re = UserServer.CreateUser(cm);
+
+                return re;
+            }
+            catch (Exception e)
+            {
+                return new
+                {
+                    result = e.HResult ,
+                    msg = e.Message
+                };
+            }
+        }
+
+        /// <summary>
+        /// 删除一个用户
+        /// </summary>
+        /// <param name="dm">需要删除的用户</param>
+        /// <returns>删除结果</returns>
+        [HttpDelete("[action]")]
+        public object DeleteUserById([FromBody]DeleteUserModel dm)
+        {
+            try
+            {
+                var addr = Server.GetUserIp(Request.HttpContext);
+                if (Server.IpHandle(addr) == 0)
+                {
+                    return new[] { "your ip can't using our api , please contact administrator" };
+                }
+
+                var re = UserServer.DeleteUser(dm);
+
+                return re;
+            }
+            catch (Exception e)
+            {
+                return new
+                {
+                    result = e.HResult ,
+                    msg = e.Message
+                };
+            }
+        }
     }
 }
