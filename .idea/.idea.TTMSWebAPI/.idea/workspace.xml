@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e6d56ab6-32d0-48fc-ad4c-43e489dbc839" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.TTMSWebAPI/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.TTMSWebAPI/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TTMSWebAPI/Controllers/SeatController.cs" afterPath="$PROJECT_DIR$/TTMSWebAPI/Controllers/SeatController.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TTMSWebAPI/Models/SeatModels.cs" afterPath="$PROJECT_DIR$/TTMSWebAPI/Models/SeatModels.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TTMSWebAPI/Servers/SeatServer.cs" afterPath="$PROJECT_DIR$/TTMSWebAPI/Servers/SeatServer.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TTMSWebAPI/Servers/TheaterServer.cs" afterPath="$PROJECT_DIR$/TTMSWebAPI/Servers/TheaterServer.cs" />
-    </list>
+    <list default="true" id="e6d56ab6-32d0-48fc-ad4c-43e489dbc839" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -141,7 +135,7 @@
         <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Controllers/TheaterController.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="148">
-              <caret line="105" column="22" lean-forward="true" selection-start-line="103" selection-start-column="21" selection-end-line="105" selection-end-column="22" />
+              <caret line="105" column="22" lean-forward="false" selection-start-line="103" selection-start-column="21" selection-end-line="105" selection-end-column="22" />
               <folding>
                 <marker date="1495210295000" expanded="true" signature="6:129" ph="..." />
                 <marker date="1495210295000" expanded="true" signature="163:4487" ph="{...}" />
@@ -186,7 +180,7 @@
         <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Servers/TheaterServer.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1364">
-              <caret line="278" column="34" lean-forward="true" selection-start-line="278" selection-start-column="34" selection-end-line="278" selection-end-column="34" />
+              <caret line="278" column="34" lean-forward="false" selection-start-line="278" selection-start-column="34" selection-end-line="278" selection-end-column="34" />
               <folding>
                 <marker date="1495209883000" expanded="true" signature="6:120" ph="..." />
                 <marker date="1495209883000" expanded="true" signature="150:12107" ph="{...}" />
@@ -325,7 +319,7 @@
         <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Servers/SeatServer.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="385">
-              <caret line="272" column="6" lean-forward="false" selection-start-line="272" selection-start-column="6" selection-end-line="272" selection-end-column="6" />
+              <caret line="272" column="13" lean-forward="false" selection-start-line="272" selection-start-column="13" selection-end-line="272" selection-end-column="13" />
               <folding>
                 <marker date="1495211978000" expanded="true" signature="6:106" ph="..." />
                 <marker date="1495211978000" expanded="true" signature="136:10489" ph="{...}" />
@@ -790,7 +784,7 @@
       <workItem from="1495169212510" duration="346000" />
       <workItem from="1495183863209" duration="278000" />
       <workItem from="1495184191323" duration="13946000" />
-      <workItem from="1495207472393" duration="3487000" />
+      <workItem from="1495207472393" duration="3976000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1493343032355</created>
@@ -803,7 +797,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53109000" />
+    <option name="totallyTimeSpent" value="53598000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2014,7 +2008,7 @@
     <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Controllers/TheaterController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
-          <caret line="105" column="22" lean-forward="true" selection-start-line="103" selection-start-column="21" selection-end-line="105" selection-end-column="22" />
+          <caret line="105" column="22" lean-forward="false" selection-start-line="103" selection-start-column="21" selection-end-line="105" selection-end-column="22" />
           <folding>
             <marker date="1495210295000" expanded="true" signature="6:129" ph="..." />
             <marker date="1495210295000" expanded="true" signature="163:4487" ph="{...}" />
@@ -2057,7 +2051,7 @@
     <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Servers/TheaterServer.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1364">
-          <caret line="278" column="34" lean-forward="true" selection-start-line="278" selection-start-column="34" selection-end-line="278" selection-end-column="34" />
+          <caret line="278" column="34" lean-forward="false" selection-start-line="278" selection-start-column="34" selection-end-line="278" selection-end-column="34" />
           <folding>
             <marker date="1495209883000" expanded="true" signature="6:120" ph="..." />
             <marker date="1495209883000" expanded="true" signature="150:12107" ph="{...}" />
@@ -2124,7 +2118,7 @@
     <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Servers/SeatServer.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
-          <caret line="272" column="6" lean-forward="false" selection-start-line="272" selection-start-column="6" selection-end-line="272" selection-end-column="6" />
+          <caret line="272" column="13" lean-forward="false" selection-start-line="272" selection-start-column="13" selection-end-line="272" selection-end-column="13" />
           <folding>
             <marker date="1495211978000" expanded="true" signature="6:106" ph="..." />
             <marker date="1495211978000" expanded="true" signature="136:10489" ph="{...}" />
