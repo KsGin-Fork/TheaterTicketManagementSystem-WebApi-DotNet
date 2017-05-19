@@ -105,7 +105,6 @@ namespace TTMSWebAPI.Models
         public string Tel { get; set; }
     }
 
-    
     /// <summary>
     /// 删除用户模型
     /// </summary>

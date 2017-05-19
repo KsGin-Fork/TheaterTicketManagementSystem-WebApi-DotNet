@@ -78,7 +78,7 @@ namespace TTMSWebAPI.Controllers
         /// </summary>
         /// <param name="um">更新座位状态模型</param>
         /// <returns>更新结果</returns>
-        [HttpGet("[Action]")]
+        [HttpPatch("[Action]")]
         public object UpdateSeatStatus([FromBody] UpdateSeatStatusModel um)
         {
             try
