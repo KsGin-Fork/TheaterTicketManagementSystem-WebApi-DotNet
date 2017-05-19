@@ -345,7 +345,6 @@ namespace TTMSWebAPI.Servers
                     msg = (string) sqlCom.Parameters["@message"].Value
                 };
             }
-
         }
     }
 }

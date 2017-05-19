@@ -202,5 +202,121 @@ namespace TTMSWebAPI.Servers
                 };
             }
         }
+
+        /// <summary>
+        /// 新增座位
+        /// </summary>
+        /// <param name="cm">新座位信息</param>
+        /// <returns>新增结果</returns>
+        public static object CreateSeat(CreateSeatModel cm)
+        {
+            using (var con = new SqlConnection(Server.SqlConString))
+            {
+                con.Open();
+
+                var sqlCom = new SqlCommand("sp_CreateSeat", con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                sqlCom.Parameters.AddRange(new []
+                {
+                    new SqlParameter
+                    {
+                        ParameterName = "@theaterId" , 
+                        Direction = ParameterDirection.Input , 
+                        SqlDbType = SqlDbType.Int , 
+                        Value = cm.theaterId
+                    },
+                    new SqlParameter
+                    {
+                        ParameterName = "@rowNumber" , 
+                        Direction = ParameterDirection.Input , 
+                        SqlDbType = SqlDbType.Int , 
+                        Value = cm.rowNumber
+                    },
+                    new SqlParameter
+                    {
+                        ParameterName = "@colNumber" , 
+                        Direction = ParameterDirection.Input , 
+                        SqlDbType = SqlDbType.Int , 
+                        Value = cm.colNumber
+                    },
+                    new SqlParameter
+                    {
+                        ParameterName = "@message",
+                        Direction = ParameterDirection.Output,
+                        Size = 30,
+                        SqlDbType = SqlDbType.VarChar
+                    },
+                    new SqlParameter
+                    {
+                        ParameterName = "@return",
+                        Direction = ParameterDirection.ReturnValue,
+                        SqlDbType = SqlDbType.Int
+                    }
+                });
+
+                sqlCom.ExecuteNonQuery();
+
+                return new
+                {
+                    result = (int) sqlCom.Parameters["@return"].Value,
+                    msg = (string) sqlCom.Parameters["@message"].Value
+                };
+            }
+
+        }
+
+        /// <summary>
+        /// 删除座位
+        /// </summary>
+        /// <param name="dm">要删除的座位</param>
+        /// <returns>删除结果</returns>
+        public static object DeleteSeat(DeleteSeatModel dm)
+        {
+            using (var con = new SqlConnection(Server.SqlConString))
+            {
+                con.Open();
+
+                var sqlCom = new SqlCommand("sp_DeleteSeat", con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                sqlCom.Parameters.AddRange(new[]
+                {
+                    new SqlParameter
+                    {
+                        ParameterName = "@theaterId",
+                        Direction = ParameterDirection.Input,
+                        SqlDbType = SqlDbType.Int,
+                        Value = dm.SeatId
+                    },
+                    new SqlParameter
+                    {
+                        ParameterName = "@message",
+                        Direction = ParameterDirection.Output,
+                        Size = 30,
+                        SqlDbType = SqlDbType.VarChar
+                    },
+                    new SqlParameter
+                    {
+                        ParameterName = "@return",
+                        Direction = ParameterDirection.ReturnValue,
+                        SqlDbType = SqlDbType.Int
+                    }
+                });
+
+                sqlCom.ExecuteNonQuery();
+
+                return new
+                {
+                    result = (int) sqlCom.Parameters["@return"].Value,
+                    msg = (string) sqlCom.Parameters["@message"].Value
+                };
+            }
+
+        }
     }
 }

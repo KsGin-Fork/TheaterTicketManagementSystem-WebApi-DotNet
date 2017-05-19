@@ -103,5 +103,67 @@ namespace TTMSWebAPI.Controllers
                 };
             }
         }
+
+        /// <summary>
+        /// 新增座位
+        /// </summary>
+        /// <param name="cm">新增座位</param>
+        /// <returns></returns>
+        [HttpPost("[Action]")]
+        public object CreateSeat([FromBody] CreateSeatModel cm)
+        {
+            try
+            {
+                var addr = Server.GetUserIp(Request.HttpContext);
+                
+                if (Server.IpHandle(addr) == 0)
+                {
+                    return new[] { "your ip can't using our api , please contact administrator" };
+                }
+
+                var re = SeatServer.CreateSeat(cm);
+
+                return re;
+            }
+            catch (Exception e)
+            {
+                return new
+                {
+                    result = e.HResult ,
+                    msg = e.Message
+                };
+            }
+        }
+
+        /// <summary>
+        /// 删除座位
+        /// </summary>
+        /// <param name="dm">要删除的座位</param>
+        /// <returns>删除结果</returns>
+        [HttpDelete("[Action]")]
+        public object DeleteSeat([FromBody] DeleteSeatModel dm)
+        {
+            try
+            {
+                var addr = Server.GetUserIp(Request.HttpContext);
+                
+                if (Server.IpHandle(addr) == 0)
+                {
+                    return new[] { "your ip can't using our api , please contact administrator" };
+                }
+
+                var re = SeatServer.DeleteSeat(dm);
+
+                return re;
+            }
+            catch (Exception e)
+            {
+                return new
+                {
+                    result = e.HResult ,
+                    msg = e.Message
+                };
+            }
+        }
     }
 }

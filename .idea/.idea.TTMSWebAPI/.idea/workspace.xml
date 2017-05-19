@@ -4,8 +4,9 @@
     <list default="true" id="e6d56ab6-32d0-48fc-ad4c-43e489dbc839" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.TTMSWebAPI/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.TTMSWebAPI/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TTMSWebAPI/Controllers/SeatController.cs" afterPath="$PROJECT_DIR$/TTMSWebAPI/Controllers/SeatController.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TTMSWebAPI/Models/UserModels.cs" afterPath="$PROJECT_DIR$/TTMSWebAPI/Models/UserModels.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TTMSWebAPI/Models/SeatModels.cs" afterPath="$PROJECT_DIR$/TTMSWebAPI/Models/SeatModels.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TTMSWebAPI/Servers/SeatServer.cs" afterPath="$PROJECT_DIR$/TTMSWebAPI/Servers/SeatServer.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TTMSWebAPI/Servers/TheaterServer.cs" afterPath="$PROJECT_DIR$/TTMSWebAPI/Servers/TheaterServer.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,8 +30,8 @@
       <file leaf-file-name="UserServer.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Servers/UserServer.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="386" column="9" lean-forward="false" selection-start-line="386" selection-start-column="9" selection-end-line="386" selection-end-column="9" />
+            <state relative-caret-position="148">
+              <caret line="462" column="18" lean-forward="false" selection-start-line="462" selection-start-column="18" selection-end-line="462" selection-end-column="18" />
               <folding>
                 <marker date="1495205999000" expanded="true" signature="6:146" ph="..." />
                 <marker date="1495205999000" expanded="true" signature="176:14004" ph="{...}" />
@@ -90,7 +91,7 @@
                 <marker date="1495205999000" expanded="true" signature="7005:7128" ph="{...}" />
                 <marker date="1495205999000" expanded="true" signature="7188:7307" ph="{...}" />
                 <marker date="1495205999000" expanded="true" signature="7321:7430" ph="/// 用户修改电话 ... " />
-                <marker date="1495205999000" expanded="true" signature="7490:8601" ph="{...}" />
+                <marker date="1495205999000" expanded="false" signature="7490:8601" ph="{...}" />
                 <marker date="1495205999000" expanded="true" signature="7554:8597" ph="{...}" />
                 <marker date="1495205999000" expanded="true" signature="7635:7689" ph="{...}" />
                 <marker date="1495205999000" expanded="true" signature="7734:8418" ph="{...}" />
@@ -139,42 +140,43 @@
       <file leaf-file-name="TheaterController.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Controllers/TheaterController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="42" column="9" lean-forward="false" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+            <state relative-caret-position="148">
+              <caret line="105" column="22" lean-forward="true" selection-start-line="103" selection-start-column="21" selection-end-line="105" selection-end-column="22" />
               <folding>
-                <marker date="1495204961000" expanded="true" signature="6:129" ph="..." />
-                <marker date="1495204961000" expanded="true" signature="170:219" ph="/// 放映厅操作API ... " />
-                <marker date="1495204961000" expanded="true" signature="321:4485" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="336:423" ph="/// 获得所有影厅 ... " />
-                <marker date="1495204961000" expanded="false" signature="469:1068" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="495:857" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="623:758" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="889:1058" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="947:1043" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="1078:1212" ph="/// 查询影厅 ... " />
-                <marker date="1495204961000" expanded="false" signature="1304:1911" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="1330:1700" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="1458:1593" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="1732:1901" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="1790:1886" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="1921:2060" ph="/// 修改影厅管理者 ... " />
-                <marker date="1495204961000" expanded="false" signature="2175:2782" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="2201:2571" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="2329:2464" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="2603:2772" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="2661:2757" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="2792:2928" ph="/// 创建一个新演出厅 ... " />
-                <marker date="1495204961000" expanded="false" signature="3029:3629" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="3055:3418" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="3183:3318" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="3450:3619" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="3508:3604" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="3639:3776" ph="/// 删除一个演出厅 ... " />
-                <marker date="1495204961000" expanded="false" signature="3879:4479" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="3905:4268" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="4033:4168" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="4300:4469" ph="{...}" />
-                <marker date="1495204961000" expanded="true" signature="4358:4454" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="6:129" ph="..." />
+                <marker date="1495210295000" expanded="true" signature="163:4487" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="170:219" ph="/// 放映厅操作API ... " />
+                <marker date="1495210295000" expanded="true" signature="321:4485" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="336:423" ph="/// 获得所有影厅 ... " />
+                <marker date="1495210295000" expanded="false" signature="469:1068" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="495:857" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="623:758" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="889:1058" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="947:1043" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="1078:1212" ph="/// 查询影厅 ... " />
+                <marker date="1495210295000" expanded="false" signature="1304:1911" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="1330:1700" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="1458:1593" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="1732:1901" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="1790:1886" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="1921:2060" ph="/// 修改影厅管理者 ... " />
+                <marker date="1495210295000" expanded="false" signature="2175:2782" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="2201:2571" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="2329:2464" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="2603:2772" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="2661:2757" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="2792:2928" ph="/// 创建一个新演出厅 ... " />
+                <marker date="1495210295000" expanded="false" signature="3029:3629" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="3055:3418" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="3183:3318" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="3450:3619" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="3508:3604" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="3639:3776" ph="/// 删除一个演出厅 ... " />
+                <marker date="1495210295000" expanded="false" signature="3879:4479" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="3905:4268" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="4033:4168" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="4300:4469" ph="{...}" />
+                <marker date="1495210295000" expanded="true" signature="4358:4454" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -183,100 +185,112 @@
       <file leaf-file-name="TheaterServer.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Servers/TheaterServer.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+            <state relative-caret-position="1364">
+              <caret line="278" column="34" lean-forward="true" selection-start-line="278" selection-start-column="34" selection-end-line="278" selection-end-column="34" />
               <folding>
-                <marker date="1495204923000" expanded="true" signature="6:120" ph="..." />
-                <marker date="1495204923000" expanded="true" signature="150:12108" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="157:206" ph="/// 影厅Server ... " />
-                <marker date="1495204923000" expanded="true" signature="244:12106" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="259:346" ph="/// 获得所有影厅 ... " />
-                <marker date="1495204923000" expanded="false" signature="391:2487" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="470:2477" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="634:715" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="783:1379" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="842:1110" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="1169:1361" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="1638:2277" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="1710:2257" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="2322:2462" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="2497:2631" ph="/// 查询影厅 ... " />
-                <marker date="1495204923000" expanded="false" signature="2688:5071" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="2767:5061" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="2930:3011" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="3079:3966" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="3138:3370" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="3429:3697" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="3756:3948" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="4222:4861" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="4294:4841" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="4906:5046" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="5089:5228" ph="/// 修改影厅管理者 ... " />
-                <marker date="1495204923000" expanded="false" signature="5308:7119" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="5387:7109" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="5516:5597" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="5665:6843" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="5724:5952" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="6011:6288" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="6347:6574" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="6633:6825" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="6933:7094" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="7129:7265" ph="/// 创建一个新演出厅 ... " />
-                <marker date="1495204923000" expanded="false" signature="7331:10411" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="7410:10401" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="7539:7620" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="7688:10135" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="7747:8026" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="8085:8358" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="8417:8688" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="8747:8978" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="9037:9279" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="9338:9580" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="9639:9866" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="9925:10117" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="10225:10386" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="10421:10558" ph="/// 删除一个演出厅 ... " />
-                <marker date="1495204923000" expanded="false" signature="10624:12100" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="10703:12089" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="10832:10913" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="10981:11823" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="11040:11268" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="11327:11554" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="11613:11805" ph="{...}" />
-                <marker date="1495204923000" expanded="true" signature="11913:12074" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="6:120" ph="..." />
+                <marker date="1495209883000" expanded="true" signature="150:12107" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="157:206" ph="/// 影厅Server ... " />
+                <marker date="1495209883000" expanded="true" signature="244:12105" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="259:346" ph="/// 获得所有影厅 ... " />
+                <marker date="1495209883000" expanded="false" signature="391:2487" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="470:2477" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="634:715" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="783:1379" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="842:1110" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="1169:1361" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="1638:2277" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="1710:2257" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="2322:2462" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="2497:2631" ph="/// 查询影厅 ... " />
+                <marker date="1495209883000" expanded="false" signature="2688:5071" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="2767:5061" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="2930:3011" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="3079:3966" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="3138:3370" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="3429:3697" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="3756:3948" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="4222:4861" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="4294:4841" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="4906:5046" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="5089:5228" ph="/// 修改影厅管理者 ... " />
+                <marker date="1495209883000" expanded="false" signature="5308:7119" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="5387:7109" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="5516:5597" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="5665:6843" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="5724:5952" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="6011:6288" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="6347:6574" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="6633:6825" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="6933:7094" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="7129:7265" ph="/// 创建一个新演出厅 ... " />
+                <marker date="1495209883000" expanded="true" signature="7331:10411" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="7410:10401" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="7539:7620" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="7688:10135" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="7747:8026" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="8085:8358" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="8417:8688" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="8747:8978" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="9037:9279" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="9338:9580" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="9639:9866" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="9925:10117" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="10225:10386" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="10421:10558" ph="/// 删除一个演出厅 ... " />
+                <marker date="1495209883000" expanded="false" signature="10624:12099" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="10703:12089" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="10832:10913" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="10981:11823" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="11040:11268" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="11327:11554" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="11613:11805" ph="{...}" />
+                <marker date="1495209883000" expanded="true" signature="11913:12074" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SeatController.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SeatController.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Controllers/SeatController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="75" column="21" lean-forward="true" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
+            <state relative-caret-position="202">
+              <caret line="111" column="30" lean-forward="false" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
               <folding>
-                <marker date="1495208570000" expanded="true" signature="6:129" ph="..." />
-                <marker date="1495208570000" expanded="true" signature="163:2792" ph="{...}" />
-                <marker date="1495208570000" expanded="true" signature="170:218" ph="/// 座位管理API ... " />
-                <marker date="1495208570000" expanded="true" signature="317:2790" ph="{...}" />
-                <marker date="1495208570000" expanded="true" signature="332:423" ph="/// 获得所有座位 ... " />
-                <marker date="1495208570000" expanded="false" signature="469:1062" ph="{...}" />
-                <marker date="1495208570000" expanded="true" signature="495:851" ph="{...}" />
-                <marker date="1495208570000" expanded="true" signature="623:758" ph="{...}" />
-                <marker date="1495208570000" expanded="true" signature="883:1052" ph="{...}" />
-                <marker date="1495208570000" expanded="true" signature="941:1037" ph="{...}" />
-                <marker date="1495208570000" expanded="true" signature="1072:1209" ph="/// 查询座位信息 ... " />
-                <marker date="1495208570000" expanded="false" signature="1296:1911" ph="{...}" />
-                <marker date="1495208570000" expanded="true" signature="1322:1700" ph="{...}" />
-                <marker date="1495208570000" expanded="true" signature="1467:1602" ph="{...}" />
-                <marker date="1495208570000" expanded="true" signature="1732:1901" ph="{...}" />
-                <marker date="1495208570000" expanded="true" signature="1790:1886" ph="{...}" />
-                <marker date="1495208570000" expanded="true" signature="1921:2058" ph="/// 更新座位状态 ... " />
-                <marker date="1495208570000" expanded="false" signature="2166:2784" ph="{...}" />
-                <marker date="1495208570000" expanded="true" signature="2192:2573" ph="{...}" />
-                <marker date="1495208570000" expanded="true" signature="2337:2472" ph="{...}" />
-                <marker date="1495208570000" expanded="true" signature="2605:2774" ph="{...}" />
-                <marker date="1495208570000" expanded="true" signature="2663:2759" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="6:129" ph="..." />
+                <marker date="1495209816000" expanded="true" signature="163:4488" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="170:218" ph="/// 座位管理API ... " />
+                <marker date="1495209816000" expanded="true" signature="317:4486" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="332:423" ph="/// 获得所有座位 ... " />
+                <marker date="1495209816000" expanded="false" signature="469:1062" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="495:851" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="623:758" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="883:1052" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="941:1037" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="1072:1209" ph="/// 查询座位信息 ... " />
+                <marker date="1495209816000" expanded="false" signature="1296:1911" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="1322:1700" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="1467:1602" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="1732:1901" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="1790:1886" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="1921:2058" ph="/// 更新座位状态 ... " />
+                <marker date="1495209816000" expanded="false" signature="2166:2784" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="2192:2573" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="2337:2472" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="2605:2774" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="2663:2759" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="2794:2921" ph="/// 新增座位 ... " />
+                <marker date="1495209816000" expanded="false" signature="3016:3628" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="3042:3417" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="3187:3322" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="3449:3618" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="3507:3603" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="3638:3771" ph="/// 删除座位 ... " />
+                <marker date="1495209816000" expanded="false" signature="3868:4480" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="3894:4269" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="4039:4174" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="4301:4470" ph="{...}" />
+                <marker date="1495209816000" expanded="true" signature="4359:4455" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -285,60 +299,89 @@
       <file leaf-file-name="SeatModels.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Models/SeatModels.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+            <state relative-caret-position="317">
+              <caret line="46" column="14" lean-forward="false" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
               <folding>
-                <marker date="1495201978000" expanded="true" signature="27:341" ph="{...}" />
-                <marker date="1495201978000" expanded="true" signature="34:83" ph="/// 更新座位状态模型 ... " />
-                <marker date="1495201978000" expanded="true" signature="122:339" ph="{...}" />
-                <marker date="1495201978000" expanded="true" signature="137:190" ph="/// 座位ID ... " />
-                <marker date="1495201978000" expanded="true" signature="239:292" ph="/// 座位状态 ... " />
+                <marker date="1495209741000" expanded="true" signature="27:1103" ph="{...}" />
+                <marker date="1495209741000" expanded="true" signature="35:82" ph="/// 新增座位模型 ... " />
+                <marker date="1495209741000" expanded="true" signature="115:582" ph="{...}" />
+                <marker date="1495209741000" expanded="true" signature="130:184" ph="/// 放映厅Id ... " />
+                <marker date="1495209741000" expanded="true" signature="245:298" ph="/// 座位行数 ... " />
+                <marker date="1495209741000" expanded="true" signature="359:412" ph="/// 座位列数 ... " />
+                <marker date="1495209741000" expanded="true" signature="473:526" ph="/// 座位状态 ... " />
+                <marker date="1495209741000" expanded="true" signature="592:641" ph="/// 更新座位状态模型 ... " />
+                <marker date="1495209741000" expanded="true" signature="680:897" ph="{...}" />
+                <marker date="1495209741000" expanded="true" signature="695:748" ph="/// 座位ID ... " />
+                <marker date="1495209741000" expanded="true" signature="797:850" ph="/// 座位状态 ... " />
+                <marker date="1495209741000" expanded="true" signature="907:954" ph="/// 删除座位模型 ... " />
+                <marker date="1495209741000" expanded="true" signature="987:1101" ph="{...}" />
+                <marker date="1495209741000" expanded="true" signature="1002:1055" ph="/// 座位ID ... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SeatServer.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SeatServer.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Servers/SeatServer.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="153" column="71" lean-forward="false" selection-start-line="153" selection-start-column="71" selection-end-line="153" selection-end-column="71" />
+            <state relative-caret-position="385">
+              <caret line="272" column="6" lean-forward="false" selection-start-line="272" selection-start-column="6" selection-end-line="272" selection-end-column="6" />
               <folding>
-                <marker date="1495208524000" expanded="true" signature="6:106" ph="..." />
-                <marker date="1495208524000" expanded="true" signature="136:6520" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="143:194" ph="/// 座位管理Server ... " />
-                <marker date="1495208524000" expanded="true" signature="222:6518" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="237:328" ph="/// 获得所有座位 ... " />
-                <marker date="1495208524000" expanded="false" signature="370:2206" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="449:2196" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="610:691" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="759:1355" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="818:1086" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="1145:1337" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="1614:1996" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="1686:1976" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="2041:2181" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="2216:2353" ph="/// 查询座位信息 ... " />
-                <marker date="1495208524000" expanded="false" signature="2404:4525" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="2483:4515" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="2643:2724" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="2792:3674" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="2851:3078" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="3137:3405" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="3464:3656" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="3933:4315" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="4005:4295" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="4360:4500" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="4535:4672" ph="/// 更新座位状态 ... " />
-                <marker date="1495208524000" expanded="false" signature="4744:6512" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="4823:6502" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="4955:5036" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="5105:6236" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="5164:5393" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="5452:5681" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="5740:5967" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="6026:6218" ph="{...}" />
-                <marker date="1495208524000" expanded="true" signature="6326:6487" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="6:106" ph="..." />
+                <marker date="1495211978000" expanded="true" signature="136:10489" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="143:194" ph="/// 座位管理Server ... " />
+                <marker date="1495211978000" expanded="true" signature="222:10487" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="237:328" ph="/// 获得所有座位 ... " />
+                <marker date="1495211978000" expanded="false" signature="370:2206" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="449:2196" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="610:691" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="759:1355" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="818:1086" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="1145:1337" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="1614:1996" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="1686:1976" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="2041:2181" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="2216:2353" ph="/// 查询座位信息 ... " />
+                <marker date="1495211978000" expanded="false" signature="2404:4525" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="2483:4515" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="2643:2724" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="2792:3674" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="2851:3078" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="3137:3405" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="3464:3656" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="3933:4315" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="4005:4295" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="4360:4500" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="4535:4672" ph="/// 更新座位状态 ... " />
+                <marker date="1495211978000" expanded="false" signature="4744:6512" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="4823:6502" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="4955:5036" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="5105:6236" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="5164:5393" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="5452:5681" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="5740:5967" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="6026:6218" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="6326:6487" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="6522:6654" ph="/// 新增座位 ... " />
+                <marker date="1495211978000" expanded="true" signature="6714:8801" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="6793:8790" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="6919:7000" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="7069:8524" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="7128:7369" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="7428:7669" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="7728:7969" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="8028:8255" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="8314:8506" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="8614:8775" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="8811:8944" ph="/// 删除座位 ... " />
+                <marker date="1495211978000" expanded="false" signature="9004:10481" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="9083:10470" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="9209:9290" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="9358:10204" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="9417:9649" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="9708:9935" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="9994:10186" ph="{...}" />
+                <marker date="1495211978000" expanded="true" signature="10294:10455" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -522,15 +565,15 @@
         <option value="$PROJECT_DIR$/TTMSWebAPI/Models/CreateUserModel.cs" />
         <option value="$PROJECT_DIR$/TTMSWebAPI/Models/UpdateUserLevel.cs" />
         <option value="$PROJECT_DIR$/TTMSWebAPI/Models/TheaterModel.cs" />
-        <option value="$PROJECT_DIR$/TTMSWebAPI/Models/SeatModels.cs" />
-        <option value="$PROJECT_DIR$/TTMSWebAPI/Servers/TheaterServer.cs" />
-        <option value="$PROJECT_DIR$/TTMSWebAPI/Controllers/TheaterController.cs" />
         <option value="$PROJECT_DIR$/TTMSWebAPI/Controllers/UserController.cs" />
         <option value="$PROJECT_DIR$/TTMSWebAPI/Servers/UserServer.cs" />
         <option value="$PROJECT_DIR$/TTMSWebAPI/Models/TheaterModels.cs" />
         <option value="$PROJECT_DIR$/TTMSWebAPI/Models/UserModels.cs" />
-        <option value="$PROJECT_DIR$/TTMSWebAPI/Servers/SeatServer.cs" />
+        <option value="$PROJECT_DIR$/TTMSWebAPI/Models/SeatModels.cs" />
         <option value="$PROJECT_DIR$/TTMSWebAPI/Controllers/SeatController.cs" />
+        <option value="$PROJECT_DIR$/TTMSWebAPI/Servers/TheaterServer.cs" />
+        <option value="$PROJECT_DIR$/TTMSWebAPI/Controllers/TheaterController.cs" />
+        <option value="$PROJECT_DIR$/TTMSWebAPI/Servers/SeatServer.cs" />
       </list>
     </option>
   </component>
@@ -575,60 +618,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="TTMSWebAPI" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TTMSWebAPI (1 project)" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TTMSWebAPI" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Servers" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TTMSWebAPI (1 project)" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TTMSWebAPI" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Models" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TTMSWebAPI (1 project)" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TTMSWebAPI" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
           </PATH>
@@ -801,7 +790,7 @@
       <workItem from="1495169212510" duration="346000" />
       <workItem from="1495183863209" duration="278000" />
       <workItem from="1495184191323" duration="13946000" />
-      <workItem from="1495207472393" duration="1072000" />
+      <workItem from="1495207472393" duration="3487000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1493343032355</created>
@@ -814,7 +803,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50694000" />
+    <option name="totallyTimeSpent" value="53109000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -866,7 +855,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -956,7 +945,7 @@
             <marker date="1495205999000" expanded="true" signature="7005:7128" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7188:7307" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7321:7430" ph="/// 用户修改电话 ... " />
-            <marker date="1495205999000" expanded="true" signature="7490:8601" ph="{...}" />
+            <marker date="1495205999000" expanded="false" signature="7490:8601" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7554:8597" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7635:7689" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7734:8418" ph="{...}" />
@@ -1177,7 +1166,7 @@
             <marker date="1495205999000" expanded="true" signature="7005:7128" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7188:7307" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7321:7430" ph="/// 用户修改电话 ... " />
-            <marker date="1495205999000" expanded="true" signature="7490:8601" ph="{...}" />
+            <marker date="1495205999000" expanded="false" signature="7490:8601" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7554:8597" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7635:7689" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7734:8418" ph="{...}" />
@@ -1398,7 +1387,7 @@
             <marker date="1495205999000" expanded="true" signature="7005:7128" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7188:7307" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7321:7430" ph="/// 用户修改电话 ... " />
-            <marker date="1495205999000" expanded="true" signature="7490:8601" ph="{...}" />
+            <marker date="1495205999000" expanded="false" signature="7490:8601" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7554:8597" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7635:7689" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7734:8418" ph="{...}" />
@@ -1520,7 +1509,7 @@
             <marker date="1495205999000" expanded="true" signature="7005:7128" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7188:7307" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7321:7430" ph="/// 用户修改电话 ... " />
-            <marker date="1495205999000" expanded="true" signature="7490:8601" ph="{...}" />
+            <marker date="1495205999000" expanded="false" signature="7490:8601" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7554:8597" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7635:7689" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7734:8418" ph="{...}" />
@@ -1787,48 +1776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Controllers/TheaterController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="42" column="9" lean-forward="false" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
-          <folding>
-            <marker date="1495204961000" expanded="true" signature="6:129" ph="..." />
-            <marker date="1495204961000" expanded="true" signature="170:219" ph="/// 放映厅操作API ... " />
-            <marker date="1495204961000" expanded="true" signature="321:4485" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="336:423" ph="/// 获得所有影厅 ... " />
-            <marker date="1495204961000" expanded="false" signature="469:1068" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="495:857" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="623:758" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="889:1058" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="947:1043" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="1078:1212" ph="/// 查询影厅 ... " />
-            <marker date="1495204961000" expanded="false" signature="1304:1911" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="1330:1700" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="1458:1593" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="1732:1901" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="1790:1886" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="1921:2060" ph="/// 修改影厅管理者 ... " />
-            <marker date="1495204961000" expanded="false" signature="2175:2782" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="2201:2571" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="2329:2464" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="2603:2772" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="2661:2757" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="2792:2928" ph="/// 创建一个新演出厅 ... " />
-            <marker date="1495204961000" expanded="false" signature="3029:3629" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="3055:3418" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="3183:3318" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="3450:3619" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="3508:3604" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="3639:3776" ph="/// 删除一个演出厅 ... " />
-            <marker date="1495204961000" expanded="false" signature="3879:4479" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="3905:4268" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="4033:4168" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="4300:4469" ph="{...}" />
-            <marker date="1495204961000" expanded="true" signature="4358:4454" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Models/TheaterModels.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
@@ -1853,77 +1800,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Servers/TheaterServer.cs">
+    <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Models/UserModels.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        <state relative-caret-position="34">
+          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
           <folding>
-            <marker date="1495204923000" expanded="true" signature="6:120" ph="..." />
-            <marker date="1495204923000" expanded="true" signature="150:12108" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="157:206" ph="/// 影厅Server ... " />
-            <marker date="1495204923000" expanded="true" signature="244:12106" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="259:346" ph="/// 获得所有影厅 ... " />
-            <marker date="1495204923000" expanded="false" signature="391:2487" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="470:2477" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="634:715" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="783:1379" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="842:1110" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="1169:1361" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="1638:2277" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="1710:2257" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="2322:2462" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="2497:2631" ph="/// 查询影厅 ... " />
-            <marker date="1495204923000" expanded="false" signature="2688:5071" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="2767:5061" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="2930:3011" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="3079:3966" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="3138:3370" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="3429:3697" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="3756:3948" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="4222:4861" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="4294:4841" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="4906:5046" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="5089:5228" ph="/// 修改影厅管理者 ... " />
-            <marker date="1495204923000" expanded="false" signature="5308:7119" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="5387:7109" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="5516:5597" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="5665:6843" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="5724:5952" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="6011:6288" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="6347:6574" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="6633:6825" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="6933:7094" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="7129:7265" ph="/// 创建一个新演出厅 ... " />
-            <marker date="1495204923000" expanded="false" signature="7331:10411" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="7410:10401" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="7539:7620" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="7688:10135" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="7747:8026" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="8085:8358" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="8417:8688" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="8747:8978" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="9037:9279" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="9338:9580" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="9639:9866" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="9925:10117" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="10225:10386" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="10421:10558" ph="/// 删除一个演出厅 ... " />
-            <marker date="1495204923000" expanded="false" signature="10624:12100" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="10703:12089" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="10832:10913" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="10981:11823" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="11040:11268" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="11327:11554" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="11613:11805" ph="{...}" />
-            <marker date="1495204923000" expanded="true" signature="11913:12074" ph="{...}" />
+            <marker date="1495207762000" expanded="true" signature="73:2574" ph="{...}" />
+            <marker date="1495207762000" expanded="true" signature="80:131" ph="/// 创建用户POST模型 ... " />
+            <marker date="1495207762000" expanded="true" signature="164:965" ph="{...}" />
+            <marker date="1495207762000" expanded="true" signature="179:232" ph="/// 用户名称 ... " />
+            <marker date="1495207762000" expanded="true" signature="309:362" ph="/// 用户账号 ... " />
+            <marker date="1495207762000" expanded="true" signature="442:495" ph="/// 用户密码 ... " />
+            <marker date="1495207762000" expanded="true" signature="576:631" ph="/// 用户权限级别 ... " />
+            <marker date="1495207762000" expanded="true" signature="709:762" ph="/// 用户性别 ... " />
+            <marker date="1495207762000" expanded="true" signature="839:892" ph="/// 用户电话 ... " />
+            <marker date="1495207762000" expanded="true" signature="971:1018" ph="/// 用户登录模型 ... " />
+            <marker date="1495207762000" expanded="false" signature="1046:1325" ph="{...}" />
+            <marker date="1495207762000" expanded="true" signature="1061:1114" ph="/// 用户账号 ... " />
+            <marker date="1495207762000" expanded="true" signature="1194:1247" ph="/// 用户密码 ... " />
+            <marker date="1495207762000" expanded="true" signature="1336:1385" ph="/// 修改用户密码模型 ... " />
+            <marker date="1495207762000" expanded="false" signature="1426:1670" ph="{...}" />
+            <marker date="1495207762000" expanded="true" signature="1441:1494" ph="/// 用户Id ... " />
+            <marker date="1495207762000" expanded="true" signature="1539:1592" ph="/// 用户密码 ... " />
+            <marker date="1495207762000" expanded="true" signature="1680:1731" ph="/// 修改用户权限等级模型 ... " />
+            <marker date="1495207762000" expanded="false" signature="1769:2012" ph="{...}" />
+            <marker date="1495207762000" expanded="true" signature="1784:1837" ph="/// 用户Id ... " />
+            <marker date="1495207762000" expanded="true" signature="1882:1937" ph="/// 用户权限级别 ... " />
+            <marker date="1495207762000" expanded="true" signature="2022:2071" ph="/// 修改用户电话模型 ... " />
+            <marker date="1495207762000" expanded="false" signature="2107:2346" ph="{...}" />
+            <marker date="1495207762000" expanded="true" signature="2122:2175" ph="/// 用户Id ... " />
+            <marker date="1495207762000" expanded="true" signature="2220:2273" ph="/// 用户电话 ... " />
+            <marker date="1495207762000" expanded="true" signature="2352:2399" ph="/// 删除用户模型 ... " />
+            <marker date="1495207762000" expanded="false" signature="2432:2572" ph="{...}" />
+            <marker date="1495207762000" expanded="true" signature="2447:2500" ph="/// 用户Id ... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Servers/UserServer.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="386" column="9" lean-forward="false" selection-start-line="386" selection-start-column="9" selection-end-line="386" selection-end-column="9" />
+        <state relative-caret-position="148">
+          <caret line="462" column="18" lean-forward="false" selection-start-line="462" selection-start-column="18" selection-end-line="462" selection-end-column="18" />
           <folding>
             <marker date="1495205999000" expanded="true" signature="6:146" ph="..." />
             <marker date="1495205999000" expanded="true" signature="176:14004" ph="{...}" />
@@ -1983,7 +1900,7 @@
             <marker date="1495205999000" expanded="true" signature="7005:7128" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7188:7307" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7321:7430" ph="/// 用户修改电话 ... " />
-            <marker date="1495205999000" expanded="true" signature="7490:8601" ph="{...}" />
+            <marker date="1495205999000" expanded="false" signature="7490:8601" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7554:8597" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7635:7689" ph="{...}" />
             <marker date="1495205999000" expanded="true" signature="7734:8418" ph="{...}" />
@@ -2028,128 +1945,242 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Models/UserModels.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding>
-            <marker date="1495207762000" expanded="true" signature="73:2574" ph="{...}" />
-            <marker date="1495207762000" expanded="true" signature="80:131" ph="/// 创建用户POST模型 ... " />
-            <marker date="1495207762000" expanded="true" signature="164:965" ph="{...}" />
-            <marker date="1495207762000" expanded="true" signature="179:232" ph="/// 用户名称 ... " />
-            <marker date="1495207762000" expanded="true" signature="309:362" ph="/// 用户账号 ... " />
-            <marker date="1495207762000" expanded="true" signature="442:495" ph="/// 用户密码 ... " />
-            <marker date="1495207762000" expanded="true" signature="576:631" ph="/// 用户权限级别 ... " />
-            <marker date="1495207762000" expanded="true" signature="709:762" ph="/// 用户性别 ... " />
-            <marker date="1495207762000" expanded="true" signature="839:892" ph="/// 用户电话 ... " />
-            <marker date="1495207762000" expanded="true" signature="971:1018" ph="/// 用户登录模型 ... " />
-            <marker date="1495207762000" expanded="false" signature="1046:1325" ph="{...}" />
-            <marker date="1495207762000" expanded="true" signature="1061:1114" ph="/// 用户账号 ... " />
-            <marker date="1495207762000" expanded="true" signature="1194:1247" ph="/// 用户密码 ... " />
-            <marker date="1495207762000" expanded="true" signature="1336:1385" ph="/// 修改用户密码模型 ... " />
-            <marker date="1495207762000" expanded="false" signature="1426:1670" ph="{...}" />
-            <marker date="1495207762000" expanded="true" signature="1441:1494" ph="/// 用户Id ... " />
-            <marker date="1495207762000" expanded="true" signature="1539:1592" ph="/// 用户密码 ... " />
-            <marker date="1495207762000" expanded="true" signature="1680:1731" ph="/// 修改用户权限等级模型 ... " />
-            <marker date="1495207762000" expanded="false" signature="1769:2012" ph="{...}" />
-            <marker date="1495207762000" expanded="true" signature="1784:1837" ph="/// 用户Id ... " />
-            <marker date="1495207762000" expanded="true" signature="1882:1937" ph="/// 用户权限级别 ... " />
-            <marker date="1495207762000" expanded="true" signature="2022:2071" ph="/// 修改用户电话模型 ... " />
-            <marker date="1495207762000" expanded="false" signature="2107:2346" ph="{...}" />
-            <marker date="1495207762000" expanded="true" signature="2122:2175" ph="/// 用户Id ... " />
-            <marker date="1495207762000" expanded="true" signature="2220:2273" ph="/// 用户电话 ... " />
-            <marker date="1495207762000" expanded="true" signature="2352:2399" ph="/// 删除用户模型 ... " />
-            <marker date="1495207762000" expanded="false" signature="2432:2572" ph="{...}" />
-            <marker date="1495207762000" expanded="true" signature="2447:2500" ph="/// 用户Id ... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Servers/SeatServer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="153" column="71" lean-forward="false" selection-start-line="153" selection-start-column="71" selection-end-line="153" selection-end-column="71" />
-          <folding>
-            <marker date="1495208524000" expanded="true" signature="6:106" ph="..." />
-            <marker date="1495208524000" expanded="true" signature="136:6520" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="143:194" ph="/// 座位管理Server ... " />
-            <marker date="1495208524000" expanded="true" signature="222:6518" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="237:328" ph="/// 获得所有座位 ... " />
-            <marker date="1495208524000" expanded="false" signature="370:2206" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="449:2196" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="610:691" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="759:1355" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="818:1086" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="1145:1337" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="1614:1996" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="1686:1976" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="2041:2181" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="2216:2353" ph="/// 查询座位信息 ... " />
-            <marker date="1495208524000" expanded="false" signature="2404:4525" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="2483:4515" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="2643:2724" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="2792:3674" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="2851:3078" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="3137:3405" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="3464:3656" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="3933:4315" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="4005:4295" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="4360:4500" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="4535:4672" ph="/// 更新座位状态 ... " />
-            <marker date="1495208524000" expanded="false" signature="4744:6512" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="4823:6502" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="4955:5036" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="5105:6236" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="5164:5393" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="5452:5681" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="5740:5967" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="6026:6218" ph="{...}" />
-            <marker date="1495208524000" expanded="true" signature="6326:6487" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Models/SeatModels.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        <state relative-caret-position="317">
+          <caret line="46" column="14" lean-forward="false" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
           <folding>
-            <marker date="1495201978000" expanded="true" signature="27:341" ph="{...}" />
-            <marker date="1495201978000" expanded="true" signature="34:83" ph="/// 更新座位状态模型 ... " />
-            <marker date="1495201978000" expanded="true" signature="122:339" ph="{...}" />
-            <marker date="1495201978000" expanded="true" signature="137:190" ph="/// 座位ID ... " />
-            <marker date="1495201978000" expanded="true" signature="239:292" ph="/// 座位状态 ... " />
+            <marker date="1495209741000" expanded="true" signature="27:1103" ph="{...}" />
+            <marker date="1495209741000" expanded="true" signature="35:82" ph="/// 新增座位模型 ... " />
+            <marker date="1495209741000" expanded="true" signature="115:582" ph="{...}" />
+            <marker date="1495209741000" expanded="true" signature="130:184" ph="/// 放映厅Id ... " />
+            <marker date="1495209741000" expanded="true" signature="245:298" ph="/// 座位行数 ... " />
+            <marker date="1495209741000" expanded="true" signature="359:412" ph="/// 座位列数 ... " />
+            <marker date="1495209741000" expanded="true" signature="473:526" ph="/// 座位状态 ... " />
+            <marker date="1495209741000" expanded="true" signature="592:641" ph="/// 更新座位状态模型 ... " />
+            <marker date="1495209741000" expanded="true" signature="680:897" ph="{...}" />
+            <marker date="1495209741000" expanded="true" signature="695:748" ph="/// 座位ID ... " />
+            <marker date="1495209741000" expanded="true" signature="797:850" ph="/// 座位状态 ... " />
+            <marker date="1495209741000" expanded="true" signature="907:954" ph="/// 删除座位模型 ... " />
+            <marker date="1495209741000" expanded="true" signature="987:1101" ph="{...}" />
+            <marker date="1495209741000" expanded="true" signature="1002:1055" ph="/// 座位ID ... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Controllers/SeatController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="75" column="21" lean-forward="true" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
+        <state relative-caret-position="202">
+          <caret line="111" column="30" lean-forward="false" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
           <folding>
-            <marker date="1495208570000" expanded="true" signature="6:129" ph="..." />
-            <marker date="1495208570000" expanded="true" signature="163:2792" ph="{...}" />
-            <marker date="1495208570000" expanded="true" signature="170:218" ph="/// 座位管理API ... " />
-            <marker date="1495208570000" expanded="true" signature="317:2790" ph="{...}" />
-            <marker date="1495208570000" expanded="true" signature="332:423" ph="/// 获得所有座位 ... " />
-            <marker date="1495208570000" expanded="false" signature="469:1062" ph="{...}" />
-            <marker date="1495208570000" expanded="true" signature="495:851" ph="{...}" />
-            <marker date="1495208570000" expanded="true" signature="623:758" ph="{...}" />
-            <marker date="1495208570000" expanded="true" signature="883:1052" ph="{...}" />
-            <marker date="1495208570000" expanded="true" signature="941:1037" ph="{...}" />
-            <marker date="1495208570000" expanded="true" signature="1072:1209" ph="/// 查询座位信息 ... " />
-            <marker date="1495208570000" expanded="false" signature="1296:1911" ph="{...}" />
-            <marker date="1495208570000" expanded="true" signature="1322:1700" ph="{...}" />
-            <marker date="1495208570000" expanded="true" signature="1467:1602" ph="{...}" />
-            <marker date="1495208570000" expanded="true" signature="1732:1901" ph="{...}" />
-            <marker date="1495208570000" expanded="true" signature="1790:1886" ph="{...}" />
-            <marker date="1495208570000" expanded="true" signature="1921:2058" ph="/// 更新座位状态 ... " />
-            <marker date="1495208570000" expanded="false" signature="2166:2784" ph="{...}" />
-            <marker date="1495208570000" expanded="true" signature="2192:2573" ph="{...}" />
-            <marker date="1495208570000" expanded="true" signature="2337:2472" ph="{...}" />
-            <marker date="1495208570000" expanded="true" signature="2605:2774" ph="{...}" />
-            <marker date="1495208570000" expanded="true" signature="2663:2759" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="6:129" ph="..." />
+            <marker date="1495209816000" expanded="true" signature="163:4488" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="170:218" ph="/// 座位管理API ... " />
+            <marker date="1495209816000" expanded="true" signature="317:4486" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="332:423" ph="/// 获得所有座位 ... " />
+            <marker date="1495209816000" expanded="false" signature="469:1062" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="495:851" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="623:758" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="883:1052" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="941:1037" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="1072:1209" ph="/// 查询座位信息 ... " />
+            <marker date="1495209816000" expanded="false" signature="1296:1911" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="1322:1700" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="1467:1602" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="1732:1901" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="1790:1886" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="1921:2058" ph="/// 更新座位状态 ... " />
+            <marker date="1495209816000" expanded="false" signature="2166:2784" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="2192:2573" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="2337:2472" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="2605:2774" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="2663:2759" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="2794:2921" ph="/// 新增座位 ... " />
+            <marker date="1495209816000" expanded="false" signature="3016:3628" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="3042:3417" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="3187:3322" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="3449:3618" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="3507:3603" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="3638:3771" ph="/// 删除座位 ... " />
+            <marker date="1495209816000" expanded="false" signature="3868:4480" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="3894:4269" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="4039:4174" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="4301:4470" ph="{...}" />
+            <marker date="1495209816000" expanded="true" signature="4359:4455" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Controllers/TheaterController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="105" column="22" lean-forward="true" selection-start-line="103" selection-start-column="21" selection-end-line="105" selection-end-column="22" />
+          <folding>
+            <marker date="1495210295000" expanded="true" signature="6:129" ph="..." />
+            <marker date="1495210295000" expanded="true" signature="163:4487" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="170:219" ph="/// 放映厅操作API ... " />
+            <marker date="1495210295000" expanded="true" signature="321:4485" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="336:423" ph="/// 获得所有影厅 ... " />
+            <marker date="1495210295000" expanded="false" signature="469:1068" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="495:857" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="623:758" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="889:1058" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="947:1043" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="1078:1212" ph="/// 查询影厅 ... " />
+            <marker date="1495210295000" expanded="false" signature="1304:1911" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="1330:1700" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="1458:1593" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="1732:1901" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="1790:1886" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="1921:2060" ph="/// 修改影厅管理者 ... " />
+            <marker date="1495210295000" expanded="false" signature="2175:2782" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="2201:2571" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="2329:2464" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="2603:2772" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="2661:2757" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="2792:2928" ph="/// 创建一个新演出厅 ... " />
+            <marker date="1495210295000" expanded="false" signature="3029:3629" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="3055:3418" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="3183:3318" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="3450:3619" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="3508:3604" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="3639:3776" ph="/// 删除一个演出厅 ... " />
+            <marker date="1495210295000" expanded="false" signature="3879:4479" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="3905:4268" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="4033:4168" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="4300:4469" ph="{...}" />
+            <marker date="1495210295000" expanded="true" signature="4358:4454" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Servers/TheaterServer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1364">
+          <caret line="278" column="34" lean-forward="true" selection-start-line="278" selection-start-column="34" selection-end-line="278" selection-end-column="34" />
+          <folding>
+            <marker date="1495209883000" expanded="true" signature="6:120" ph="..." />
+            <marker date="1495209883000" expanded="true" signature="150:12107" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="157:206" ph="/// 影厅Server ... " />
+            <marker date="1495209883000" expanded="true" signature="244:12105" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="259:346" ph="/// 获得所有影厅 ... " />
+            <marker date="1495209883000" expanded="false" signature="391:2487" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="470:2477" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="634:715" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="783:1379" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="842:1110" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="1169:1361" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="1638:2277" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="1710:2257" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="2322:2462" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="2497:2631" ph="/// 查询影厅 ... " />
+            <marker date="1495209883000" expanded="false" signature="2688:5071" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="2767:5061" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="2930:3011" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="3079:3966" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="3138:3370" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="3429:3697" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="3756:3948" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="4222:4861" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="4294:4841" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="4906:5046" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="5089:5228" ph="/// 修改影厅管理者 ... " />
+            <marker date="1495209883000" expanded="false" signature="5308:7119" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="5387:7109" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="5516:5597" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="5665:6843" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="5724:5952" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="6011:6288" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="6347:6574" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="6633:6825" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="6933:7094" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="7129:7265" ph="/// 创建一个新演出厅 ... " />
+            <marker date="1495209883000" expanded="true" signature="7331:10411" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="7410:10401" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="7539:7620" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="7688:10135" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="7747:8026" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="8085:8358" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="8417:8688" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="8747:8978" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="9037:9279" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="9338:9580" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="9639:9866" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="9925:10117" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="10225:10386" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="10421:10558" ph="/// 删除一个演出厅 ... " />
+            <marker date="1495209883000" expanded="false" signature="10624:12099" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="10703:12089" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="10832:10913" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="10981:11823" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="11040:11268" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="11327:11554" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="11613:11805" ph="{...}" />
+            <marker date="1495209883000" expanded="true" signature="11913:12074" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Servers/SeatServer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="272" column="6" lean-forward="false" selection-start-line="272" selection-start-column="6" selection-end-line="272" selection-end-column="6" />
+          <folding>
+            <marker date="1495211978000" expanded="true" signature="6:106" ph="..." />
+            <marker date="1495211978000" expanded="true" signature="136:10489" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="143:194" ph="/// 座位管理Server ... " />
+            <marker date="1495211978000" expanded="true" signature="222:10487" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="237:328" ph="/// 获得所有座位 ... " />
+            <marker date="1495211978000" expanded="false" signature="370:2206" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="449:2196" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="610:691" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="759:1355" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="818:1086" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="1145:1337" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="1614:1996" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="1686:1976" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="2041:2181" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="2216:2353" ph="/// 查询座位信息 ... " />
+            <marker date="1495211978000" expanded="false" signature="2404:4525" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="2483:4515" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="2643:2724" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="2792:3674" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="2851:3078" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="3137:3405" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="3464:3656" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="3933:4315" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="4005:4295" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="4360:4500" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="4535:4672" ph="/// 更新座位状态 ... " />
+            <marker date="1495211978000" expanded="false" signature="4744:6512" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="4823:6502" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="4955:5036" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="5105:6236" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="5164:5393" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="5452:5681" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="5740:5967" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="6026:6218" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="6326:6487" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="6522:6654" ph="/// 新增座位 ... " />
+            <marker date="1495211978000" expanded="true" signature="6714:8801" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="6793:8790" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="6919:7000" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="7069:8524" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="7128:7369" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="7428:7669" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="7728:7969" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="8028:8255" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="8314:8506" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="8614:8775" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="8811:8944" ph="/// 删除座位 ... " />
+            <marker date="1495211978000" expanded="false" signature="9004:10481" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="9083:10470" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="9209:9290" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="9358:10204" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="9417:9649" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="9708:9935" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="9994:10186" ph="{...}" />
+            <marker date="1495211978000" expanded="true" signature="10294:10455" ph="{...}" />
           </folding>
         </state>
       </provider>
