@@ -121,20 +121,20 @@ namespace TTMSWebAPI.Servers
 
                 var msg = (string) sqlCom.Parameters["@message"].Value;
 
-                var data = new List<object>();
+                object data = null;
 
                 var reader = sqlCom.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    data.Add(new
+                    data = new
                     {
                         seatId = (int) reader[0],
                         theaterId = (int) reader[1],
                         status = (bool) reader[2],
                         seatRowNumber = (int) reader[3],
                         seatColNumber = (int) reader[4]
-                    });
+                    };
                 }
 
                 return new

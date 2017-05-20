@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -7,15 +6,15 @@ using TTMSWebAPI.Models;
 namespace TTMSWebAPI.Servers
 {
     /// <summary>
-    /// 影厅Server
+    /// 剧目管理Server
     /// </summary>
-    public static class TheaterServer
+    public class ProgrammeServer
     {
         /// <summary>
-        /// 获得所有影厅
+        /// 获得所有剧目
         /// </summary>
-        /// <returns></returns>
-        public static object GetAllTheater()
+        /// <returns>剧目列表</returns>
+        public static object GetAllProgramme()
         {
             using (var con = new SqlConnection(Server.SqlConString))
             {
@@ -23,7 +22,7 @@ namespace TTMSWebAPI.Servers
 
                 var message = "";
 
-                var sqlCom = new SqlCommand("sp_GetAllTheater", con)
+                var sqlCom = new SqlCommand("sp_GetAllProgramme", con)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
@@ -58,13 +57,11 @@ namespace TTMSWebAPI.Servers
                 {
                     data.Add(new
                     {
-                        theaterId = (int) reader[0],
-                        theaterName = reader[1] != DBNull.Value ? (string) reader[1] : null,
-                        theaterLocation = reader[2] != DBNull.Value ? (string) reader[2] : null,
-                        theaterMapSite = reader[3] != DBNull.Value ? (string) reader[3] : null,
-                        theaterAdmitId = (int) reader[4],
-                        theaterSeatRowsCount = (int) reader[5],
-                        theaterSeatColsCount = (int) reader[6]
+                        programmeId = (int) reader[0],
+                        programmeName = (string) reader[1],
+                        programmeDruation = (int) reader[2],
+                        programmeTags = (string) reader[3],
+                        programmeProfile = (string) reader[4]
                     });
                 }
 
@@ -78,11 +75,11 @@ namespace TTMSWebAPI.Servers
         }
 
         /// <summary>
-        /// 查询影厅
+        /// 查询剧目信息
         /// </summary>
-        /// <param name="theaterId">影厅Id</param>
-        /// <returns></returns>
-        public static object QueryTheater(int theaterId)
+        /// <param name="programmeName">剧目名称</param>
+        /// <returns>剧目信息</returns>
+        public static object QueryProgramme(string programmeName)
         {
             using (var con = new SqlConnection(Server.SqlConString))
             {
@@ -90,7 +87,7 @@ namespace TTMSWebAPI.Servers
 
                 var message = "";
 
-                var sqlCom = new SqlCommand("sp_QueryTheater", con)
+                var sqlCom = new SqlCommand("sp_QueryProgramme", con)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
@@ -99,10 +96,83 @@ namespace TTMSWebAPI.Servers
                 {
                     new SqlParameter
                     {
-                        ParameterName = "@theaterId",
+                        ParameterName = "@programmeName",
+                        Direction = ParameterDirection.Input,
+                        Size = 50,
+                        SqlDbType = SqlDbType.NVarChar,
+                        Value = programmeName
+                    },
+                    new SqlParameter
+                    {
+                        ParameterName = "@message",
+                        Direction = ParameterDirection.Output,
+                        Size = 30,
+                        SqlDbType = SqlDbType.VarChar,
+                        Value = message
+                    },
+                    new SqlParameter
+                    {
+                        ParameterName = "@return",
+                        Direction = ParameterDirection.ReturnValue,
+                        SqlDbType = SqlDbType.Int
+                    }
+                });
+
+                sqlCom.ExecuteNonQuery();
+
+                var msg = (string) sqlCom.Parameters["@message"].Value;
+
+                object data = null;
+
+                var reader = sqlCom.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    data = new
+                    {
+                        programmeId = (int) reader[0],
+                        programmeName = (string) reader[1],
+                        programmeDruation = (int) reader[2],
+                        programmeTags = (string) reader[3],
+                        programmeProfile = (string) reader[4]
+                    };
+                }
+
+                return new
+                {
+                    result = (int) sqlCom.Parameters["@return"].Value,
+                    msg,
+                    data
+                };
+            }
+        }
+
+        /// <summary>
+        /// 查询剧目信息
+        /// </summary>
+        /// <param name="programmeId">剧目ID</param>
+        /// <returns>剧目信息</returns>
+        public static object QueryProgramme(int programmeId)
+        {
+            using (var con = new SqlConnection(Server.SqlConString))
+            {
+                con.Open();
+
+                var message = "";
+
+                var sqlCom = new SqlCommand("sp_QueryProgramme", con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                sqlCom.Parameters.AddRange(new[]
+                {
+                    new SqlParameter
+                    {
+                        ParameterName = "@programmeId",
                         Direction = ParameterDirection.Input,
                         SqlDbType = SqlDbType.Int,
-                        Value = theaterId
+                        Value = programmeId
                     },
                     new SqlParameter
                     {
@@ -132,13 +202,11 @@ namespace TTMSWebAPI.Servers
                 {
                     data = new
                     {
-                        theaterId = (int) reader[0],
-                        theaterName = reader[1] != DBNull.Value ? (string) reader[1] : null,
-                        theaterLocation = reader[2] != DBNull.Value ? (string) reader[2] : null,
-                        theaterMapSite = reader[3] != DBNull.Value ? (string) reader[3] : null,
-                        theaterAdmitId = (int) reader[4],
-                        theaterSeatRowsCount = (int) reader[5],
-                        theaterSeatColsCount = (int) reader[6]
+                        programmeId = (int) reader[0],
+                        programmeName = (string) reader[1],
+                        programmeDruation = (int) reader[2],
+                        programmeTags = (string) reader[3],
+                        programmeProfile = (string) reader[4]
                     };
                 }
 
@@ -150,19 +218,19 @@ namespace TTMSWebAPI.Servers
                 };
             }
         }
-        
+
         /// <summary>
-        /// 修改影厅管理者
+        /// 新建一个剧目
         /// </summary>
-        /// <param name="um">修改影厅管理者模型</param>
-        /// <returns>修改结果</returns>
-        public static object UpdateTheaterAdminId(UpdateTheaterAdminIDModel um)
+        /// <param name="cm">新建剧目模型</param>
+        /// <returns>新建结果</returns>
+        public static object CreateProgramme(CreateProgrammeModel cm)
         {
             using (var con = new SqlConnection(Server.SqlConString))
             {
                 con.Open();
 
-                var sqlCom = new SqlCommand("sp_UpdateTheater", con)
+                var sqlCom = new SqlCommand("sp_CreateProgramme", con)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
@@ -171,18 +239,33 @@ namespace TTMSWebAPI.Servers
                 {
                     new SqlParameter
                     {
-                        ParameterName = "@theaterId",
+                        ParameterName = "@proName",
                         Direction = ParameterDirection.Input,
-                        SqlDbType = SqlDbType.Int,
-                        Value = um.Id
+                        Size = 50,
+                        SqlDbType = SqlDbType.NVarChar,
+                        Value = cm.ProgrammeName
                     },
                     new SqlParameter
                     {
-                        ParameterName = "@newAdminId",
+                        ParameterName = "@duration",
                         Direction = ParameterDirection.Input,
+                        SqlDbType = SqlDbType.Int,
+                        Value = cm.Duration
+                    },
+                    new SqlParameter
+                    {
+                        ParameterName = "@tags",
+                        Direction = ParameterDirection.Input,
+                        Size = 20,
                         SqlDbType = SqlDbType.NVarChar,
-                        Size = 15,
-                        Value = um.NewAdminId
+                        Value = cm.Tags
+                    },
+                    new SqlParameter
+                    {
+                        ParameterName = "@profile",
+                        Direction = ParameterDirection.Input,
+                        SqlDbType = SqlDbType.Text,
+                        Value = cm.Profile
                     },
                     new SqlParameter
                     {
@@ -210,105 +293,17 @@ namespace TTMSWebAPI.Servers
         }
 
         /// <summary>
-        /// 创建一个新演出厅
+        /// 删除一个剧目
         /// </summary>
-        /// <param name="cm">演出厅信息</param>
-        /// <returns>创建结果</returns>
-        public static object CreateTheater(CreateTheaterModel cm)
-        {
-            using (var con = new SqlConnection(Server.SqlConString))
-            {
-                con.Open();
-
-                var sqlCom = new SqlCommand("sp_CreateTheater", con)
-                {
-                    CommandType = CommandType.StoredProcedure
-                };
-
-                sqlCom.Parameters.AddRange(new[]
-                {
-                    new SqlParameter
-                    {
-                        ParameterName = "@theaterName",
-                        Direction = ParameterDirection.Input,
-                        SqlDbType = SqlDbType.NVarChar,
-                        Size = 30,
-                        Value = cm.TheaterName
-                    },
-                    new SqlParameter
-                    {
-                        ParameterName = "@Location",
-                        Direction = ParameterDirection.Input,
-                        SqlDbType = SqlDbType.NVarChar,
-                        Size = 30,
-                        Value = cm.Location
-                    },
-                    new SqlParameter
-                    {
-                        ParameterName = "@MapSite",
-                        Direction = ParameterDirection.Input,
-                        SqlDbType = SqlDbType.NVarChar,
-                        Size = 30,
-                        Value = cm.MapSite
-                    },
-                    new SqlParameter
-                    {
-                        ParameterName = "@AdminId",
-                        Direction = ParameterDirection.Input,
-                        SqlDbType = SqlDbType.Int,
-                        Value = cm.AdminID
-                    },
-                    new SqlParameter
-                    {
-                        ParameterName = "@seatRowsCount",
-                        Direction = ParameterDirection.Input,
-                        SqlDbType = SqlDbType.Int,
-                        Value = cm.SeatRowCount
-                    },
-                    new SqlParameter
-                    {
-                        ParameterName = "@seatColsCount",
-                        Direction = ParameterDirection.Input,
-                        SqlDbType = SqlDbType.Int,
-                        Value = cm.SeatColCount
-                    },
-                    new SqlParameter
-                    {
-                        ParameterName = "@message",
-                        Direction = ParameterDirection.Output,
-                        Size = 30,
-                        SqlDbType = SqlDbType.VarChar
-                    },
-                    new SqlParameter
-                    {
-                        ParameterName = "@return",
-                        Direction = ParameterDirection.ReturnValue,
-                        SqlDbType = SqlDbType.Int
-                    }
-                });
-
-                sqlCom.ExecuteNonQuery();
-
-                return new
-                {
-                    result = (int) sqlCom.Parameters["@return"].Value,
-                    msg = (string) sqlCom.Parameters["@message"].Value
-                };
-            }
-        }
-
-        /// <summary>
-        /// 删除一个演出厅
-        /// </summary>
-        /// <param name="dm">被删除的演出厅</param>
+        /// <param name="dm">删除剧目模型</param>
         /// <returns>删除结果</returns>
-        public static object DeleteTheater(DeleteTheaterModel dm)
+        public static object DeleteProgramme(DeleteProgrammeModel dm)
         {
             using (var con = new SqlConnection(Server.SqlConString))
             {
                 con.Open();
 
-                var sqlCom = new SqlCommand("sp_DeleteTheater", con)
+                var sqlCom = new SqlCommand("sp_DeleteProgramme", con)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
@@ -317,7 +312,7 @@ namespace TTMSWebAPI.Servers
                 {
                     new SqlParameter
                     {
-                        ParameterName = "@theaterId",
+                        ParameterName = "@programmeId",
                         Direction = ParameterDirection.Input,
                         SqlDbType = SqlDbType.Int,
                         Value = dm.Id
@@ -343,6 +338,79 @@ namespace TTMSWebAPI.Servers
                 {
                     result = (int) sqlCom.Parameters["@return"].Value,
                     msg = (string) sqlCom.Parameters["@message"].Value
+                };
+            }
+        }
+
+        /// <summary>
+        /// 根据标签筛选剧目
+        /// </summary>
+        /// <param name="tags">标签</param>
+        /// <returns>剧目</returns>
+        public static object SelectProgramme(string tags)
+        {
+            using (var con = new SqlConnection(Server.SqlConString))
+            {
+                con.Open();
+
+                var message = "";
+
+                var sqlCom = new SqlCommand("sp_SelectProgramme", con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                sqlCom.Parameters.AddRange(new[]
+                {
+                    new SqlParameter
+                    {
+                        ParameterName = "@tags",
+                        Direction = ParameterDirection.Input,
+                        Size = 20,
+                        SqlDbType = SqlDbType.NVarChar,
+                        Value = tags
+                    },
+                    new SqlParameter
+                    {
+                        ParameterName = "@message",
+                        Direction = ParameterDirection.Output,
+                        Size = 30,
+                        SqlDbType = SqlDbType.VarChar,
+                        Value = message
+                    },
+                    new SqlParameter
+                    {
+                        ParameterName = "@return",
+                        Direction = ParameterDirection.ReturnValue,
+                        SqlDbType = SqlDbType.Int
+                    }
+                });
+
+                sqlCom.ExecuteNonQuery();
+
+                var msg = (string) sqlCom.Parameters["@message"].Value;
+
+                var data = new List<object>();
+
+                var reader = sqlCom.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    data.Add(new
+                    {
+                        programmeId = (int) reader[0],
+                        programmeName = (string) reader[1],
+                        programmeDruation = (int) reader[2],
+                        programmeTags = (string) reader[3],
+                        programmeProfile = (string) reader[4]
+                    });
+                }
+
+                return new
+                {
+                    result = (int) sqlCom.Parameters["@return"].Value,
+                    msg,
+                    data
                 };
             }
         }
