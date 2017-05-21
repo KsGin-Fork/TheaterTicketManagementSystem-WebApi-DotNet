@@ -290,7 +290,8 @@ namespace TTMSWebAPI.Servers
                     msg,
                     data
                 };
-            }        }
+            }     
+        }
 
         /// <summary>
         /// 上架商品
@@ -420,6 +421,153 @@ namespace TTMSWebAPI.Servers
                     msg = (string) sqlCom.Parameters["@message"].Value
                 };
             }
+        }
+
+        /// <summary>
+        /// 根据日期筛选商品
+        /// </summary>
+        /// <param name="date">日期(e.g.xxxx-xx-xx)</param>
+        /// <returns></returns>
+        public static object SelectGoodByDate(string date)
+        {
+            using (var con = new SqlConnection(Server.SqlConString))
+            {
+                con.Open();
+
+                var message = "";
+
+                var sqlCom = new SqlCommand("sp_SelectGood", con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                sqlCom.Parameters.AddRange(new[]
+                {
+                    new SqlParameter
+                    {
+                        ParameterName = "@playDate",
+                        Direction = ParameterDirection.Input,
+                        SqlDbType = SqlDbType.Date,
+                        Value = date
+                    },
+                    new SqlParameter
+                    {
+                        ParameterName = "@message",
+                        Direction = ParameterDirection.Output,
+                        Size = 30,
+                        SqlDbType = SqlDbType.VarChar,
+                        Value = message
+                    },
+                    new SqlParameter
+                    {
+                        ParameterName = "@return",
+                        Direction = ParameterDirection.ReturnValue,
+                        SqlDbType = SqlDbType.Int
+                    }
+                });
+
+                sqlCom.ExecuteNonQuery();
+
+                var msg = (string) sqlCom.Parameters["@message"].Value;
+
+                var data = new List<object>();
+
+                var reader = sqlCom.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    data.Add( new
+                    {
+                        goodId = (int) reader[0],
+                        programmeId = (int) reader[1],
+                        theaterId = (int) reader[2],
+                        performance = (string) reader[3],
+                        playDate = (DateTime) reader[4],
+                        price = (decimal) reader[5]
+                    });
+                }
+
+                return new
+                {
+                    result = (int) sqlCom.Parameters["@return"].Value,
+                    msg,
+                    data
+                };
+            }        
+        }
+
+        /// <summary>
+        /// 根据场次筛选商品
+        /// </summary>
+        /// <param name="performance">场次(e.g.早一)</param>
+        /// <returns></returns>
+        public static object SelectGoodByPerformance(string performance)
+        {
+            using (var con = new SqlConnection(Server.SqlConString))
+            {
+                con.Open();
+
+                var message = "";
+
+                var sqlCom = new SqlCommand("sp_SelectGood", con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                sqlCom.Parameters.AddRange(new[]
+                {
+                    new SqlParameter
+                    {
+                        ParameterName = "@performance",
+                        Direction = ParameterDirection.Input,
+                        Size = 10 ,
+                        SqlDbType = SqlDbType.NVarChar,
+                        Value = performance
+                    },
+                    new SqlParameter
+                    {
+                        ParameterName = "@message",
+                        Direction = ParameterDirection.Output,
+                        Size = 30,
+                        SqlDbType = SqlDbType.VarChar,
+                        Value = message
+                    },
+                    new SqlParameter
+                    {
+                        ParameterName = "@return",
+                        Direction = ParameterDirection.ReturnValue,
+                        SqlDbType = SqlDbType.Int
+                    }
+                });
+
+                sqlCom.ExecuteNonQuery();
+
+                var msg = (string) sqlCom.Parameters["@message"].Value;
+
+                var data = new List<object>();
+
+                var reader = sqlCom.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    data.Add( new
+                    {
+                        goodId = (int) reader[0],
+                        programmeId = (int) reader[1],
+                        theaterId = (int) reader[2],
+                        performance = (string) reader[3],
+                        playDate = (DateTime) reader[4],
+                        price = (decimal) reader[5]
+                    });
+                }
+
+                return new
+                {
+                    result = (int) sqlCom.Parameters["@return"].Value,
+                    msg,
+                    data
+                };
+            }        
         }
     }
 }

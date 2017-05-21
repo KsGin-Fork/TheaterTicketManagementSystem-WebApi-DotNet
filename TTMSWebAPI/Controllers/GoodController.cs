@@ -131,6 +131,66 @@ namespace TTMSWebAPI.Controllers
         }
 
         /// <summary>
+        /// 根据日期筛选商品
+        /// </summary>
+        /// <param name="date">日期(format:xxxx-xx-xx)</param>
+        /// <returns></returns>
+        [HttpGet("[action]/{date}")]
+        public object SelectGoodByDate(string date)
+        {
+            try
+            {
+                var addr = Server.GetUserIp(Request.HttpContext);
+                if (Server.IpHandle(addr) == 0)
+                {
+                    return new[] { "your ip can't using our api , please contact administrator" };
+                }
+                
+                var re = GoodServer.SelectGoodByDate(date);
+
+                return re;
+            }
+            catch (Exception e)
+            {
+                return new
+                {
+                    result = e.HResult ,
+                    msg = e.Message
+                };
+            }
+        }
+        
+        /// <summary>
+        /// 根据场次筛选商品
+        /// </summary>
+        /// <param name="performance">场次</param>
+        /// <returns></returns>
+        [HttpGet("[action]/{performance}")]
+        public object SelectGoodByPerformance(string performance)
+        {
+            try
+            {
+                var addr = Server.GetUserIp(Request.HttpContext);
+                if (Server.IpHandle(addr) == 0)
+                {
+                    return new[] { "your ip can't using our api , please contact administrator" };
+                }
+                
+                var re = GoodServer.SelectGoodByPerformance(performance);
+
+                return re;
+            }
+            catch (Exception e)
+            {
+                return new
+                {
+                    result = e.HResult ,
+                    msg = e.Message
+                };
+            }
+        }
+        
+        /// <summary>
         /// 上架节目
         /// </summary>
         /// <param name="cm">上架节目模型</param>
