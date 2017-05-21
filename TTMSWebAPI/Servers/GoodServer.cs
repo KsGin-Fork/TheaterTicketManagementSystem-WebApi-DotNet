@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Data.SqlTypes;
 using TTMSWebAPI.Models;
 
 namespace TTMSWebAPI.Servers
 {
+    /// <summary>
+    /// 商品Server
+    /// </summary>
     public class GoodServer
     {
         /// <summary>
