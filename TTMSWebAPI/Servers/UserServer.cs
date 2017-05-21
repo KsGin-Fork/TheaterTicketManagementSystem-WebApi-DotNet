@@ -165,9 +165,9 @@ namespace TTMSWebAPI.Servers
 		/// <summary>
 		/// 删除一个用户
 		/// </summary>
-		/// <param name="dm">需要删除的用户Id</param>
+		/// <param name="id">Id</param>
 		/// <returns>删除结果</returns>
-		public static object DeleteUser(DeleteUserModel dm)
+		public static object DeleteUser(int id)
 		{
 			using (var con = new SqlConnection(Server.SqlConString))
 			{
@@ -182,10 +182,10 @@ namespace TTMSWebAPI.Servers
 				{
 					new SqlParameter
 					{
-						ParameterName = "@account",
+						ParameterName = "@userId",
 						Direction = ParameterDirection.Input,
 						SqlDbType = SqlDbType.Int,
-						Value = dm.Id
+						Value = id
 					},
 					new SqlParameter
 					{

@@ -223,10 +223,10 @@ namespace TTMSWebAPI.Controllers
         /// <summary>
         /// 下架商品
         /// </summary>
-        /// <param name="dm">下架模型</param>
+        /// <param name="id">商品Id</param>
         /// <returns>下架结果</returns>
-        [HttpDelete("[action]")]
-        public object DeleteGood([FromBody] DeleteGoodModel dm)
+        [HttpDelete("[action]/{id}")]
+        public object DeleteGood(int id)
         {
             try
             {
@@ -236,7 +236,7 @@ namespace TTMSWebAPI.Controllers
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
                 
-                var re = GoodServer.DeleteGood(dm);
+                var re = GoodServer.DeleteGood(id);
 
                 return re;
             }

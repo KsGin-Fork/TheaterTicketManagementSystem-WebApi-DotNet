@@ -295,9 +295,9 @@ namespace TTMSWebAPI.Servers
         /// <summary>
         /// 删除一个剧目
         /// </summary>
-        /// <param name="dm">删除剧目模型</param>
+        /// <param name="id">剧目Id</param>
         /// <returns>删除结果</returns>
-        public static object DeleteProgramme(DeleteProgrammeModel dm)
+        public static object DeleteProgramme(int id)
         {
             using (var con = new SqlConnection(Server.SqlConString))
             {
@@ -315,7 +315,7 @@ namespace TTMSWebAPI.Servers
                         ParameterName = "@programmeId",
                         Direction = ParameterDirection.Input,
                         SqlDbType = SqlDbType.Int,
-                        Value = dm.Id
+                        Value = id
                     },
                     new SqlParameter
                     {

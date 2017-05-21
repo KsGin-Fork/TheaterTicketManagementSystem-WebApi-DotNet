@@ -133,10 +133,10 @@ namespace TTMSWebAPI.Controllers
         /// <summary>
         /// 删除一个演出厅
         /// </summary>
-        /// <param name="dm">被删除的演出厅</param>
+        /// <param name="id">演出厅Id</param>
         /// <returns>删除结果</returns>
-        [HttpDelete("[action]")]
-        public object DeleteTheater([FromBody] DeleteTheaterModel dm)
+        [HttpDelete("[action]/{id}")]
+        public object DeleteTheater(int id)
         {
             try
             {
@@ -145,7 +145,7 @@ namespace TTMSWebAPI.Controllers
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
-                var re = TheaterServer.DeleteTheater(dm);
+                var re = TheaterServer.DeleteTheater(id);
 
                 return re;
             }

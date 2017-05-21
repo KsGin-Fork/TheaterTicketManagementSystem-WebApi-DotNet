@@ -271,9 +271,9 @@ namespace TTMSWebAPI.Servers
         /// <summary>
         /// 删除座位
         /// </summary>
-        /// <param name="dm">要删除的座位</param>
+        /// <param name="id">座位id</param>
         /// <returns>删除结果</returns>
-        public static object DeleteSeat(DeleteSeatModel dm)
+        public static object DeleteSeat(int id)
         {
             using (var con = new SqlConnection(Server.SqlConString))
             {
@@ -291,7 +291,7 @@ namespace TTMSWebAPI.Servers
                         ParameterName = "@theaterId",
                         Direction = ParameterDirection.Input,
                         SqlDbType = SqlDbType.Int,
-                        Value = dm.SeatId
+                        Value = id
                     },
                     new SqlParameter
                     {

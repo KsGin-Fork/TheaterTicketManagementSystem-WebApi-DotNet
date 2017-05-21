@@ -138,10 +138,10 @@ namespace TTMSWebAPI.Controllers
         /// <summary>
         /// 删除座位
         /// </summary>
-        /// <param name="dm">要删除的座位</param>
+        /// <param name="id">座位id</param>
         /// <returns>删除结果</returns>
-        [HttpDelete("[Action]")]
-        public object DeleteSeat([FromBody] DeleteSeatModel dm)
+        [HttpDelete("[Action]/{id}")]
+        public object DeleteSeat(int id)
         {
             try
             {
@@ -152,7 +152,7 @@ namespace TTMSWebAPI.Controllers
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
 
-                var re = SeatServer.DeleteSeat(dm);
+                var re = SeatServer.DeleteSeat(id);
 
                 return re;
             }

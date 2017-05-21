@@ -50,15 +50,5 @@ namespace TTMSWebAPI.Models
         /// </summary>
         public int NewAdminId { get; set; }
     }
-    
-    /// <summary>
-    /// 删除演出厅模型
-    /// </summary>
-    public class DeleteTheaterModel
-    {
-        /// <summary>
-        /// 演出厅Id
-        /// </summary>
-        public int Id { get; set; }
-    }
+
 }

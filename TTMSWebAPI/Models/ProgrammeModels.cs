@@ -26,15 +26,4 @@ namespace TTMSWebAPI.Models
         /// </summary>
         public string Profile { get; set; }
     }
-
-    /// <summary>
-    /// 删除剧目模型
-    /// </summary>
-    public class DeleteProgrammeModel
-    {
-        /// <summary>
-        /// 剧目ID
-        /// </summary>
-        public int Id { get; set; }
-    }
 }

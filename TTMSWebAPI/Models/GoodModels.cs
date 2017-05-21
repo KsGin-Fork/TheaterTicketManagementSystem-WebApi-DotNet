@@ -31,15 +31,4 @@ namespace TTMSWebAPI.Models
         /// </summary>
         public int Price { get; set; }
     }
-
-    /// <summary>
-    /// 下架模型
-    /// </summary>
-    public class DeleteGoodModel
-    {
-        /// <summary>
-        /// 商品Id
-        /// </summary>
-        public int GoodId { get; set; }
-    }
 }

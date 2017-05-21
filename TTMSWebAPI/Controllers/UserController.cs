@@ -258,10 +258,10 @@ namespace TTMSWebAPI.Controllers
         /// <summary>
         /// 删除一个用户
         /// </summary>
-        /// <param name="dm">需要删除的用户</param>
+        /// <param name="id">用户ID</param>
         /// <returns>删除结果</returns>
-        [HttpDelete("[action]")]
-        public object DeleteUserById([FromBody]DeleteUserModel dm)
+        [HttpDelete("[action]/{id}")]
+        public object DeleteUser(int id)
         {
             try
             {
@@ -271,7 +271,7 @@ namespace TTMSWebAPI.Controllers
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
 
-                var re = UserServer.DeleteUser(dm);
+                var re = UserServer.DeleteUser(id);
 
                 return re;
             }

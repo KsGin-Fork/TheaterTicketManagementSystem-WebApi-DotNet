@@ -105,15 +105,4 @@ namespace TTMSWebAPI.Models
         public string Tel { get; set; }
     }
 
-    /// <summary>
-    /// 删除用户模型
-    /// </summary>
-    public class DeleteUserModel
-    {
-        /// <summary>
-        /// 用户Id
-        /// </summary>
-        [StringLength(15)]
-        public string Id { get; set; }
-    }
 }

@@ -42,15 +42,5 @@ namespace TTMSWebAPI.Models
         /// </summary>
         public bool Status { get; set; }
     }
-    
-    /// <summary>
-    /// 删除座位模型
-    /// </summary>
-    public class DeleteSeatModel
-    {
-        /// <summary>
-        /// 座位ID
-        /// </summary>
-        public int SeatId { get; set; }
-    }
+
 }

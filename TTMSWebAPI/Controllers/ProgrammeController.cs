@@ -164,10 +164,10 @@ namespace TTMSWebAPI.Controllers
         /// <summary>
         /// 删除剧目
         /// </summary>
-        /// <param name="dm">待删除的剧目</param>
+        /// <param name="id">剧目Id</param>
         /// <returns>删除结果</returns>
-        [HttpDelete("[action]")]
-        public object DeleteProgramme([FromBody]DeleteProgrammeModel dm)
+        [HttpDelete("[action]/{id}")]
+        public object DeleteProgramme(int id)
         {
             try
             {
@@ -177,7 +177,7 @@ namespace TTMSWebAPI.Controllers
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
                 
-                var re = ProgrammeServer.DeleteProgramme(dm);
+                var re = ProgrammeServer.DeleteProgramme(id);
 
                 return re;
             }

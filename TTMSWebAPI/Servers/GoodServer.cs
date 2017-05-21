@@ -378,9 +378,9 @@ namespace TTMSWebAPI.Servers
         /// <summary>
         /// 下架商品
         /// </summary>
-        /// <param name="dm">下架模型</param>
+        /// <param name="id">商品id</param>
         /// <returns>下架结果</returns>
-        public static object DeleteGood(DeleteGoodModel dm)
+        public static object DeleteGood(int id)
         {
             using (var con = new SqlConnection(Server.SqlConString))
             {
@@ -398,7 +398,7 @@ namespace TTMSWebAPI.Servers
                         ParameterName = "@goodId",
                         Direction = ParameterDirection.Input,
                         SqlDbType = SqlDbType.Int,
-                        Value = dm.GoodId
+                        Value = id
                     },
                     new SqlParameter
                     {
