@@ -38,6 +38,11 @@ namespace TTMSWebAPI.Models
         /// </summary>
         [StringLength(12)]
         public string Tel { get; set; }
+        
+        /// <summary>
+        /// 用户所在影厅
+        /// </summary>
+        public int theaterId { get; set; }
     }
 
     /// <summary>

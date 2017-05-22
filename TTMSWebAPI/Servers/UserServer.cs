@@ -139,6 +139,13 @@ namespace TTMSWebAPI.Servers
 					},
 					new SqlParameter
 					{
+						ParameterName = "@theaterId",
+						Direction = ParameterDirection.Input,
+						SqlDbType = SqlDbType.Int ,
+						Value = cm.theaterId
+					},
+					new SqlParameter
+					{
 						ParameterName = "@message",
 						Direction = ParameterDirection.Output,
 						Size = 30,
@@ -149,7 +156,7 @@ namespace TTMSWebAPI.Servers
 						ParameterName = "@return",
 						Direction = ParameterDirection.ReturnValue,
 						SqlDbType = SqlDbType.Int
-					}
+					} 
 				});
 
 				sqlCom.ExecuteNonQuery();
@@ -447,7 +454,8 @@ namespace TTMSWebAPI.Servers
 						userLevel = (string)reader[6],
 						userSex = reader[7] != DBNull.Value ? (string)reader[7] : null,
 						userAvatar = reader[8] != DBNull.Value ? (BitArray)reader[8] : null,
-						userTel = reader[9] != DBNull.Value ? (string)reader[9] : null
+						userTel = reader[9] != DBNull.Value ? (string)reader[9] : null,
+						userTheaterId = (int)reader[10]
 					};
 				}
 				return new
@@ -519,7 +527,8 @@ namespace TTMSWebAPI.Servers
 						userLevel = (string)reader[6],
 						userSex = reader[7] != DBNull.Value ? (string)reader[7] : null,
 						userAvatar = reader[8] != DBNull.Value ? (BitArray)reader[8] : null,
-						userTel = reader[9] != DBNull.Value ? (string)reader[9] : null
+						userTel = reader[9] != DBNull.Value ? (string)reader[9] : null,
+						userTheaterId = (int)reader[10]
 					};
 				}
 				return new
@@ -587,7 +596,8 @@ namespace TTMSWebAPI.Servers
 						userLevel = (string)reader[6],
 						userSex = reader[7] != DBNull.Value ? (string)reader[7] : null,
 						userAvatar = reader[8] != DBNull.Value ? (BitArray)reader[8] : null,
-						userTel = reader[9] != DBNull.Value ? (string)reader[9] : null
+						userTel = reader[9] != DBNull.Value ? (string)reader[9] : null,
+						userTheaterId = (int)reader[10]
 					});
 				}
 				
