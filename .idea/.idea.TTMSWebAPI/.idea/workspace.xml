@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e6d56ab6-32d0-48fc-ad4c-43e489dbc839" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TTMSWebAPI/Controllers/OrderController.cs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TTMSWebAPI/Models/OrderModels.cs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TTMSWebAPI/Servers/OrderServer.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.TTMSWebAPI/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.TTMSWebAPI/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TTMSWebAPI/Controllers/GoodController.cs" afterPath="$PROJECT_DIR$/TTMSWebAPI/Controllers/GoodController.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TTMSWebAPI/Controllers/HomeController.cs" afterPath="$PROJECT_DIR$/TTMSWebAPI/Controllers/HomeController.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TTMSWebAPI/Controllers/ProgrammeController.cs" afterPath="$PROJECT_DIR$/TTMSWebAPI/Controllers/ProgrammeController.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TTMSWebAPI/Controllers/TicketController.cs" afterPath="$PROJECT_DIR$/TTMSWebAPI/Controllers/TicketController.cs" />
-    </list>
+    <list default="true" id="e6d56ab6-32d0-48fc-ad4c-43e489dbc839" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -828,7 +819,7 @@
       <workItem from="1495280441263" duration="5463000" />
       <workItem from="1495336670263" duration="8765000" />
       <workItem from="1495422441086" duration="2249000" />
-      <workItem from="1495443034673" duration="5562000" />
+      <workItem from="1495443034673" duration="5639000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1493343032355</created>
@@ -841,7 +832,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76084000" />
+    <option name="totallyTimeSpent" value="76161000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
