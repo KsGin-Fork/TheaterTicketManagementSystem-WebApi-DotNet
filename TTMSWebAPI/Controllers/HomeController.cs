@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 
 namespace TTMSWebAPI.Controllers
 {
@@ -6,6 +7,7 @@ namespace TTMSWebAPI.Controllers
     /// 主页
     /// </summary>
     [Route("[controller]")]
+    [EnableCors("mCors")] 
     public class HomeController : Controller
     {
         /// <summary>

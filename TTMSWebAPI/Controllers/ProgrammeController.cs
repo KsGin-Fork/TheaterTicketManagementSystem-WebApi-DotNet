@@ -1,4 +1,5 @@
 using System;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using TTMSWebAPI.Models;
 using TTMSWebAPI.Servers;
@@ -9,6 +10,7 @@ namespace TTMSWebAPI.Controllers
     /// 剧目管理API
     /// </summary>
     [Route("[controller]")]
+    [EnableCors("mCors")]
     public class ProgrammeController : Controller
     {
         /// <summary>

@@ -1,4 +1,5 @@
 using System;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using TTMSWebAPI.Models;
 using TTMSWebAPI.Servers;
@@ -9,6 +10,7 @@ namespace TTMSWebAPI.Controllers
     /// 商品(已上架剧目)操作API
     /// </summary>
     [Route("[controller]")]
+    [EnableCors("mCors")]
     public class GoodController : Controller
     {
         /// <summary>

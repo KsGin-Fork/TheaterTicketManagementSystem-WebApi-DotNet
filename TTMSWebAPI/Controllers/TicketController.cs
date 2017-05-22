@@ -1,4 +1,5 @@
 using System;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using TTMSWebAPI.Servers;
 
@@ -7,6 +8,8 @@ namespace TTMSWebAPI.Controllers
     /// <summary>
     /// 电影票操作API
     /// </summary>
+    [Route("[controller]")]
+    [EnableCors("mCors")]
     public class TicketController : Controller
     {
         /// <summary>
@@ -75,7 +78,7 @@ namespace TTMSWebAPI.Controllers
         /// 售票
         /// </summary>
         /// <param name="ticketId">票ID</param>
-        /// /// <param name="userId">用户ID</param>
+        /// <param name="userId">用户ID</param>
         /// <returns>售票结果</returns>
         [HttpPost("[action]/{ticketId}&{userId}")]
         public object SellTicket(int ticketId , int userId)
