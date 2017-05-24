@@ -79,6 +79,7 @@ namespace TTMSWebAPI.Controllers
         /// <param name="um">更新座位状态模型</param>
         /// <returns>更新结果</returns>
         [HttpPatch("[Action]")]
+        [HttpPost("[action]")]
         public object UpdateSeatStatus([FromBody] UpdateSeatStatusModel um)
         {
             try
@@ -110,6 +111,7 @@ namespace TTMSWebAPI.Controllers
         /// <param name="cm">新增座位</param>
         /// <returns></returns>
         [HttpPost("[Action]")]
+        [HttpPut("[action]")]
         public object CreateSeat([FromBody] CreateSeatModel cm)
         {
             try
