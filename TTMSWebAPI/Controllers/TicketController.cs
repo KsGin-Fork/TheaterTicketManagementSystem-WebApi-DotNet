@@ -81,7 +81,6 @@ namespace TTMSWebAPI.Controllers
         /// <param name="userId">用户ID</param>
         /// <returns>售票结果</returns>
         [HttpPost("[action]/{ticketId}&{userId}")]
-        [HttpPut("[action]")]
         public object SellTicket(int ticketId , int userId)
         {
             try
@@ -113,7 +112,6 @@ namespace TTMSWebAPI.Controllers
         /// <param name="userId">用户ID</param>        
         /// <returns>售票结果</returns>
         [HttpPost("[action]/{ticketId}&{userId}")]
-        [HttpPut("[action]")]
         public object ReturnedTicket(int ticketId , int userId)
         {
             try

@@ -138,7 +138,6 @@ namespace TTMSWebAPI.Controllers
         /// <param name="cm">待新建的剧目</param>
         /// <returns>新建结果</returns>
         [HttpPost("[action]")]
-        [HttpPut("[action]")]
         public object CreateProgramme([FromBody]CreateProgrammeModel cm)
         {
             try

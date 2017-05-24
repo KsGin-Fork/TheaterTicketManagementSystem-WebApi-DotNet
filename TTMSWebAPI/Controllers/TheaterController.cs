@@ -107,7 +107,6 @@ namespace TTMSWebAPI.Controllers
         /// <param name="cm">演出厅信息</param>
         /// <returns>创建结果</returns>
         [HttpPost("[action]")]
-        [HttpPut("[action]")]
         public object CreateTheater([FromBody] CreateTheaterModel cm)
         {
             try

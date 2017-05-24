@@ -198,7 +198,6 @@ namespace TTMSWebAPI.Controllers
         /// <param name="cm">上架节目模型</param>
         /// <returns>上架结果</returns>
         [HttpPost("[action]")]
-        [HttpPut("[action]")]
         public object CreateGood([FromBody] CreateGoodModel cm)
         {
             try
