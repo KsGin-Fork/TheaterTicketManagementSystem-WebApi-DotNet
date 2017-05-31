@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
@@ -46,6 +47,16 @@ namespace TTMSWebAPI
             // Add framework services.
             services.AddMvc();
 
+	        // Adds a default in-memory implementation of IDistributedCache.
+	        services.AddDistributedMemoryCache();
+	        // session 设置
+	        services.AddSession(options =>
+	        {
+		        // 设置 Session 过期时间
+		        options.IdleTimeout = TimeSpan.FromDays(30);
+		        //options.CookieHttpOnly = true;
+	        });
+	        
 	        //doc
 	        // Add our repository type
 	        services.AddSingleton<HttpGetAttribute, HttpGetAttribute>();
@@ -83,6 +94,9 @@ namespace TTMSWebAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+	        //使用Session
+	        app.UseSession();
+	        
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 

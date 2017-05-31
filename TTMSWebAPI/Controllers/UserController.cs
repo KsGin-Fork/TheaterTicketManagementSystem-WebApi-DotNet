@@ -1,5 +1,6 @@
 using System;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TTMSWebAPI.Models;
 using TTMSWebAPI.Servers;
@@ -59,6 +60,7 @@ namespace TTMSWebAPI.Controllers
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
+                  
 
                 var re = UserServer.QueryUserByAccount(account);
 
@@ -89,7 +91,7 @@ namespace TTMSWebAPI.Controllers
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
-
+                
                 var re = UserServer.QueryUserById(id);
 
                 return re;
@@ -121,6 +123,11 @@ namespace TTMSWebAPI.Controllers
                 }
 
                 var re = UserServer.Login(lm);
+
+                if (re.result == 200)
+                {
+                    HttpContext.Session.SetString("user_account" , lm.Account);
+                }
 
                 return re;
             }

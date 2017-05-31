@@ -17,7 +17,7 @@ namespace TTMSWebAPI.Servers
 		/// </summary>
 		/// <returns>登陆结果</returns>
 		/// <param name="lm">用户</param>
-		public static object Login(LoginModel lm)
+		public static ResultModel Login(LoginModel lm)
 		{
 			using (var con = new SqlConnection(Server.SqlConString))
 			{
@@ -63,7 +63,7 @@ namespace TTMSWebAPI.Servers
 
 				sqlCom.ExecuteNonQuery();
 
-				return new
+				return new ResultModel
 				{
 					result = (int) sqlCom.Parameters["@return"].Value,
 					msg = (string) sqlCom.Parameters["@message"].Value
