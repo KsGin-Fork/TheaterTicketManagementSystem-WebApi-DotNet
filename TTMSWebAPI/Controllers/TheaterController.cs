@@ -101,6 +101,7 @@ namespace TTMSWebAPI.Controllers
         /// <param name="um">修改影厅管理者模型</param>
         /// <returns>修改结果</returns>
         [HttpPatch("[action]")]
+        [HttpPost("[action]")]
         public object UpdateTheaterAdminId([FromBody]UpdateTheaterAdminIDModel um)
         {
             try

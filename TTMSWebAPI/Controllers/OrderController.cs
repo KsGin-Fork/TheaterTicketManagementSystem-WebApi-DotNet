@@ -60,6 +60,7 @@ namespace TTMSWebAPI.Controllers
         /// <param name="sm">选择订单模型</param>
         /// <returns>筛选结果</returns>
         [HttpPatch("[action]")]
+        [HttpPost("[action]")]
         public object SelectOrder([FromBody]SelectOrderModel sm)
         {
             try

@@ -144,6 +144,7 @@ namespace TTMSWebAPI.Controllers
         /// <returns>登陆结果</returns>
         /// <param name="lm">登录用户</param>
         [HttpPatch("[action]")]
+        [HttpPost("[action]")]
         public object Login([FromBody]LoginModel lm)
         {
             try
@@ -180,6 +181,7 @@ namespace TTMSWebAPI.Controllers
         /// <param name="um">用户</param>
         /// <returns>修改密码结果</returns>
         [HttpPatch("[action]")]
+        [HttpPost("[action]")]
         public object UpdateUserPassword([FromBody]UpdateUserPasswordModel um)
         {
             try
@@ -221,6 +223,7 @@ namespace TTMSWebAPI.Controllers
         /// <param name="um">用户</param>
         /// <returns>修改等级结果</returns>
         [HttpPatch("[action]")]
+        [HttpPost("[action]")]
         public object UpdateUserLevel([FromBody]UpdateUserLevelModel um)
         {
             try
@@ -262,6 +265,7 @@ namespace TTMSWebAPI.Controllers
         /// <param name="um">用户</param>
         /// <returns>修改电话结果</returns>
         [HttpPatch("[action]")]
+        [HttpPost("[action]")]
         public object UpdateUserTel([FromBody]UpdateUserTelModel um)
         {
             try
