@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Cors;
+﻿using System;
+using System.Collections;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using TTMSWebAPI.Servers;
 
 namespace TTMSWebAPI.Controllers
 {
@@ -19,5 +22,25 @@ namespace TTMSWebAPI.Controllers
         {
             return View();
         }
+
+        /// <summary>
+        /// 验证码
+        /// </summary>
+        /// <returns>验证码</returns>
+        [HttpGet("[action]")]
+        [EnableCors("mCors")]
+        public byte[] VerCode()
+        {
+            try
+            {
+                return Server.VerCode();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
+
+    
 }

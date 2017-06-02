@@ -29,6 +29,17 @@ namespace TTMSWebAPI.Controllers
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
+                
+                var account = HttpContext.Session.GetString("user_account");
+
+                if (account == null)
+                {
+                    return new
+                    {
+                        result = 401 ,
+                        msg = "not login"
+                    };
+                }
 
                 var re = UserServer.GetAllUser();
 
@@ -48,10 +59,10 @@ namespace TTMSWebAPI.Controllers
         /// <summary>
         /// 获得用户信息
         /// </summary>
-        /// <param name="account">用户账号</param>
+        /// <param name="acc">用户账号</param>
         /// <returns></returns>
-        [HttpGet("[Action]/{account}")]
-        public object QueryUserByAccount(string account)
+        [HttpGet("[Action]/{acc}")]
+        public object QueryUserByAccount(string acc)
         {
             try
             {
@@ -61,8 +72,18 @@ namespace TTMSWebAPI.Controllers
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
                   
+                var account = HttpContext.Session.GetString("user_account");
 
-                var re = UserServer.QueryUserByAccount(account);
+                if (account == null)
+                {
+                    return new
+                    {
+                        result = 401 ,
+                        msg = "not login"
+                    };
+                }
+
+                var re = UserServer.QueryUserByAccount(acc);
 
                 return re;
             }
@@ -90,6 +111,17 @@ namespace TTMSWebAPI.Controllers
                 if (Server.IpHandle(addr) == 0)
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
+                }
+                
+                var account = HttpContext.Session.GetString("user_account");
+
+                if (account == null)
+                {
+                    return new
+                    {
+                        result = 401 ,
+                        msg = "not login"
+                    };
                 }
                 
                 var re = UserServer.QueryUserById(id);
@@ -128,7 +160,7 @@ namespace TTMSWebAPI.Controllers
                 {
                     HttpContext.Session.SetString("user_account" , lm.Account);
                 }
-
+                
                 return re;
             }
             catch (Exception e)
@@ -156,6 +188,17 @@ namespace TTMSWebAPI.Controllers
                 if (Server.IpHandle(addr) == 0)
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
+                }
+                
+                var account = HttpContext.Session.GetString("user_account");
+
+                if (account == null)
+                {
+                    return new
+                    {
+                        result = 401 ,
+                        msg = "not login"
+                    };
                 }
 
                 var re = UserServer.UpdateUserPassword(um);
@@ -188,6 +231,17 @@ namespace TTMSWebAPI.Controllers
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
 
+                var account = HttpContext.Session.GetString("user_account");
+
+                if (account == null)
+                {
+                    return new
+                    {
+                        result = 401 ,
+                        msg = "not login"
+                    };
+                }
+                
                 var re = UserServer.UpdateUserLevel(um);
 
                 return re;
@@ -216,6 +270,17 @@ namespace TTMSWebAPI.Controllers
                 if (Server.IpHandle(addr) == 0)
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
+                }
+                
+                var account = HttpContext.Session.GetString("user_account");
+
+                if (account == null)
+                {
+                    return new
+                    {
+                        result = 401 ,
+                        msg = "not login"
+                    };
                 }
 
                 var re = UserServer.UpdateUserTel(um);
@@ -276,6 +341,17 @@ namespace TTMSWebAPI.Controllers
                 if (Server.IpHandle(addr) == 0)
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
+                }
+                
+                var account = HttpContext.Session.GetString("user_account");
+
+                if (account == null)
+                {
+                    return new
+                    {
+                        result = 401 ,
+                        msg = "not login"
+                    };
                 }
 
                 var re = UserServer.DeleteUser(id);

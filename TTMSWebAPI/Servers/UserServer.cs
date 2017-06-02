@@ -453,9 +453,9 @@ namespace TTMSWebAPI.Servers
 						userLastSignInTime = (DateTime)reader[5],
 						userLevel = (string)reader[6],
 						userSex = reader[7] != DBNull.Value ? (string)reader[7] : null,
-						userAvatar = reader[8] != DBNull.Value ? (BitArray)reader[8] : null,
-						userTel = reader[9] != DBNull.Value ? (string)reader[9] : null,
-						userTheaterId = (int)reader[10]
+						userTel = reader[8] != DBNull.Value ? (string)reader[8] : null,
+						userTheaterId = (int)reader[9] ,
+						userAvatar = reader[10] != DBNull.Value ? (BitArray)reader[10] : null
 					};
 				}
 				return new
@@ -526,9 +526,9 @@ namespace TTMSWebAPI.Servers
 						userLastSignInTime = (DateTime)reader[5],
 						userLevel = (string)reader[6],
 						userSex = reader[7] != DBNull.Value ? (string)reader[7] : null,
-						userAvatar = reader[8] != DBNull.Value ? (BitArray)reader[8] : null,
-						userTel = reader[9] != DBNull.Value ? (string)reader[9] : null,
-						userTheaterId = (int)reader[10]
+						userTel = reader[8] != DBNull.Value ? (string)reader[8] : null,
+						userTheaterId = (int)reader[9] ,
+						userAvatar = reader[10] != DBNull.Value ? (BitArray)reader[10] : null
 					};
 				}
 				return new
@@ -595,9 +595,9 @@ namespace TTMSWebAPI.Servers
 						userLastSignInTime = (DateTime)reader[5],
 						userLevel = (string)reader[6],
 						userSex = reader[7] != DBNull.Value ? (string)reader[7] : null,
-						userAvatar = reader[8] != DBNull.Value ? (BitArray)reader[8] : null,
-						userTel = reader[9] != DBNull.Value ? (string)reader[9] : null,
-						userTheaterId = (int)reader[10]
+						userTel = reader[8] != DBNull.Value ? (string)reader[8] : null,
+						userTheaterId = (int)reader[9] ,
+						userAvatar = reader[10] != DBNull.Value ? (BitArray)reader[10] : null
 					});
 				}
 				

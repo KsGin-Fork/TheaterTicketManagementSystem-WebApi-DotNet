@@ -3,10 +3,12 @@ using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Internal;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.PlatformAbstractions;
 using Swashbuckle.AspNetCore.Swagger;
@@ -48,13 +50,22 @@ namespace TTMSWebAPI
             services.AddMvc();
 
 	        // Adds a default in-memory implementation of IDistributedCache.
-	        services.AddDistributedMemoryCache();
+//	        services.AddDistributedMemoryCache();
+	        services.AddDistributedSqlServerCache(options =>
+	        {
+		        options.ConnectionString = Configuration.GetConnectionString("sqlserverCacheConnection");
+		        options.SchemaName = "dbo";
+		        options.TableName = "session";
+		        options.SystemClock = new SystemClock();
+	        });
+	        
 	        // session 设置
 	        services.AddSession(options =>
 	        {
 		        // 设置 Session 过期时间
+		        options.CookieName = ".TTMS.Session";
 		        options.IdleTimeout = TimeSpan.FromDays(30);
-		        //options.CookieHttpOnly = true;
+		        options.CookieHttpOnly = true;
 	        });
 	        
 	        //doc
@@ -73,6 +84,7 @@ namespace TTMSWebAPI
 			// Setup CORS
 			// ********************
 			var corsBuilder = new CorsPolicyBuilder();
+//	        corsBuilder.WithOrigins("http://localhost:63342", "http://ksgin.online:80" , "http://123.206.82.241");
 			corsBuilder.AllowAnyHeader();
 			corsBuilder.AllowAnyMethod();
 			corsBuilder.AllowAnyOrigin();
