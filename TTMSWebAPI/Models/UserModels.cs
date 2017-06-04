@@ -60,6 +60,12 @@ namespace TTMSWebAPI.Models
         /// </summary>
         [StringLength(15)]
         public string Password { get; set; }
+
+        /// <summary>
+        /// 验证码
+        /// </summary>
+        [StringLength(10)]
+        public string VerCode { get; set; }
     } 
     
     /// <summary>

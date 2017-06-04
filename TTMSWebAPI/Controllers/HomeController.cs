@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TTMSWebAPI.Servers;
 
@@ -28,11 +28,14 @@ namespace TTMSWebAPI.Controllers
         /// </summary>
         /// <returns>验证码</returns>
         [HttpGet("[action]")]
-        [EnableCors("mCors")]
-        public byte[] VerCode()
+        public object VerCode()
         {
             try
             {
+                var verCode = Server.VerCode();
+
+                HttpContext.Session.SetString("user_verCode" , verCode.code);
+
                 return Server.VerCode();
             }
             catch (Exception)

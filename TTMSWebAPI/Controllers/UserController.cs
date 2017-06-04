@@ -150,9 +150,31 @@ namespace TTMSWebAPI.Controllers
             try
             {
                 var addr = Server.GetUserIp(Request.HttpContext);
+
                 if (Server.IpHandle(addr) == 0)
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
+                }
+
+                var verCode = HttpContext.Session.GetString("user_verCode");
+
+                if (verCode == null)
+                {
+                    return new
+                    {
+                        result = 401,
+                        msg = "verCode session is null"
+                    };
+                }
+
+
+                if (verCode != lm.VerCode)
+                {
+                    return new
+                    {
+                        result = 401,
+                        msg = "wrong verCode"
+                    };
                 }
 
                 var re = UserServer.Login(lm);

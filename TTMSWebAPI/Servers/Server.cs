@@ -6,6 +6,7 @@ using System.DrawingCore.Imaging;
 using System.IO;
 using System.Linq;
 using Microsoft.AspNetCore.Http;
+using TTMSWebAPI.Models;
 
 namespace TTMSWebAPI.Servers
 {
@@ -90,12 +91,23 @@ namespace TTMSWebAPI.Servers
 		/// 验证码Base64
 		/// </summary>
 		/// <returns></returns>
-		public static byte[] VerCode()
+		public static VerCodeModel VerCode()
 		{
 			const int codeW = 80;
 			const int codeH = 30;
 			const int fontSize = 16;
-			var chkCode = new []{1, 2, 3, 5};
+		    var chkCode = new int[4];
+		    var verCode = string.Empty;
+
+            //生成随机数
+		    var tick = DateTime.Now.Ticks;
+		    var r = new Random((int)(tick & 0xffffffffL) | (int)(tick >> 32));
+            for (var i = 0; i < 4; i++)
+            { 
+		        chkCode[i] = r.Next() % 10;
+		        verCode += chkCode[i];
+		    }
+
 			var rnd = new Random();
 			//颜色列表，用于验证码、噪线、噪点 
 			Color[] color =
@@ -132,7 +144,11 @@ namespace TTMSWebAPI.Servers
 			try
 			{
 				bmp.Save(ms, ImageFormat.Png);
-				return ms.ToArray();
+			    return new VerCodeModel
+			    {
+			        code = verCode , 
+			        base64 = ms.ToArray()
+			    };
 			}
 			catch (Exception)
 			{
