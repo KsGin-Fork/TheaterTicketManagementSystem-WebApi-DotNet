@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -303,10 +304,11 @@ namespace TTMSWebAPI.Controllers
         /// <summary>
         /// 新建剧目
         /// </summary>
+        /// <param name="env">系统</param>
         /// <param name="cm">待新建的剧目</param>
         /// <returns>新建结果</returns>
         [HttpPost("[action]")]
-        public object CreateProgramme([FromBody] CreateProgrammeModel cm)
+        public object CreateProgramme([FromServices] IHostingEnvironment env,[FromBody] CreateProgrammeModel cm)
         {
             try
             {
@@ -326,7 +328,7 @@ namespace TTMSWebAPI.Controllers
                         msg = "not login"
                     };
                 }
-
+                
                 var re = ProgrammeServer.CreateProgramme(cm);
 
                 return re;

@@ -64,8 +64,10 @@ namespace TTMSWebAPI
 	        {
 		        // 设置 Session 过期时间
 		        options.CookieName = ".TTMS.Session";
-		        options.IdleTimeout = TimeSpan.FromDays(30);
-		        options.CookieHttpOnly = true;
+		        options.IdleTimeout = TimeSpan.FromDays(15);
+		        options.CookieHttpOnly = false;
+		        options.CookieDomain = ".ksgin.online";
+		        options.CookiePath = "/";
 	        });
 	        
 	        //doc
@@ -84,10 +86,10 @@ namespace TTMSWebAPI
 			// Setup CORS
 			// ********************
 			var corsBuilder = new CorsPolicyBuilder();
-	        corsBuilder.WithOrigins("http://localhost:63342" , "http://wwww.ksgin.online");
+	        //corsBuilder.WithOrigins("http://localhost:63342" , "http://wwww.ksgin.online");
 			corsBuilder.AllowAnyHeader();
 			corsBuilder.AllowAnyMethod();
-			//corsBuilder.AllowAnyOrigin();
+			corsBuilder.AllowAnyOrigin();
 			corsBuilder.AllowCredentials();
 
 			services.AddCors(options =>
