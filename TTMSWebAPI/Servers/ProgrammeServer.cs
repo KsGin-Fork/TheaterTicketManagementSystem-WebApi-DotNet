@@ -521,13 +521,13 @@ namespace TTMSWebAPI.Servers
 
                 var msg = (string) sqlCom.Parameters["@message"].Value;
 
-                var data = new List<object>();
+                var data = new List<string>();
 
                 var reader = sqlCom.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    data.Add(reader);
+                    data.Add((string)reader[0]);
                 }
 
                 return new
