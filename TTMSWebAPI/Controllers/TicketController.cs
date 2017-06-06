@@ -16,10 +16,10 @@ namespace TTMSWebAPI.Controllers
         /// <summary>
         /// 查询票信息
         /// </summary>
-        /// <param name="Id">票Id</param>
+        /// <param name="id">票Id</param>
         /// <returns></returns>
         [HttpGet("[action]/{Id}")]
-        public object QueryTicket(int Id)
+        public object QueryTicket(int id)
         {
             try
             {
@@ -28,7 +28,7 @@ namespace TTMSWebAPI.Controllers
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
-                
+
                 var account = HttpContext.Session.GetString("user_account");
 
                 if (account == null)
@@ -40,7 +40,7 @@ namespace TTMSWebAPI.Controllers
                     };
                 }
                 
-                var re = TicketServer.QueryTicket(Id);
+                var re = TicketServer.QueryTicket(id);
 
                 return re;
             }
@@ -57,12 +57,10 @@ namespace TTMSWebAPI.Controllers
         /// <summary>
         /// 筛选票
         /// </summary>
-        /// <param name="theaterId">影厅ID</param>
-        /// <param name="playDate">播放日期</param>
-        /// <param name="performance">场次</param>
+        /// <param name="goodId">节目ID</param>
         /// <returns></returns>
-        [HttpGet("[action]")]
-        public object SelectTicket(int theaterId , string playDate , string performance)
+        [HttpGet("[action]/{goodId}")]
+        public object SelectTicket(int goodId)
         {
             try
             {
@@ -83,7 +81,7 @@ namespace TTMSWebAPI.Controllers
                     };
                 }
                 
-                var re = TicketServer.SelectTicket(theaterId , playDate , performance);
+                var re = TicketServer.SelectTicket(goodId);
 
                 return re;
             }
@@ -98,13 +96,12 @@ namespace TTMSWebAPI.Controllers
         }
         
         /// <summary>
-        /// 售票
+        /// 订票
         /// </summary>
         /// <param name="ticketId">票ID</param>
-        /// <param name="userId">用户ID</param>
         /// <returns>售票结果</returns>
-        [HttpPost("[action]/{ticketId}&{userId}")]
-        public object SellTicket(int ticketId , int userId)
+        [HttpPost("[action]/{ticketId}")]
+        public object SellTicket(int ticketId)
         {
             try
             {
@@ -125,7 +122,49 @@ namespace TTMSWebAPI.Controllers
                     };
                 }
                 
-                var re = TicketServer.SellTicket(ticketId , userId);
+                var re = TicketServer.SellTicket(ticketId);
+
+                return re;
+            }
+            catch (Exception e)
+            {
+                return new
+                {
+                    result = e.HResult ,
+                    msg = e.Message
+                };
+            }
+        }
+
+        /// <summary>
+        /// 支付
+        /// </summary>
+        /// <param name="ticketId">票Id</param>
+        /// <param name="userId">用户Id</param>
+        /// <returns></returns>
+        [HttpPost("[action]/{ticketId}&{userId}")]
+        public object PayTicket(int ticketId , int userId)
+        {
+            try
+            {
+                var addr = Server.GetUserIp(Request.HttpContext);
+                if (Server.IpHandle(addr) == 0)
+                {
+                    return new[] { "your ip can't using our api , please contact administrator" };
+                }
+                
+                var account = HttpContext.Session.GetString("user_account");
+
+                if (account == null)
+                {
+                    return new
+                    {
+                        result = 401 ,
+                        msg = "not login"
+                    };
+                }
+                
+                var re = TicketServer.PayTicket(ticketId , userId);
 
                 return re;
             }

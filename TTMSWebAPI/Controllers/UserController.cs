@@ -173,7 +173,9 @@ namespace TTMSWebAPI.Controllers
                     return new
                     {
                         result = 401,
-                        msg = "wrong verCode"
+                        msg = "wrong verCode" , 
+                        veC = verCode , 
+                        subVec = lm.VerCode
                     };
                 }
 

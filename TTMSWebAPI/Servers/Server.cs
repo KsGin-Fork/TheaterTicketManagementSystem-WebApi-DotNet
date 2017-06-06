@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Data.SqlClient;
 using System.DrawingCore;
 using System.DrawingCore.Imaging;
@@ -10,10 +9,10 @@ using TTMSWebAPI.Models;
 
 namespace TTMSWebAPI.Servers
 {
-	/// <summary>
-	/// Server类
-	/// </summary>
-	public static class Server
+    /// <summary>
+    /// Server类
+    /// </summary>
+    public static class Server
 	{
 		/// <summary>
 		/// 连接字符串

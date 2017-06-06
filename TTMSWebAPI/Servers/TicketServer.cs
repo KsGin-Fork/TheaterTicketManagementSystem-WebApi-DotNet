@@ -13,9 +13,8 @@ namespace TTMSWebAPI.Servers
         /// 售票
         /// </summary>
         /// <param name="ticketId">票ID</param>
-        /// <param name="userId">用户ID</param>
         /// <returns>售票结果</returns>
-        public static object SellTicket(int ticketId , int userId)
+        public static object SellTicket(int ticketId)
         {
             using (var con = new SqlConnection(Server.SqlConString))
             {
@@ -34,13 +33,6 @@ namespace TTMSWebAPI.Servers
                         Direction = ParameterDirection.Input,
                         SqlDbType = SqlDbType.Int,
                         Value = ticketId
-                    },
-                    new SqlParameter
-                    {
-                        ParameterName = "@userId",
-                        Direction = ParameterDirection.Input,
-                        SqlDbType = SqlDbType.Int,
-                        Value = userId
                     },
                     new SqlParameter
                     {
@@ -126,10 +118,10 @@ namespace TTMSWebAPI.Servers
         }
 
         /// <summary>
-        /// 获得所有的票
+        /// 查询节目的票
         /// </summary>
         /// <returns>票列表</returns>
-        public static object SelectTicket(int theaterId , string playDate , string performance)
+        public static object SelectTicket(int goodId)
         {
             using (var con = new SqlConnection(Server.SqlConString))
             {
@@ -146,26 +138,10 @@ namespace TTMSWebAPI.Servers
                 {
                     new SqlParameter
                     {
-                        ParameterName = "@theaterId",
+                        ParameterName = "@goodId",
                         Direction = ParameterDirection.Input,
                         SqlDbType = SqlDbType.Int,
-                        Value = theaterId
-                    },
-                    new SqlParameter
-                    {
-                        ParameterName = "@playDate",
-                        Direction = ParameterDirection.Input,
-                        Size = 15,
-                        SqlDbType = SqlDbType.NVarChar,
-                        Value = playDate
-                    },
-                    new SqlParameter
-                    {
-                        ParameterName = "@performance",
-                        Direction = ParameterDirection.Input,
-                        Size = 10,
-                        SqlDbType = SqlDbType.NVarChar,
-                        Value = performance
+                        Value = goodId
                     },
                     new SqlParameter
                     {
@@ -292,6 +268,64 @@ namespace TTMSWebAPI.Servers
                     result = (int) sqlCom.Parameters["@return"].Value,
                     msg,
                     data
+                };
+            }
+        }
+
+        /// <summary>
+        /// 用户支付
+        /// </summary>
+        /// <param name="ticketId">票Id</param>
+        /// <param name="userId">用户Id</param>
+        /// <returns></returns>
+        public static object PayTicket(int ticketId , int userId)
+        {
+            using (var con = new SqlConnection(Server.SqlConString))
+            {
+                con.Open();
+				
+                var sqlCom = new SqlCommand("sp_PayTicket", con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                sqlCom.Parameters.AddRange(new []
+                {
+                    new SqlParameter
+                    {
+                        ParameterName = "@ticketId",
+                        Direction = ParameterDirection.Input,
+                        SqlDbType = SqlDbType.Int,
+                        Value = ticketId
+                    },
+                    new SqlParameter
+                    {
+                        ParameterName = "@userId",
+                        Direction = ParameterDirection.Input,
+                        SqlDbType = SqlDbType.Int,
+                        Value = ticketId
+                    },
+                    new SqlParameter
+                    {
+                        ParameterName = "@message",
+                        Direction = ParameterDirection.Output,
+                        Size = 30,
+                        SqlDbType = SqlDbType.VarChar
+                    },
+                    new SqlParameter
+                    {
+                        ParameterName = "@return",
+                        Direction = ParameterDirection.ReturnValue,
+                        SqlDbType = SqlDbType.Int
+                    }
+                });
+
+                sqlCom.ExecuteNonQuery();
+
+                return new
+                {
+                    result = (int) sqlCom.Parameters["@return"].Value,
+                    msg = (string) sqlCom.Parameters["@message"].Value
                 };
             }
         }
