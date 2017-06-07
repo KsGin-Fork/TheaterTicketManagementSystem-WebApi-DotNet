@@ -54,12 +54,54 @@ namespace TTMSWebAPI.Controllers
             }
         }
 
+        
+        /// <summary>
+        /// 筛选影厅座位
+        /// </summary>
+        /// <param name="theaterId">影厅Id</param>
+        /// <returns>座位列表</returns>
+        [HttpGet("[action]/{theaterId}")]
+        public object SelectSeat(int theaterId)
+        {
+            try
+            {
+                var addr = Server.GetUserIp(Request.HttpContext);
+                if (Server.IpHandle(addr) == 0)
+                {
+                    return new[] { "your ip can't using our api , please contact administrator" };
+                }
+
+                var account = HttpContext.Session.GetString("user_account");
+
+                if (account == null)
+                {
+                    return new
+                    {
+                        result = 401 ,
+                        msg = "not login"
+                    };
+                }
+                
+                var re = SeatServer.SelectSeat(theaterId);
+
+                return re;
+            }
+            catch (Exception e)
+            {
+                return new
+                {
+                    result = e.HResult ,
+                    msg = e.Message
+                };
+            }
+        }
+        
         /// <summary>
         /// 查询座位信息
         /// </summary>
         /// <param name="seatId">座位ID</param>
         /// <returns>座位信息</returns>
-        [HttpGet("[Action]/sid={seatId}")]
+        [HttpGet("[Action]/{seatId}")]
         public object QuerySeat(int seatId)
         {
             try

@@ -610,5 +610,83 @@ namespace TTMSWebAPI.Servers
 			}
 		}
 
+		/// <summary>
+		/// 筛选用户
+		/// </summary>
+		/// <param name="theaterId">影厅Id</param>
+		/// <returns>用户列表</returns>
+		public static object SelectUser(int theaterId)
+		{
+			using (var con = new SqlConnection(Server.SqlConString))
+			{
+				con.Open();
+
+				var message = "";
+				
+				var sqlCom = new SqlCommand("sp_SelectUser", con)
+				{
+					CommandType = CommandType.StoredProcedure
+				};
+
+				sqlCom.Parameters.AddRange(new []
+				{
+					new SqlParameter
+					{
+						ParameterName = "@theaterId",
+						Direction = ParameterDirection.Input,
+						SqlDbType = SqlDbType.Int,
+						Value = theaterId
+					},
+					new SqlParameter
+					{
+						ParameterName = "@message",
+						Direction = ParameterDirection.Output,
+						Size = 30,
+						SqlDbType = SqlDbType.VarChar,
+						Value = message
+					},
+					new SqlParameter
+					{
+						ParameterName = "@return",
+						Direction = ParameterDirection.ReturnValue,
+						SqlDbType = SqlDbType.Int
+					}
+				});
+
+				sqlCom.ExecuteNonQuery();
+
+				var msg = (string) sqlCom.Parameters["@message"].Value;
+
+				var data = new List<object>();
+
+				var reader = sqlCom.ExecuteReader();
+				
+				while (reader.Read())
+				{
+					data.Add( new
+					{
+						userId = (int)reader[0],
+						userName = reader[1] != DBNull.Value ? (string)reader[1] : null ,
+						userAccount = reader[2] != DBNull.Value ? (string)reader[2] : null,
+						userPassword = reader[3] != DBNull.Value ? (string)reader[3] : null,
+						userCreateTime = (DateTime)reader[4],
+						userLastSignInTime = (DateTime)reader[5],
+						userLevel = (string)reader[6],
+						userSex = reader[7] != DBNull.Value ? (string)reader[7] : null,
+						userTel = reader[8] != DBNull.Value ? (string)reader[8] : null,
+						userTheaterId = (int)reader[9] ,
+						userAvatar = reader[10] != DBNull.Value ? (byte[])reader[10] : null
+					});
+				}
+				
+				return new
+				{
+					result = (int) sqlCom.Parameters["@return"].Value,
+					msg,
+					data
+				};
+			}
+
+		}
 	}
 }

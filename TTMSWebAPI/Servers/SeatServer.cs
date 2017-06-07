@@ -318,5 +318,77 @@ namespace TTMSWebAPI.Servers
             }
 
         }
+
+        /// <summary>
+        /// 筛选影厅座位
+        /// </summary>
+        /// <param name="theaterId">影厅Id</param>
+        /// <returns>座位列表</returns>
+        public static object SelectSeat(int theaterId)
+        {
+            using (var con = new SqlConnection(Server.SqlConString))
+            {
+                con.Open();
+
+                var message = "";
+
+                var sqlCom = new SqlCommand("sp_SelectSeat", con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                sqlCom.Parameters.AddRange(new[]
+                {
+                    new SqlParameter
+                    {
+                      ParameterName  = "@theaterId",
+                        Direction = ParameterDirection.Input,
+                        SqlDbType = SqlDbType.Int,
+                        Value = theaterId
+                    },
+                    new SqlParameter
+                    {
+                        ParameterName = "@message",
+                        Direction = ParameterDirection.Output,
+                        Size = 30,
+                        SqlDbType = SqlDbType.VarChar,
+                        Value = message
+                    },
+                    new SqlParameter
+                    {
+                        ParameterName = "@return",
+                        Direction = ParameterDirection.ReturnValue,
+                        SqlDbType = SqlDbType.Int
+                    }
+                });
+
+                sqlCom.ExecuteNonQuery();
+
+                var msg = (string) sqlCom.Parameters["@message"].Value;
+
+                var data = new List<object>();
+
+                var reader = sqlCom.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    data.Add(new
+                    {
+                        seatId = (int) reader[0],
+                        theaterId = (int) reader[1],
+                        status = (bool) reader[2],
+                        seatRowNumber = (int) reader[3],
+                        seatColNumber = (int) reader[4]
+                    });
+                }
+
+                return new
+                {
+                    result = (int) sqlCom.Parameters["@return"].Value,
+                    msg,
+                    data
+                };
+            }
+        }
     }
 }

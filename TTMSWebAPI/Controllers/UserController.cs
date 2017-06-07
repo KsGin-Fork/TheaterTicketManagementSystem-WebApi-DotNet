@@ -54,7 +54,49 @@ namespace TTMSWebAPI.Controllers
                 };
             }
 
-        }  
+        }
+
+        /// <summary>
+        /// 筛选影厅用户（管理者以及所属影厅的售票员）
+        /// </summary>
+        /// <param name="theaterId">影厅Id</param>
+        /// <returns>用户列表</returns>
+        [HttpGet("[action]/{theaterId}")]
+        public object SelectUser(int theaterId)
+        {
+            try
+            {
+                var addr = Server.GetUserIp(Request.HttpContext);
+                if (Server.IpHandle(addr) == 0)
+                {
+                    return new[] { "your ip can't using our api , please contact administrator" };
+                }
+                
+                var account = HttpContext.Session.GetString("user_account");
+
+//                if (account == null)
+//                {
+//                    return new
+//                    {
+//                        result = 401 ,
+//                        msg = "not login"
+//                    };
+//                }
+
+                var re = UserServer.SelectUser(theaterId);
+
+                return re;
+            }
+            catch (Exception e)
+            {
+                return new
+                {
+                    result = e.HResult ,
+                    msg = e.Message
+                };
+            }
+
+        }
         
         /// <summary>
         /// 获得用户信息
