@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -176,7 +177,7 @@ namespace TTMSWebAPI.Servers
                         Tage = (string)reader[2] ,
                         Profile = (string)reader[3] ,
                         Performance = (string)reader[4],
-                        Date = (string)reader[5],
+                        Date = (DateTime)reader[5],
                         Price = (decimal)reader[6],
                         TheaterName = (string)reader[7] ,
                         SeatRowNumber = (int)reader[8] ,
@@ -254,7 +255,7 @@ namespace TTMSWebAPI.Servers
                         Tage = (string)reader[2] ,
                         Profile = (string)reader[3] ,
                         Performance = (string)reader[4],
-                        Date = (string)reader[5],
+                        Date = (DateTime)reader[5],
                         Price = (decimal)reader[6],
                         TheaterName = (string)reader[7] ,
                         SeatRowNumber = (int)reader[8] ,
