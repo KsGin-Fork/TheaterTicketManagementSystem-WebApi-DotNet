@@ -3,12 +3,12 @@ using System.ComponentModel.DataAnnotations;
 namespace TTMSWebAPI.Models
 {
     /// <summary>
-    /// 上架节目ID
+    /// 上架节目模型
     /// </summary>
     public class CreateGoodModel
     {
         /// <summary>
-        /// 节目ID
+        /// 剧目ID
         /// </summary>
         public int ProgrammeId { get; set; }
         /// <summary>
