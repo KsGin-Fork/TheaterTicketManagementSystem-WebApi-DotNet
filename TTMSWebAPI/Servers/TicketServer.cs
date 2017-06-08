@@ -182,7 +182,8 @@ namespace TTMSWebAPI.Servers
                         TheaterName = (string)reader[7] ,
                         SeatRowNumber = (int)reader[8] ,
                         SeatColNumber = (int)reader[9] ,
-                        Status = (int)reader[10]
+                        Status = (int)reader[10] , 
+                        Id = (int)reader[11]
                     });
                 }
 				
