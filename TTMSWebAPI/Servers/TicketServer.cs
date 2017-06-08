@@ -305,7 +305,7 @@ namespace TTMSWebAPI.Servers
                         ParameterName = "@userId",
                         Direction = ParameterDirection.Input,
                         SqlDbType = SqlDbType.Int,
-                        Value = ticketId
+                        Value = userId
                     },
                     new SqlParameter
                     {
