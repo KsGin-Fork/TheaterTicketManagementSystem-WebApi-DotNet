@@ -28,18 +28,18 @@ namespace TTMSWebAPI.Controllers
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
-                
+
                 var account = HttpContext.Session.GetString("user_account");
 
                 if (account == null)
                 {
                     return new
                     {
-                        result = 401 ,
+                        result = 401,
                         msg = "not login"
                     };
                 }
-                
+
                 var re = GoodServer.GetAllGood();
 
                 return re;
@@ -48,7 +48,7 @@ namespace TTMSWebAPI.Controllers
             {
                 return new
                 {
-                    result = e.HResult ,
+                    result = e.HResult,
                     msg = e.Message
                 };
             }
@@ -69,18 +69,18 @@ namespace TTMSWebAPI.Controllers
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
-                
+
                 var account = HttpContext.Session.GetString("user_account");
 
                 if (account == null)
                 {
                     return new
                     {
-                        result = 401 ,
+                        result = 401,
                         msg = "not login"
                     };
                 }
-                
+
                 var re = GoodServer.QueryGood(goodId);
 
                 return re;
@@ -89,19 +89,19 @@ namespace TTMSWebAPI.Controllers
             {
                 return new
                 {
-                    result = e.HResult ,
+                    result = e.HResult,
                     msg = e.Message
                 };
             }
         }
 
         /// <summary>
-        /// 根据放映厅筛选商品
+        /// 筛选商品
         /// </summary>
-        /// <param name="theaterId">放映厅Id</param>
         /// <returns>商品列表</returns>
-        [HttpGet("[action]/{theaterId}")]
-        public object SelectGoodByTheater(int theaterId)
+        [HttpPatch("[action]")]
+        [HttpPost("[action]")]
+        public object SelectGood([FromBody]SelectGoodModel sgm)
         {
             try
             {
@@ -110,19 +110,19 @@ namespace TTMSWebAPI.Controllers
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
-                
+
                 var account = HttpContext.Session.GetString("user_account");
 
-                if (account == null)
-                {
-                    return new
-                    {
-                        result = 401 ,
-                        msg = "not login"
-                    };
-                }
-                
-                var re = GoodServer.SelectGoodByTheater(theaterId);
+                //if (account == null)
+                //{
+                //    return new
+                //    {
+                //        result = 401 ,
+                //        msg = "not login"
+                //    };
+                //}
+
+                var re = GoodServer.SelectGood(sgm);
 
                 return re;
             }
@@ -130,135 +130,13 @@ namespace TTMSWebAPI.Controllers
             {
                 return new
                 {
-                    result = e.HResult ,
+                    result = e.HResult,
                     msg = e.Message
                 };
             }
         }
 
-        /// <summary>
-        /// 根据节目筛选商品
-        /// </summary>
-        /// <param name="programmeId">节目Id</param>
-        /// <returns></returns>
-        [HttpGet("[action]/{programmeId}")]
-        public object SelectGoodByProgramme(int programmeId)
-        {
-            try
-            {
-                var addr = Server.GetUserIp(Request.HttpContext);
-                if (Server.IpHandle(addr) == 0)
-                {
-                    return new[] { "your ip can't using our api , please contact administrator" };
-                }
-                
-                var account = HttpContext.Session.GetString("user_account");
 
-                if (account == null)
-                {
-                    return new
-                    {
-                        result = 401 ,
-                        msg = "not login"
-                    };
-                }
-                
-                var re = GoodServer.SelectGoodByProgramme(programmeId);
-
-                return re;
-            }
-            catch (Exception e)
-            {
-                return new
-                {
-                    result = e.HResult ,
-                    msg = e.Message
-                };
-            }
-        }
-
-        /// <summary>
-        /// 根据日期筛选商品
-        /// </summary>
-        /// <param name="date">日期(format:xxxx-xx-xx)</param>
-        /// <returns></returns>
-        [HttpGet("[action]/{date}")]
-        public object SelectGoodByDate(string date)
-        {
-            try
-            {
-                var addr = Server.GetUserIp(Request.HttpContext);
-                if (Server.IpHandle(addr) == 0)
-                {
-                    return new[] { "your ip can't using our api , please contact administrator" };
-                }
-                
-                var account = HttpContext.Session.GetString("user_account");
-
-                if (account == null)
-                {
-                    return new
-                    {
-                        result = 401 ,
-                        msg = "not login"
-                    };
-                }
-                
-                var re = GoodServer.SelectGoodByDate(date);
-
-                return re;
-            }
-            catch (Exception e)
-            {
-                return new
-                {
-                    result = e.HResult ,
-                    msg = e.Message
-                };
-            }
-        }
-        
-        /// <summary>
-        /// 根据场次筛选商品
-        /// </summary>
-        /// <param name="performance">场次</param>
-        /// <returns></returns>
-        [HttpGet("[action]/{performance}")]
-        public object SelectGoodByPerformance(string performance)
-        {
-            try
-            {
-                var addr = Server.GetUserIp(Request.HttpContext);
-                if (Server.IpHandle(addr) == 0)
-                {
-                    return new[] { "your ip can't using our api , please contact administrator" };
-                }
-                
-                var account = HttpContext.Session.GetString("user_account");
-
-                if (account == null)
-                {
-                    return new
-                    {
-                        result = 401 ,
-                        msg = "not login"
-                    };
-                }
-                
-                var re = GoodServer.SelectGoodByPerformance(performance);
-
-                return re;
-            }
-            catch (Exception e)
-            {
-                return new
-                {
-                    result = e.HResult ,
-                    msg = e.Message
-                };
-            }
-        }
-        
         /// <summary>
         /// 上架节目
         /// </summary>
@@ -274,18 +152,18 @@ namespace TTMSWebAPI.Controllers
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
-                
+
                 var account = HttpContext.Session.GetString("user_account");
 
                 if (account == null)
                 {
                     return new
                     {
-                        result = 401 ,
+                        result = 401,
                         msg = "not login"
                     };
                 }
-                
+
                 var re = GoodServer.CreateGood(cm);
 
                 return re;
@@ -294,7 +172,7 @@ namespace TTMSWebAPI.Controllers
             {
                 return new
                 {
-                    result = e.HResult ,
+                    result = e.HResult,
                     msg = e.Message
                 };
             }
@@ -315,18 +193,18 @@ namespace TTMSWebAPI.Controllers
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
-                
+
                 var account = HttpContext.Session.GetString("user_account");
 
                 if (account == null)
                 {
                     return new
                     {
-                        result = 401 ,
+                        result = 401,
                         msg = "not login"
                     };
                 }
-                
+
                 var re = GoodServer.DeleteGood(id);
 
                 return re;
@@ -335,7 +213,7 @@ namespace TTMSWebAPI.Controllers
             {
                 return new
                 {
-                    result = e.HResult ,
+                    result = e.HResult,
                     msg = e.Message
                 };
             }

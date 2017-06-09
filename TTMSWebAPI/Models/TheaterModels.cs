@@ -23,10 +23,6 @@ namespace TTMSWebAPI.Models
         [StringLength(30)]
         public string MapSite { get; set; }
         /// <summary>
-        /// 管理者ID
-        /// </summary>
-        public int AdminID { get; set; }
-        /// <summary>
         /// 行座位个数
         /// </summary>
         public int SeatRowCount { get; set; }
@@ -35,20 +31,4 @@ namespace TTMSWebAPI.Models
         /// </summary>
         public int SeatColCount { get; set; }
     }
-
-    /// <summary>
-    /// 修改剧院管理者模型
-    /// </summary>
-    public class UpdateTheaterAdminIDModel
-    {
-        /// <summary>
-        /// 剧院Id
-        /// </summary>
-        public int Id { get; set; }
-        /// <summary>
-        /// 新的管理员ID
-        /// </summary>
-        public int NewAdminId { get; set; }
-    }
-
 }
