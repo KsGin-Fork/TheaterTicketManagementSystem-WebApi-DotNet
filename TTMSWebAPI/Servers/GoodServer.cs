@@ -186,15 +186,14 @@ namespace TTMSWebAPI.Servers
                     {
                         ParameterName = "@playDate",
                         Direction = ParameterDirection.Input,
-                        SqlDbType = SqlDbType.VarChar,
-                        Size = 15,
+                        SqlDbType = SqlDbType.Date,
                         Value = sgm.PlayDate
                     },
                     new SqlParameter
                     {
                         ParameterName = "@performance",
                         Direction = ParameterDirection.Input,
-                        SqlDbType = SqlDbType.VarChar,
+                        SqlDbType = SqlDbType.NVarChar,
                         Size = 10,
                         Value = sgm.Performance
                     },

@@ -101,7 +101,7 @@ namespace TTMSWebAPI.Controllers
         /// <returns>商品列表</returns>
         [HttpPatch("[action]")]
         [HttpPost("[action]")]
-        public object SelectGood([FromBody]SelectGoodModel sgm)
+        public object SelectGood([FromBody] SelectGoodModel sgm)
         {
             try
             {
@@ -113,14 +113,14 @@ namespace TTMSWebAPI.Controllers
 
                 var account = HttpContext.Session.GetString("user_account");
 
-                //if (account == null)
-                //{
-                //    return new
-                //    {
-                //        result = 401 ,
-                //        msg = "not login"
-                //    };
-                //}
+                if (account == null)
+                {
+                    return new
+                    {
+                        result = 401 ,
+                        msg = "not login"
+                    };
+                }
 
                 var re = GoodServer.SelectGood(sgm);
 
