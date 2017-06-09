@@ -28,14 +28,14 @@ namespace TTMSWebAPI.Controllers
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
-                
+
                 var account = HttpContext.Session.GetString("user_account");
 
                 if (account == null)
                 {
                     return new
                     {
-                        result = 401 ,
+                        result = 401,
                         msg = "not login"
                     };
                 }
@@ -48,7 +48,7 @@ namespace TTMSWebAPI.Controllers
             {
                 return new
                 {
-                    result = e.HResult ,
+                    result = e.HResult,
                     msg = e.Message
                 };
             }
@@ -76,11 +76,11 @@ namespace TTMSWebAPI.Controllers
                 {
                     return new
                     {
-                        result = 401 ,
+                        result = 401,
                         msg = "not login"
                     };
                 }
-                
+
                 var re = TheaterServer.QueryTheater(theaterId);
 
                 return re;
@@ -89,49 +89,7 @@ namespace TTMSWebAPI.Controllers
             {
                 return new
                 {
-                    result = e.HResult ,
-                    msg = e.Message
-                };
-            }
-        }
-
-        /// <summary>
-        /// 修改影厅管理者
-        /// </summary>
-        /// <param name="um">修改影厅管理者模型</param>
-        /// <returns>修改结果</returns>
-        [HttpPatch("[action]")]
-        [HttpPost("[action]")]
-        public object UpdateTheaterAdminId([FromBody]UpdateTheaterAdminIDModel um)
-        {
-            try
-            {
-                var addr = Server.GetUserIp(Request.HttpContext);
-                if (Server.IpHandle(addr) == 0)
-                {
-                    return new[] { "your ip can't using our api , please contact administrator" };
-                }
-                
-                var account = HttpContext.Session.GetString("user_account");
-
-                if (account == null)
-                {
-                    return new
-                    {
-                        result = 401 ,
-                        msg = "not login"
-                    };
-                }
-                
-                var re = TheaterServer.UpdateTheaterAdminId(um);
-
-                return re;
-            }
-            catch (Exception e)
-            {
-                return new
-                {
-                    result = e.HResult ,
+                    result = e.HResult,
                     msg = e.Message
                 };
             }
@@ -152,18 +110,18 @@ namespace TTMSWebAPI.Controllers
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
-                
+
                 var account = HttpContext.Session.GetString("user_account");
 
                 if (account == null)
                 {
                     return new
                     {
-                        result = 401 ,
+                        result = 401,
                         msg = "not login"
                     };
                 }
-                
+
                 var re = TheaterServer.CreateTheater(cm);
 
                 return re;
@@ -172,7 +130,7 @@ namespace TTMSWebAPI.Controllers
             {
                 return new
                 {
-                    result = e.HResult ,
+                    result = e.HResult,
                     msg = e.Message
                 };
             }
@@ -193,18 +151,18 @@ namespace TTMSWebAPI.Controllers
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
-                
+
                 var account = HttpContext.Session.GetString("user_account");
 
                 if (account == null)
                 {
                     return new
                     {
-                        result = 401 ,
+                        result = 401,
                         msg = "not login"
                     };
                 }
-                
+
                 var re = TheaterServer.DeleteTheater(id);
 
                 return re;
@@ -213,7 +171,7 @@ namespace TTMSWebAPI.Controllers
             {
                 return new
                 {
-                    result = e.HResult ,
+                    result = e.HResult,
                     msg = e.Message
                 };
             }

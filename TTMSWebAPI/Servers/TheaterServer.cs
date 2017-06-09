@@ -62,9 +62,8 @@ namespace TTMSWebAPI.Servers
                         theaterName = reader[1] != DBNull.Value ? (string)reader[1] : null,
                         theaterLocation = reader[2] != DBNull.Value ? (string)reader[2] : null,
                         theaterMapSite = reader[3] != DBNull.Value ? (string)reader[3] : null,
-                        theaterAdmitId = (int)reader[4],
-                        theaterSeatRowsCount = (int)reader[5],
-                        theaterSeatColsCount = (int)reader[6]
+                        theaterSeatRowsCount = (int)reader[4],
+                        theaterSeatColsCount = (int)reader[5]
                     });
                 }
 
@@ -136,9 +135,8 @@ namespace TTMSWebAPI.Servers
                         theaterName = reader[1] != DBNull.Value ? (string)reader[1] : null,
                         theaterLocation = reader[2] != DBNull.Value ? (string)reader[2] : null,
                         theaterMapSite = reader[3] != DBNull.Value ? (string)reader[3] : null,
-                        theaterAdmitId = (int)reader[4],
-                        theaterSeatRowsCount = (int)reader[5],
-                        theaterSeatColsCount = (int)reader[6]
+                        theaterSeatRowsCount = (int)reader[4],
+                        theaterSeatColsCount = (int)reader[5]
                     };
                 }
 
@@ -147,64 +145,6 @@ namespace TTMSWebAPI.Servers
                     result = (int)sqlCom.Parameters["@return"].Value,
                     msg,
                     data
-                };
-            }
-        }
-
-        /// <summary>
-        /// 修改影厅管理者
-        /// </summary>
-        /// <param name="um">修改影厅管理者模型</param>
-        /// <returns>修改结果</returns>
-        public static object UpdateTheaterAdminId(UpdateTheaterAdminIDModel um)
-        {
-            using (var con = new SqlConnection(Server.SqlConString))
-            {
-                con.Open();
-
-                var sqlCom = new SqlCommand("sp_UpdateTheater", con)
-                {
-                    CommandType = CommandType.StoredProcedure
-                };
-
-                sqlCom.Parameters.AddRange(new[]
-                {
-                    new SqlParameter
-                    {
-                        ParameterName = "@theaterId",
-                        Direction = ParameterDirection.Input,
-                        SqlDbType = SqlDbType.Int,
-                        Value = um.Id
-                    },
-                    new SqlParameter
-                    {
-                        ParameterName = "@newAdminId",
-                        Direction = ParameterDirection.Input,
-                        SqlDbType = SqlDbType.NVarChar,
-                        Size = 15,
-                        Value = um.NewAdminId
-                    },
-                    new SqlParameter
-                    {
-                        ParameterName = "@message",
-                        Direction = ParameterDirection.Output,
-                        Size = 30,
-                        SqlDbType = SqlDbType.VarChar
-                    },
-                    new SqlParameter
-                    {
-                        ParameterName = "@return",
-                        Direction = ParameterDirection.ReturnValue,
-                        SqlDbType = SqlDbType.Int
-                    }
-                });
-
-                sqlCom.ExecuteNonQuery();
-
-                return new
-                {
-                    result = (int)sqlCom.Parameters["@return"].Value,
-                    msg = (string)sqlCom.Parameters["@message"].Value
                 };
             }
         }
@@ -250,13 +190,6 @@ namespace TTMSWebAPI.Servers
                         SqlDbType = SqlDbType.NVarChar,
                         Size = 30,
                         Value = cm.MapSite
-                    },
-                    new SqlParameter
-                    {
-                        ParameterName = "@AdminId",
-                        Direction = ParameterDirection.Input,
-                        SqlDbType = SqlDbType.Int,
-                        Value = cm.AdminID
                     },
                     new SqlParameter
                     {
