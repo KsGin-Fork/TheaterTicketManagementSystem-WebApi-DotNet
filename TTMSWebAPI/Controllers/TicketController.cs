@@ -35,11 +35,11 @@ namespace TTMSWebAPI.Controllers
                 {
                     return new
                     {
-                        result = 401 ,
+                        result = 401,
                         msg = "not login"
                     };
                 }
-                
+
                 var re = TicketServer.QueryTicket(id);
 
                 return re;
@@ -48,12 +48,12 @@ namespace TTMSWebAPI.Controllers
             {
                 return new
                 {
-                    result = e.HResult ,
+                    result = e.HResult,
                     msg = e.Message
                 };
             }
         }
-        
+
         /// <summary>
         /// 筛选票
         /// </summary>
@@ -69,18 +69,18 @@ namespace TTMSWebAPI.Controllers
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
-                
+
                 var account = HttpContext.Session.GetString("user_account");
 
                 if (account == null)
                 {
                     return new
                     {
-                        result = 401 ,
+                        result = 401,
                         msg = "not login"
                     };
                 }
-                
+
                 var re = TicketServer.SelectTicket(goodId);
 
                 return re;
@@ -89,12 +89,12 @@ namespace TTMSWebAPI.Controllers
             {
                 return new
                 {
-                    result = e.HResult ,
+                    result = e.HResult,
                     msg = e.Message
                 };
             }
         }
-        
+
         /// <summary>
         /// 订票
         /// </summary>
@@ -110,18 +110,18 @@ namespace TTMSWebAPI.Controllers
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
-                
+
                 var account = HttpContext.Session.GetString("user_account");
 
                 if (account == null)
                 {
                     return new
                     {
-                        result = 401 ,
+                        result = 401,
                         msg = "not login"
                     };
                 }
-                
+
                 var re = TicketServer.SellTicket(ticketId);
 
                 return re;
@@ -130,7 +130,7 @@ namespace TTMSWebAPI.Controllers
             {
                 return new
                 {
-                    result = e.HResult ,
+                    result = e.HResult,
                     msg = e.Message
                 };
             }
@@ -143,7 +143,7 @@ namespace TTMSWebAPI.Controllers
         /// <param name="userId">用户Id</param>
         /// <returns></returns>
         [HttpPost("[action]/{ticketId}&{userId}")]
-        public object PayTicket(int ticketId , int userId)
+        public object PayTicket(int ticketId, int userId)
         {
             try
             {
@@ -152,19 +152,19 @@ namespace TTMSWebAPI.Controllers
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
-                
+
                 var account = HttpContext.Session.GetString("user_account");
 
                 if (account == null)
                 {
                     return new
                     {
-                        result = 401 ,
+                        result = 401,
                         msg = "not login"
                     };
                 }
-                
-                var re = TicketServer.PayTicket(ticketId , userId);
+
+                var re = TicketServer.PayTicket(ticketId, userId);
 
                 return re;
             }
@@ -172,7 +172,7 @@ namespace TTMSWebAPI.Controllers
             {
                 return new
                 {
-                    result = e.HResult ,
+                    result = e.HResult,
                     msg = e.Message
                 };
             }
@@ -185,7 +185,7 @@ namespace TTMSWebAPI.Controllers
         /// <param name="userId">用户ID</param>        
         /// <returns>售票结果</returns>
         [HttpPost("[action]/{ticketId}&{userId}")]
-        public object ReturnedTicket(int ticketId , int userId)
+        public object ReturnedTicket(int ticketId, int userId)
         {
             try
             {
@@ -194,19 +194,19 @@ namespace TTMSWebAPI.Controllers
                 {
                     return new[] { "your ip can't using our api , please contact administrator" };
                 }
-                
+
                 var account = HttpContext.Session.GetString("user_account");
 
                 if (account == null)
                 {
                     return new
                     {
-                        result = 401 ,
+                        result = 401,
                         msg = "not login"
                     };
                 }
-                
-                var re = TicketServer.ReturnedTicket(ticketId , userId);
+
+                var re = TicketServer.ReturnedTicket(ticketId, userId);
 
                 return re;
             }
@@ -214,7 +214,7 @@ namespace TTMSWebAPI.Controllers
             {
                 return new
                 {
-                    result = e.HResult ,
+                    result = e.HResult,
                     msg = e.Message
                 };
             }

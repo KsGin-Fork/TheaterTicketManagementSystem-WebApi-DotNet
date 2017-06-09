@@ -9,7 +9,7 @@ namespace TTMSWebAPI.Servers
     /// 票操作Server
     /// </summary>
     public class TicketServer
-    {   
+    {
         /// <summary>
         /// 售票
         /// </summary>
@@ -20,13 +20,13 @@ namespace TTMSWebAPI.Servers
             using (var con = new SqlConnection(Server.SqlConString))
             {
                 con.Open();
-				
+
                 var sqlCom = new SqlCommand("sp_SellTicket", con)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
 
-                sqlCom.Parameters.AddRange(new []
+                sqlCom.Parameters.AddRange(new[]
                 {
                     new SqlParameter
                     {
@@ -54,8 +54,8 @@ namespace TTMSWebAPI.Servers
 
                 return new
                 {
-                    result = (int) sqlCom.Parameters["@return"].Value,
-                    msg = (string) sqlCom.Parameters["@message"].Value
+                    result = (int)sqlCom.Parameters["@return"].Value,
+                    msg = (string)sqlCom.Parameters["@message"].Value
                 };
             }
         }
@@ -66,18 +66,18 @@ namespace TTMSWebAPI.Servers
         /// <param name="ticketId">票ID</param>
         /// <param name="userId">用户ID</param>
         /// <returns>退票结果</returns>
-        public static object ReturnedTicket(int ticketId , int userId)
+        public static object ReturnedTicket(int ticketId, int userId)
         {
             using (var con = new SqlConnection(Server.SqlConString))
             {
                 con.Open();
-				
+
                 var sqlCom = new SqlCommand("sp_ReturnedTicket", con)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
 
-                sqlCom.Parameters.AddRange(new []
+                sqlCom.Parameters.AddRange(new[]
                 {
                     new SqlParameter
                     {
@@ -112,8 +112,8 @@ namespace TTMSWebAPI.Servers
 
                 return new
                 {
-                    result = (int) sqlCom.Parameters["@return"].Value,
-                    msg = (string) sqlCom.Parameters["@message"].Value
+                    result = (int)sqlCom.Parameters["@return"].Value,
+                    msg = (string)sqlCom.Parameters["@message"].Value
                 };
             }
         }
@@ -129,13 +129,13 @@ namespace TTMSWebAPI.Servers
                 con.Open();
 
                 var message = "";
-				
+
                 var sqlCom = new SqlCommand("sp_SelectTicket", con)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
 
-                sqlCom.Parameters.AddRange(new []
+                sqlCom.Parameters.AddRange(new[]
                 {
                     new SqlParameter
                     {
@@ -162,34 +162,34 @@ namespace TTMSWebAPI.Servers
 
                 sqlCom.ExecuteNonQuery();
 
-                var msg = (string) sqlCom.Parameters["@message"].Value;
+                var msg = (string)sqlCom.Parameters["@message"].Value;
 
                 var data = new List<object>();
 
                 var reader = sqlCom.ExecuteReader();
-				
+
                 while (reader.Read())
                 {
-                    data.Add( new
+                    data.Add(new
                     {
-                        Name = (string)reader[0] ,
-                        Duration = (int)reader[1] ,
-                        Tage = (string)reader[2] ,
-                        Profile = (string)reader[3] ,
+                        Name = (string)reader[0],
+                        Duration = (int)reader[1],
+                        Tage = (string)reader[2],
+                        Profile = (string)reader[3],
                         Performance = (string)reader[4],
                         Date = (DateTime)reader[5],
                         Price = (decimal)reader[6],
-                        TheaterName = (string)reader[7] ,
-                        SeatRowNumber = (int)reader[8] ,
-                        SeatColNumber = (int)reader[9] ,
-                        Status = (int)reader[10] , 
+                        TheaterName = (string)reader[7],
+                        SeatRowNumber = (int)reader[8],
+                        SeatColNumber = (int)reader[9],
+                        Status = (int)reader[10],
                         Id = (int)reader[11]
                     });
                 }
-				
+
                 return new
                 {
-                    result = (int) sqlCom.Parameters["@return"].Value,
+                    result = (int)sqlCom.Parameters["@return"].Value,
                     msg,
                     data
                 };
@@ -208,13 +208,13 @@ namespace TTMSWebAPI.Servers
                 con.Open();
 
                 var message = "";
-				
+
                 var sqlCom = new SqlCommand("sp_QueryTicket", con)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
 
-                sqlCom.Parameters.AddRange(new []
+                sqlCom.Parameters.AddRange(new[]
                 {
                     new SqlParameter
                     {
@@ -241,33 +241,33 @@ namespace TTMSWebAPI.Servers
 
                 sqlCom.ExecuteNonQuery();
 
-                var msg = (string) sqlCom.Parameters["@message"].Value;
+                var msg = (string)sqlCom.Parameters["@message"].Value;
 
                 object data = null;
 
                 var reader = sqlCom.ExecuteReader();
-				
+
                 while (reader.Read())
                 {
                     data = new
                     {
-                        Name = (string)reader[0] ,
-                        Duration = (int)reader[1] ,
-                        Tage = (string)reader[2] ,
-                        Profile = (string)reader[3] ,
+                        Name = (string)reader[0],
+                        Duration = (int)reader[1],
+                        Tage = (string)reader[2],
+                        Profile = (string)reader[3],
                         Performance = (string)reader[4],
                         Date = (DateTime)reader[5],
                         Price = (decimal)reader[6],
-                        TheaterName = (string)reader[7] ,
-                        SeatRowNumber = (int)reader[8] ,
-                        SeatColNumber = (int)reader[9] ,
+                        TheaterName = (string)reader[7],
+                        SeatRowNumber = (int)reader[8],
+                        SeatColNumber = (int)reader[9],
                         Status = (int)reader[10]
                     };
                 }
-				
+
                 return new
                 {
-                    result = (int) sqlCom.Parameters["@return"].Value,
+                    result = (int)sqlCom.Parameters["@return"].Value,
                     msg,
                     data
                 };
@@ -280,18 +280,18 @@ namespace TTMSWebAPI.Servers
         /// <param name="ticketId">票Id</param>
         /// <param name="userId">用户Id</param>
         /// <returns></returns>
-        public static object PayTicket(int ticketId , int userId)
+        public static object PayTicket(int ticketId, int userId)
         {
             using (var con = new SqlConnection(Server.SqlConString))
             {
                 con.Open();
-				
+
                 var sqlCom = new SqlCommand("sp_PayTicket", con)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
 
-                sqlCom.Parameters.AddRange(new []
+                sqlCom.Parameters.AddRange(new[]
                 {
                     new SqlParameter
                     {
@@ -326,8 +326,8 @@ namespace TTMSWebAPI.Servers
 
                 return new
                 {
-                    result = (int) sqlCom.Parameters["@return"].Value,
-                    msg = (string) sqlCom.Parameters["@message"].Value
+                    result = (int)sqlCom.Parameters["@return"].Value,
+                    msg = (string)sqlCom.Parameters["@message"].Value
                 };
             }
         }

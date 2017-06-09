@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e6d56ab6-32d0-48fc-ad4c-43e489dbc839" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.TTMSWebAPI/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.TTMSWebAPI/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TTMSWebAPI/Servers/TicketServer.cs" afterPath="$PROJECT_DIR$/TTMSWebAPI/Servers/TicketServer.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TTMSWebAPI/Program.cs" afterPath="$PROJECT_DIR$/TTMSWebAPI/Program.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TTMSWebAPI/Servers/TheaterServer.cs" afterPath="$PROJECT_DIR$/TTMSWebAPI/Servers/TheaterServer.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -89,8 +90,8 @@
       <file leaf-file-name="TicketController.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Controllers/TicketController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="154" column="16" lean-forward="true" selection-start-line="154" selection-start-column="16" selection-end-line="154" selection-end-column="16" />
+            <state relative-caret-position="325">
+              <caret line="118" column="21" lean-forward="true" selection-start-line="118" selection-start-column="21" selection-end-line="118" selection-end-column="21" />
               <folding>
                 <marker date="1496915519000" expanded="true" signature="6:137" ph="..." />
                 <marker date="1496915519000" expanded="true" signature="171:6361" ph="{...}" />
@@ -144,7 +145,7 @@
       <file leaf-file-name="Server.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Servers/Server.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
+            <state relative-caret-position="1728">
               <caret line="96" column="36" lean-forward="false" selection-start-line="96" selection-start-column="36" selection-end-line="96" selection-end-column="36" />
               <folding />
             </state>
@@ -222,8 +223,8 @@
       <file leaf-file-name="TicketServer.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Servers/TicketServer.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="307" column="38" lean-forward="false" selection-start-line="307" selection-start-column="38" selection-end-line="307" selection-end-column="38" />
+            <state relative-caret-position="58">
+              <caret line="297" column="52" lean-forward="false" selection-start-line="297" selection-start-column="52" selection-end-line="297" selection-end-column="52" />
               <folding>
                 <marker date="1496915450000" expanded="true" signature="6:95" ph="..." />
                 <marker date="1496915450000" expanded="true" signature="125:11244" ph="{...}" />
@@ -285,6 +286,27 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="HomeController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Controllers/HomeController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+              <folding>
+                <marker date="1496710044000" expanded="false" signature="6:137" ph="..." />
+                <marker date="1496710044000" expanded="true" signature="171:1013" ph="{...}" />
+                <marker date="1496710044000" expanded="true" signature="178:221" ph="/// 主页 ... " />
+                <marker date="1496710044000" expanded="true" signature="321:1005" ph="{...}" />
+                <marker date="1496710044000" expanded="true" signature="336:423" ph="/// 主页 ... " />
+                <marker date="1496710044000" expanded="true" signature="473:520" ph="{...}" />
+                <marker date="1496710044000" expanded="true" signature="530:617" ph="/// 验证码 ... " />
+                <marker date="1496710044000" expanded="true" signature="679:999" ph="{...}" />
+                <marker date="1496710044000" expanded="true" signature="705:902" ph="{...}" />
+                <marker date="1496710044000" expanded="true" signature="932:989" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="OrderModels.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Models/OrderModels.cs">
           <provider selected="true" editor-type-id="text-editor">
@@ -297,20 +319,6 @@
                 <marker date="1495455658000" expanded="true" signature="290:343" ph="/// 用户Id ... " />
                 <marker date="1495455658000" expanded="true" signature="401:452" ph="/// 日期 ... " />
                 <marker date="1495455658000" expanded="true" signature="538:589" ph="/// 类型 ... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Get.cshtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Views/Home/Get.cshtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-              <folding>
-                <marker date="1496193733000" expanded="true" signature="23:118" ph="&lt;head.../&gt;" />
-                <marker date="1496193733000" expanded="true" signature="119:189" ph="&lt;body.../&gt;" />
-                <marker date="1496193733000" expanded="true" signature="126:181" ph="&lt;div.../&gt;" />
               </folding>
             </state>
           </provider>
@@ -610,24 +618,6 @@
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Servers" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TTMSWebAPI (1 project)" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TTMSWebAPI" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Controllers" />
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
@@ -826,7 +816,8 @@
       <workItem from="1496833554860" duration="123000" />
       <workItem from="1496846943674" duration="611000" />
       <workItem from="1496910577290" duration="233000" />
-      <workItem from="1496914789038" duration="395000" />
+      <workItem from="1496914789038" duration="951000" />
+      <workItem from="1496975365418" duration="312000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1493343032355</created>
@@ -839,7 +830,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110005000" />
+    <option name="totallyTimeSpent" value="110873000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -856,9 +847,9 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29160935" sideWeight="0.46171874" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14305365" sideWeight="0.46171874" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29160935" sideWeight="0.53828126" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29160935" sideWeight="0.53828126" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30411687" sideWeight="0.6453125" order="7" side_tool="false" content_ui="tabs" />
@@ -1033,17 +1024,17 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TTMSWebAPI/README.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1058,13 +1049,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4841">
           <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Controllers/HomeController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1143,15 +1127,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          <folding>
-            <marker date="1496798715000" expanded="true" signature="80:127" ph="/// 上架节目模型 ... " />
-            <marker date="1496798715000" expanded="true" signature="160:755" ph="{...}" />
-            <marker date="1496798715000" expanded="true" signature="175:228" ph="/// 剧目ID ... " />
-            <marker date="1496798715000" expanded="true" signature="282:336" ph="/// 放映厅ID ... " />
-            <marker date="1496798715000" expanded="true" signature="388:441" ph="/// 放映场次 ... " />
-            <marker date="1496798715000" expanded="true" signature="525:578" ph="/// 放映日期 ... " />
-            <marker date="1496798715000" expanded="true" signature="659:710" ph="/// 价格 ... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1481,7 +1456,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Servers/Server.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
+        <state relative-caret-position="1728">
           <caret line="96" column="36" lean-forward="false" selection-start-line="96" selection-start-column="36" selection-end-line="96" selection-end-column="36" />
           <folding />
         </state>
@@ -1489,8 +1464,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Servers/TicketServer.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="307" column="38" lean-forward="false" selection-start-line="307" selection-start-column="38" selection-end-line="307" selection-end-column="38" />
+        <state relative-caret-position="58">
+          <caret line="297" column="52" lean-forward="false" selection-start-line="297" selection-start-column="52" selection-end-line="297" selection-end-column="52" />
           <folding>
             <marker date="1496915450000" expanded="true" signature="6:95" ph="..." />
             <marker date="1496915450000" expanded="true" signature="125:11244" ph="{...}" />
@@ -1551,10 +1526,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Controllers/HomeController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+          <folding>
+            <marker date="1496710044000" expanded="false" signature="6:137" ph="..." />
+            <marker date="1496710044000" expanded="true" signature="171:1013" ph="{...}" />
+            <marker date="1496710044000" expanded="true" signature="178:221" ph="/// 主页 ... " />
+            <marker date="1496710044000" expanded="true" signature="321:1005" ph="{...}" />
+            <marker date="1496710044000" expanded="true" signature="336:423" ph="/// 主页 ... " />
+            <marker date="1496710044000" expanded="true" signature="473:520" ph="{...}" />
+            <marker date="1496710044000" expanded="true" signature="530:617" ph="/// 验证码 ... " />
+            <marker date="1496710044000" expanded="true" signature="679:999" ph="{...}" />
+            <marker date="1496710044000" expanded="true" signature="705:902" ph="{...}" />
+            <marker date="1496710044000" expanded="true" signature="932:989" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TTMSWebAPI/Controllers/TicketController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="154" column="16" lean-forward="true" selection-start-line="154" selection-start-column="16" selection-end-line="154" selection-end-column="16" />
+        <state relative-caret-position="325">
+          <caret line="118" column="21" lean-forward="true" selection-start-line="118" selection-start-column="21" selection-end-line="118" selection-end-column="21" />
           <folding>
             <marker date="1496915519000" expanded="true" signature="6:137" ph="..." />
             <marker date="1496915519000" expanded="true" signature="171:6361" ph="{...}" />

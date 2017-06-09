@@ -48,7 +48,7 @@ namespace TTMSWebAPI.Servers
 
                 sqlCom.ExecuteNonQuery();
 
-                var msg = (string) sqlCom.Parameters["@message"].Value;
+                var msg = (string)sqlCom.Parameters["@message"].Value;
 
                 var data = new List<object>();
 
@@ -58,19 +58,19 @@ namespace TTMSWebAPI.Servers
                 {
                     data.Add(new
                     {
-                        theaterId = (int) reader[0],
-                        theaterName = reader[1] != DBNull.Value ? (string) reader[1] : null,
-                        theaterLocation = reader[2] != DBNull.Value ? (string) reader[2] : null,
-                        theaterMapSite = reader[3] != DBNull.Value ? (string) reader[3] : null,
-                        theaterAdmitId = (int) reader[4],
-                        theaterSeatRowsCount = (int) reader[5],
-                        theaterSeatColsCount = (int) reader[6]
+                        theaterId = (int)reader[0],
+                        theaterName = reader[1] != DBNull.Value ? (string)reader[1] : null,
+                        theaterLocation = reader[2] != DBNull.Value ? (string)reader[2] : null,
+                        theaterMapSite = reader[3] != DBNull.Value ? (string)reader[3] : null,
+                        theaterAdmitId = (int)reader[4],
+                        theaterSeatRowsCount = (int)reader[5],
+                        theaterSeatColsCount = (int)reader[6]
                     });
                 }
 
                 return new
                 {
-                    result = (int) sqlCom.Parameters["@return"].Value,
+                    result = (int)sqlCom.Parameters["@return"].Value,
                     msg,
                     data
                 };
@@ -122,7 +122,7 @@ namespace TTMSWebAPI.Servers
 
                 sqlCom.ExecuteNonQuery();
 
-                var msg = (string) sqlCom.Parameters["@message"].Value;
+                var msg = (string)sqlCom.Parameters["@message"].Value;
 
                 object data = null;
 
@@ -132,25 +132,25 @@ namespace TTMSWebAPI.Servers
                 {
                     data = new
                     {
-                        theaterId = (int) reader[0],
-                        theaterName = reader[1] != DBNull.Value ? (string) reader[1] : null,
-                        theaterLocation = reader[2] != DBNull.Value ? (string) reader[2] : null,
-                        theaterMapSite = reader[3] != DBNull.Value ? (string) reader[3] : null,
-                        theaterAdmitId = (int) reader[4],
-                        theaterSeatRowsCount = (int) reader[5],
-                        theaterSeatColsCount = (int) reader[6]
+                        theaterId = (int)reader[0],
+                        theaterName = reader[1] != DBNull.Value ? (string)reader[1] : null,
+                        theaterLocation = reader[2] != DBNull.Value ? (string)reader[2] : null,
+                        theaterMapSite = reader[3] != DBNull.Value ? (string)reader[3] : null,
+                        theaterAdmitId = (int)reader[4],
+                        theaterSeatRowsCount = (int)reader[5],
+                        theaterSeatColsCount = (int)reader[6]
                     };
                 }
 
                 return new
                 {
-                    result = (int) sqlCom.Parameters["@return"].Value,
+                    result = (int)sqlCom.Parameters["@return"].Value,
                     msg,
                     data
                 };
             }
         }
-        
+
         /// <summary>
         /// 修改影厅管理者
         /// </summary>
@@ -203,8 +203,8 @@ namespace TTMSWebAPI.Servers
 
                 return new
                 {
-                    result = (int) sqlCom.Parameters["@return"].Value,
-                    msg = (string) sqlCom.Parameters["@message"].Value
+                    result = (int)sqlCom.Parameters["@return"].Value,
+                    msg = (string)sqlCom.Parameters["@message"].Value
                 };
             }
         }
@@ -291,8 +291,8 @@ namespace TTMSWebAPI.Servers
 
                 return new
                 {
-                    result = (int) sqlCom.Parameters["@return"].Value,
-                    msg = (string) sqlCom.Parameters["@message"].Value
+                    result = (int)sqlCom.Parameters["@return"].Value,
+                    msg = (string)sqlCom.Parameters["@message"].Value
                 };
             }
         }
@@ -341,8 +341,8 @@ namespace TTMSWebAPI.Servers
 
                 return new
                 {
-                    result = (int) sqlCom.Parameters["@return"].Value,
-                    msg = (string) sqlCom.Parameters["@message"].Value
+                    result = (int)sqlCom.Parameters["@return"].Value,
+                    msg = (string)sqlCom.Parameters["@message"].Value
                 };
             }
         }

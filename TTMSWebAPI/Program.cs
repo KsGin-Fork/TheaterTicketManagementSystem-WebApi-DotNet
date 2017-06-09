@@ -24,7 +24,7 @@ namespace TTMSWebAPI
                 .CaptureStartupErrors(true)
                 .Build();
 
-           host.Run();
+            host.Run();
         }
     }
 }
