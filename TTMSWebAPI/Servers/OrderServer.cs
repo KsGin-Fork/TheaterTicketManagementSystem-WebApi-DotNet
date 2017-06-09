@@ -58,7 +58,7 @@ namespace TTMSWebAPI.Servers
                 {
                     data.Add( new
                     {
-                        goodId = (int) reader[0],
+                        orderId = (int) reader[0],
                         ticketId = (int) reader[1],
                         userId = (int) reader[2],
                         type = (int) reader[3],
@@ -112,10 +112,10 @@ namespace TTMSWebAPI.Servers
                     },
                     new SqlParameter
                     {
-                        ParameterName = "@playDate",
+                        ParameterName = "@tradeDate",
                         Direction = ParameterDirection.Input,
                         SqlDbType = SqlDbType.Date,
-                        Value = sm.Date
+                        Value = sm.TradeDate
                     },
                     new SqlParameter
                     {
@@ -152,7 +152,7 @@ namespace TTMSWebAPI.Servers
                 {
                     data.Add( new
                     {
-                        goodId = (int) reader[0],
+                        orderId = (int) reader[0],
                         ticketId = (int) reader[1],
                         userId = (int) reader[2],
                         type = (int) reader[3],

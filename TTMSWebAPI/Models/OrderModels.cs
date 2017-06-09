@@ -21,7 +21,7 @@ namespace TTMSWebAPI.Models
         /// 日期
         /// </summary>
         [StringLength(15)]
-        public string Date { get; set; }
+        public string TradeDate { get; set; }
         
         /// <summary>
         /// 类型
