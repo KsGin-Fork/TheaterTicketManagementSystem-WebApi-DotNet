@@ -95,5 +95,49 @@ namespace TTMSWebAPI.Controllers
                 };
             }
         }
+
+           
+        /// <summary>
+        /// 分析销售情况
+        /// </summary>
+        /// <param name="am">分析模型</param>
+        /// <returns></returns>
+        [HttpPatch("[action]")]
+        [HttpPost("[action]")]
+        public object AnalyseOrder([FromBody]AnalyseOrderModel am)
+        {
+            try
+            {
+                var addr = Server.GetUserIp(Request.HttpContext);
+                if (Server.IpHandle(addr) == 0)
+                {
+                    return new[] { "your ip can't using our api , please contact administrator" };
+                }
+                
+                var account = HttpContext.Session.GetString("user_account");
+
+//                if (account == null)
+//                {
+//                    return new
+//                    {
+//                        result = 401 ,
+//                        msg = "not login"
+//                    };
+//                }
+//                
+                var re = OrderServer.AnalyseOrder(am);
+
+                return re;
+            }
+            catch (Exception e)
+            {
+                return new
+                {
+                    result = e.HResult ,
+                    msg = e.Message
+                };
+            }
+        }     
+        
     }
 }
